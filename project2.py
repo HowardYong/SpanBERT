@@ -15,21 +15,17 @@ import sys
 import argparse
 import re
 
+from spanbert import SpanBERT
+from spacy_help_functions import *
+from relation_set import RelationSet
 from googleapiclient.discovery import build
 import requests
 from bs4 import BeautifulSoup
 import spacy
-from spanbert import SpanBERT
-from spacy_help_functions import *
 import openai
 
 from collections import Counter
 from collections import defaultdict
-from pprint import pprint
-import numpy as np
-from numpy import dot
-from numpy.linalg import norm
-
 
 
 def search(google_api_key, google_engine_id, q):
@@ -106,74 +102,6 @@ def print_parameters(args):
         print(f'{k:<15} = {v:>5}')
     print('Loading necessary libraries...')
 
-def extract_relations_gpt3(sentence, openai_api_key, relation_type, threshold):
-    openai.api_key = openai_api_key
-
-    examples = {
-        'Schools_Attended': '["Jeff Bezos", "Schools_Attended", "Princeton University"]',
-        'Work_For': '["Alec Radford", "Work_For", "OpenAI"]',
-        'Live_In': '["Mariah Carey", "Live_In", "New York City"]',
-        'Top_Member_Employees': '["Jensen Huang", "Top_Member_Employees", "Nvidia"]'
-    }
-
-    # prompt = f"Given the following example of a relation: {examples[relation_type]}, please extract all the {relation_type} relations in the format of [\"Entity1\", \"{relation_type}\", \"Entity2\"] from the sentence: '{sentence}'. List all relevant relations."
-    prompt = f"Given the following example of a relation: {examples[relation_type]}, please extract all the {relation_type} relations in the format of [\"Entity1\", \"{relation_type}\", \"Entity2\"] from the sentence: '{sentence}'. If the relation is not directly mentioned in the sentence, infer the correct one based on the context and the provided example. List all relevant relations."
-    # prompt = f"Given the following example of a relation: {examples[relation_type]}, please extract all the {relation_type} relations in the format of [\"Entity1\", \"{relation_type}\", \"Entity2\"] from the sentence: '{sentence}'. If the relation is not directly mentioned in the sentence, infer the correct one based on the context and the provided example. When extracting education-related relations, consider different levels of education if applicable. List all relevant relations."
-
-    print("my prompt is: ")
-    print(prompt)
-    print("END PROMPT\n")
-
-    model = 'text-davinci-003'
-    max_tokens = 100
-    temperature = 0.2
-    top_p = 1
-    frequency_penalty = 0
-    presence_penalty = 0
-
-    response = openai.Completion.create(
-        model=model,
-        prompt=prompt,
-        max_tokens=max_tokens,
-        temperature=temperature,
-        top_p=top_p,
-        frequency_penalty=frequency_penalty,
-        presence_penalty=presence_penalty
-    )
-
-    # print("GPT RESPONSE IS: ", response)
-    # print("PDSKLFJLSKDFJLSDKJFLSDJF")
-
-    # result = response.choices[0].text.strip()
-    relations_string = response.choices[0].text.strip()
-    relations_string = relations_string.replace("\n", "")
-    relations_string = '[' + relations_string + ']'
-    print("GPT RESPONSE IS: ")
-    print(relations_string)
-    print("GPT RESPONSE END\n")
-    # exit()
-    try:
-        # extracted_relation = ast.literal_eval(result)
-        print("trying1")
-        relations_list = ast.literal_eval(relations_string)
-        print("trying2")
-        print("EXTRACTED REL IS: ")
-        print(relations_list)
-        # print(type(extracted_relation))
-        print("EXTRACTED REL  END\n")
-        validated_relations = []
-        for relation in relations_list:
-            if len(relation) == 3 and relation[0] and relation[1] == relation_type and relation[2]:
-                validated_relations.append(relation)
-        print("validated REL IS: ")
-        print(validated_relations)
-        # print(type(extracted_relation))
-        print("validated REL  END\n")
-        return validated_relations
-    except (SyntaxError, AssertionError, ValueError):
-        return None
-
-
 
 def main(args):
     print_parameters(args)
@@ -190,7 +118,7 @@ def main(args):
         model = SpanBERT("./pretrained_spanbert")  
     else:
         model = None
-    X = set()
+    X = RelationSet()
     visited = set()
     res = search(args.google_api_key, args.google_engine_id, args.q)
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
@@ -220,16 +148,16 @@ def main(args):
             if len(text) == 0:
                 print('\tWebpage has no main text to extract. Skipping...')
                 continue
-            
             doc = nlp(text)
 
             print('\tAnnotating the webpage using spacy...')
             relations, num_sentences_used = extract_relations(doc, model, relation_to_entities[args.r-1], args.t)
-
+            for r, conf in relations.items():
+                X.add(r, conf)
+            print('[main, X]: ', X)
 
             print(f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
             print(f'\tRelations extracted from this website: {len(relations)} (Overall: {len(X)})\n')
-            print("Relations: {}".format(dict(relations)))
         n_iter += 1
     return
 
