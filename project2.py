@@ -59,7 +59,7 @@ def extract_main_text(soup):
     main_content = soup.find('main')
     if not main_content:
         return main_text
-    
+
     for tag in main_content.find_all(["div", "table"], {"class": ["toc", "infobox"]}):
         tag.decompose()
 
@@ -85,7 +85,8 @@ def format_text(text):
 
 
 def print_parameters(args):
-    relations_of_interest = ['Schools_Attended', 'Work_For', 'Live_In', 'Top_Member_Employees']
+    relations_of_interest = ['Schools_Attended',
+                             'Work_For', 'Live_In', 'Top_Member_Employees']
     parameters = {
         'Client key': args.google_api_key,
         'Engine key': args.google_engine_id,
@@ -105,23 +106,27 @@ def print_parameters(args):
 
 def main(args):
     print_parameters(args)
-    entities_of_interest = ["ORGANIZATION", "PERSON", "LOCATION", "CITY", "STATE_OR_PROVINCE", "COUNTRY"]
+    relations_of_interest = ['Schools_Attended',
+                             'Work_For', 'Live_In', 'Top_Member_Employees']
+    entities_of_interest = ["ORGANIZATION", "PERSON",
+                            "LOCATION", "CITY", "STATE_OR_PROVINCE", "COUNTRY"]
     relation_to_entities = [
         [entities_of_interest[1], entities_of_interest[0]],
-        [entities_of_interest[1], entities_of_interest[0]], 
-        entities_of_interest[1:], 
-        [entities_of_interest[0], entities_of_interest[1]], 
+        [entities_of_interest[1], entities_of_interest[0]],
+        entities_of_interest[1:],
+        [entities_of_interest[0], entities_of_interest[1]],
     ]
-    nlp = spacy.load("en_core_web_lg")  
+    nlp = spacy.load("en_core_web_lg")
 
     if args.spanbert:
-        model = SpanBERT("./pretrained_spanbert")  
+        model = SpanBERT("./pretrained_spanbert")
     else:
         model = None
     X = RelationSet()
     visited = set()
     res = search(args.google_api_key, args.google_engine_id, args.q)
-    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
 
     n_iter = 0
     while len(X) < args.k:
@@ -136,10 +141,12 @@ def main(args):
             print(f'URL ({i+1} / {num_webpages}): {link}')
             visited.add(webpage['link'])
 
-            print (f'\tFetching text from url...')
-            response = requests.get(webpage['link'], headers=headers, timeout=20)
+            print(f'\tFetching text from url...')
+            response = requests.get(
+                webpage['link'], headers=headers, timeout=20)
             if response.status_code != 200:
-                print(f'\tWarning (response {response.status_code}): Target address {webpage["link"]}. Failed to retrieve webpage.')
+                print(
+                    f'\tWarning (response {response.status_code}): Target address {webpage["link"]}. Failed to retrieve webpage.')
                 continue
             else:
                 content = response.text
@@ -151,13 +158,20 @@ def main(args):
             doc = nlp(text)
 
             print('\tAnnotating the webpage using spacy...')
-            relations, num_sentences_used = extract_relations(doc, model, relation_to_entities[args.r-1], args.t)
+            if args.spanbert:
+                relations, num_sentences_used = extract_doc_relations_spanbert(
+                    doc, model, relation_to_entities[args.r-1], args.t)
+            else:
+                relations, num_sentences_used = extract_doc_relations_gpt3(
+                    doc, args.openai_api_key, relations_of_interest[args.r-1], args.t)
             for r, conf in relations.items():
                 X.add(r, conf)
             print('[main, X]: ', X)
 
-            print(f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
-            print(f'\tRelations extracted from this website: {len(relations)} (Overall: {len(X)})\n')
+            print(
+                f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
+            print(
+                f'\tRelations extracted from this website: {len(relations)} (Overall: {len(X)})\n')
         n_iter += 1
     return
 
@@ -167,15 +181,22 @@ if __name__ == "__main__":
         prog='Project2',
         description='Information extraction for relations'
     )
-    
-    parser.add_argument('-spanbert', '--spanbert', action='store_true', help='Using SpanBERT for extraction')
-    parser.add_argument('-gpt3', '--gpt3', action='store_true', help='Using GPT-3 for extraction')
-    parser.add_argument('google_api_key', help='Google custom search JSON API key')
-    parser.add_argument('google_engine_id', help='Google custom search engine ID')
+
+    parser.add_argument('-spanbert', '--spanbert',
+                        action='store_true', help='Using SpanBERT for extraction')
+    parser.add_argument('-gpt3', '--gpt3', action='store_true',
+                        help='Using GPT-3 for extraction')
+    parser.add_argument(
+        'google_api_key', help='Google custom search JSON API key')
+    parser.add_argument('google_engine_id',
+                        help='Google custom search engine ID')
     parser.add_argument('openai_api_key', help='OpenAI API key')
-    parser.add_argument('r', choices=[1,2,3,4], type=int, help='Relation to extract')
-    parser.add_argument('t', type=float, help='Extraction confidence threshold')
+    parser.add_argument(
+        'r', choices=[1, 2, 3, 4], type=int, help='Relation to extract')
+    parser.add_argument(
+        't', type=float, help='Extraction confidence threshold')
     parser.add_argument('q', help='Seed query provided as list of words')
-    parser.add_argument('k', type=int, help='Number of tuples requested in output')
+    parser.add_argument(
+        'k', type=int, help='Number of tuples requested in output')
     args = parser.parse_args()
     main(args)

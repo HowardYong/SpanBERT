@@ -35,7 +35,7 @@ def get_entities(sentence, entities_of_interest):
     return [(e.text, spacy2bert[e.label_]) for e in sentence.ents if e.label_ in spacy2bert]
 
 
-def extract_relations(doc, spanbert, entities_of_interest=None, conf=0.7):
+def extract_doc_relations_spanbert(doc, spanbert, entities_of_interest=None, conf=0.7):
     res = defaultdict(int)
     num_sentences = len([s for s in doc.sents])
     num_sentences_used = 0
@@ -84,7 +84,7 @@ def extract_relations(doc, spanbert, entities_of_interest=None, conf=0.7):
 
 
 def extract_doc_relations_gpt3(doc, openai_api_key, relation, entities_of_interest=None):
-    res = []
+    res = defaultdict(int)
     num_sentences = len([s for s in doc.sents])
     num_sentences_used = 0
 
@@ -102,8 +102,10 @@ def extract_doc_relations_gpt3(doc, openai_api_key, relation, entities_of_intere
             extracted_relation = extract_sentence_relations_gpt3(
                 sentence, openai_api_key, relation)
             if extracted_relation:
+                num_sentences_used += 1
                 print("extracted relation was valid, adding ", extracted_relation)
-                res.extend(extracted_relation)
+                for relation in extracted_relation:
+                    res[extracted_relation] = 1.0
             else:
                 print("extracted relation was invalid")
 
