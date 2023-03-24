@@ -1,0 +1,61 @@
+            prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
+                      f"please extract all the {relation_of_interest} relations in the format of "
+                      f"[\"SUBJECT ENTITY\", \"{relation_of_interest}\", \"OBJECT ENTITY\"] from the sentence: '{sentence}'. "
+                      f"If the relation is not directly mentioned in the sentence, infer the correct one based on the context "
+                      f"and the provided example. List all relevant relations. SUBJECT ENTITY should fall under the classification "
+                      f"of a UNIQUE, NON-GENERIC, and IDENTIFIABLE person and OBJECT ENTITY should fall under the classification of a SPECIFIC, EXACT, UNIQUE, and IDENTIFIABLE educational institution. ") 
+					  
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Schools_Attended
+Threshold       =   0.7
+Query           = mark zuckerberg harvard
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: mark zuckerberg harvard ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Mark_Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 80 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 80 sentences 
+	Processed 10 / 80 sentences 
+	Processed 15 / 80 sentences 
+	Processed 20 / 80 sentences 
+	Processed 25 / 80 sentences 
+	Processed 30 / 80 sentences 
+	Processed 35 / 80 sentences 
+	Processed 40 / 80 sentences 
+	Processed 45 / 80 sentences 
+	Processed 50 / 80 sentences 
+	Processed 55 / 80 sentences 
+	Processed 60 / 80 sentences 
+	Processed 65 / 80 sentences 
+	Processed 70 / 80 sentences 
+	Processed 75 / 80 sentences 
+	Processed 80 / 80 sentences 
+[main, len(X), X]:  18 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: He, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Middle School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: He, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: California
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Stanford University
+	Relation: Schools_Attended, Subj: Y Combinator, Obj: Stanford University
+
+	Extracted annotations for  11  out of total  80  sentences.
+	Relations extracted from this website: 18 (Overall: 0)
+
