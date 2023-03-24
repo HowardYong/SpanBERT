@@ -1,4 +1,4 @@
-    prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
+   prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
               f"please extract all the {relation_of_interest} relations in the format of "
               f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
               f"Subject Entity must  "
@@ -6,7 +6,7 @@
 
     model = 'text-davinci-003'
     max_tokens = 100
-    temperature = 0.05
+    temperature = 0.03
     top_p = 1
     frequency_penalty = 0
     presence_penalty = 0
@@ -331,7 +331,7 @@ URL (6 / 10): https://www.thecrimson.com/article/2004/6/10/mark-e-zuckerberg-06-
 	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
 	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
 
-	Extracted annotations for  3  out of total  99  sentences.
+	Extracted annotations for  4  out of total  99  sentences.
 	Relations extracted from this website: 4 (Overall: 0)
 
 URL (7 / 10): https://www.forbes.com/profile/mark-zuckerberg/

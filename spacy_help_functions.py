@@ -134,7 +134,7 @@ def extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_
 
     model = 'text-davinci-003'
     max_tokens = 100
-    temperature = 0.05
+    temperature = 0.1
     top_p = 1
     frequency_penalty = 0
     presence_penalty = 0

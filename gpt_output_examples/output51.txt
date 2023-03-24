@@ -1,0 +1,333 @@
+    prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
+              f"please extract all the {relation_of_interest} relations in the format of "
+              f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
+              f"Subject Entity must  "
+              f"be a {subj_classification} and Object Entity must be a {obj_classification}  ")
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.1
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+	
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Live_In
+Threshold       =   0.0
+Query           = megan repinoe redding
+# of Tuples     =     2
+Loading necessary libraries...
+=========== Iteration: 0 - Query: megan repinoe redding ===========
+URL (1 / 10): https://www.mercurynews.com/2019/07/06/womens-world-cup-hometown-star-out-of-step-in-californias-trump-country/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 79 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 79 sentences 
+	Processed 10 / 79 sentences 
+	Processed 15 / 79 sentences 
+	Processed 20 / 79 sentences 
+	Processed 25 / 79 sentences 
+	Processed 30 / 79 sentences 
+	Processed 35 / 79 sentences 
+	Processed 40 / 79 sentences 
+	Processed 45 / 79 sentences 
+	Processed 50 / 79 sentences 
+	Processed 55 / 79 sentences 
+	Processed 60 / 79 sentences 
+	Processed 65 / 79 sentences 
+	Processed 70 / 79 sentences 
+	Processed 75 / 79 sentences 
+[main, len(X), X]:  5 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+
+	Extracted annotations for  7  out of total  79  sentences.
+	Relations extracted from this website: 5 (Overall: 0)
+
+URL (2 / 10): https://www.redding.com/story/news/local/2019/07/08/after-world-cup-win-and-local-controversy-megan-rapinoe-still-praises-hometown-love/1679235001/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 27 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 27 sentences 
+	Processed 10 / 27 sentences 
+	Processed 15 / 27 sentences 
+	Processed 20 / 27 sentences 
+	Processed 25 / 27 sentences 
+[main, len(X), X]:  6 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+
+	Extracted annotations for  1  out of total  27  sentences.
+	Relations extracted from this website: 1 (Overall: 0)
+
+URL (3 / 10): https://www.thedailybeast.com/the-mystical-megachurch-ruling-over-world-cup-soccer-star-megan-rapinoes-hometown
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 67 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 67 sentences 
+	Processed 10 / 67 sentences 
+	Processed 15 / 67 sentences 
+	Processed 20 / 67 sentences 
+	Processed 25 / 67 sentences 
+	Processed 30 / 67 sentences 
+	Processed 35 / 67 sentences 
+	Processed 40 / 67 sentences 
+	Processed 45 / 67 sentences 
+	Processed 50 / 67 sentences 
+	Processed 55 / 67 sentences 
+	Processed 60 / 67 sentences 
+	Processed 65 / 67 sentences 
+[main, len(X), X]:  13 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Friend's Son, Obj: Cerebral Palsy
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Record Searchlight
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe's Father, Obj: Shasta County
+	Relation: Live_In, Subj: Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+
+	Extracted annotations for  4  out of total  67  sentences.
+	Relations extracted from this website: 7 (Overall: 0)
+
+URL (4 / 10): https://www.actionnewsnow.com/news/local/biden-to-award-medal-of-freedom-to-redding-native-megan-rapinoe/article_b2c769ac-f955-11ec-be4a-13d2127552d7.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 6 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 6 sentences 
+[main, len(X), X]:  13 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Friend's Son, Obj: Cerebral Palsy
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Record Searchlight
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe's Father, Obj: Shasta County
+	Relation: Live_In, Subj: Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+
+	Extracted annotations for  0  out of total  6  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (5 / 10): https://krcrtv.com/news/local/reddings-megan-rapinoe-inducted-into-californias-hall-of-fame
+	Fetching text from url...
+	Webpage has no main text to extract. Skipping...
+URL (6 / 10): https://www.espn.com/espnw/sports/article/24486574/us-soccer-star-megan-rapinoe-launches-fire-relief-fund-redding-hometown
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 70 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 70 sentences 
+	Processed 10 / 70 sentences 
+	Processed 15 / 70 sentences 
+	Processed 20 / 70 sentences 
+	Processed 25 / 70 sentences 
+	Processed 30 / 70 sentences 
+	Processed 35 / 70 sentences 
+	Processed 40 / 70 sentences 
+	Processed 45 / 70 sentences 
+	Processed 50 / 70 sentences 
+	Processed 55 / 70 sentences 
+	Processed 60 / 70 sentences 
+	Processed 65 / 70 sentences 
+	Processed 70 / 70 sentences 
+[main, len(X), X]:  14 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Friend's Son, Obj: Cerebral Palsy
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Record Searchlight
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe's Father, Obj: Shasta County
+	Relation: Live_In, Subj: Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+
+	Extracted annotations for  2  out of total  70  sentences.
+	Relations extracted from this website: 2 (Overall: 0)
+
+URL (7 / 10): https://en.wikipedia.org/wiki/Megan_Rapinoe
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 72 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 72 sentences 
+	Processed 10 / 72 sentences 
+	Processed 15 / 72 sentences 
+	Processed 20 / 72 sentences 
+	Processed 25 / 72 sentences 
+	Processed 30 / 72 sentences 
+	Processed 35 / 72 sentences 
+	Processed 40 / 72 sentences 
+	Processed 45 / 72 sentences 
+	Processed 50 / 72 sentences 
+	Processed 55 / 72 sentences 
+	Processed 60 / 72 sentences 
+	Processed 65 / 72 sentences 
+	Processed 70 / 72 sentences 
+[main, len(X), X]:  22 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Christine Sinclair, Obj: Portland
+	Relation: Live_In, Subj: Friend's Son, Obj: Cerebral Palsy
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Record Searchlight
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland, Oregon
+	Relation: Live_In, Subj: Rapinoe, Obj: Oregon
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+	Relation: Live_In, Subj: Shannon MacMillan, Obj: Portland
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: University of Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe's Father, Obj: Shasta County
+	Relation: Live_In, Subj: Tiffeny Milbrett, Obj: Portland
+	Relation: Live_In, Subj: Trump, Obj: Shasta County
+
+	Extracted annotations for  3  out of total  72  sentences.
+	Relations extracted from this website: 8 (Overall: 0)
+
+URL (8 / 10): https://anewscafe.com/2015/07/22/redding/soccer-star-megan-rapinoe-has-her-day-in-absentia-as-the-redding-council-discusses-drones-power-plants-and-salaries/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 43 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 43 sentences 
+	Processed 10 / 43 sentences 
+	Processed 15 / 43 sentences 
+	Processed 20 / 43 sentences 
+	Processed 25 / 43 sentences 
+	Processed 30 / 43 sentences 
+	Processed 35 / 43 sentences 
+	Processed 40 / 43 sentences 
+[main, len(X), X]:  25 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Christine Sinclair, Obj: Portland
+	Relation: Live_In, Subj: Friend's Son, Obj: Cerebral Palsy
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Jon Lewis, Obj: Redding
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland, Oregon
+	Relation: Live_In, Subj: Rapinoe, Obj: Oregon
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Portland, Ore
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Record Searchlight
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: University of Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe's Father, Obj: Shasta County
+	Relation: Live_In, Subj: Tiffeny Milbrett, Obj: Portland
+	Relation: Live_In, Subj: Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Shannon MacMillan, Obj: Portland
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: Rod Dinger, Obj: Redding
+
+	Extracted annotations for  3  out of total  43  sentences.
+	Relations extracted from this website: 3 (Overall: 0)
+
+URL (9 / 10): https://www.californiamuseum.org/inductee/megan-rapinoe
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 13 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 13 sentences 
+	Processed 10 / 13 sentences 
+[main, len(X), X]:  25 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Christine Sinclair, Obj: Portland
+	Relation: Live_In, Subj: Friend's Son, Obj: Cerebral Palsy
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Jon Lewis, Obj: Redding
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland, Oregon
+	Relation: Live_In, Subj: Rapinoe, Obj: Oregon
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Portland, Ore
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Record Searchlight
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: University of Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe's Father, Obj: Shasta County
+	Relation: Live_In, Subj: Tiffeny Milbrett, Obj: Portland
+	Relation: Live_In, Subj: Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Shannon MacMillan, Obj: Portland
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: Rod Dinger, Obj: Redding
+
+	Extracted annotations for  1  out of total  13  sentences.
+	Relations extracted from this website: 1 (Overall: 0)
+
+URL (10 / 10): https://www.mynspr.org/news/2019-07-09/hometown-fans-watch-as-redding-native-megan-rapinoe-wins-world-cup-top-scorer-best-player-awards
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 13 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 13 sentences 
+	Processed 10 / 13 sentences 
+[main, len(X), X]:  28 Relation set:
+	Relation: Live_In, Subj: Alex Morgan, Obj: US
+	Relation: Live_In, Subj: Christine Sinclair, Obj: Portland
+	Relation: Live_In, Subj: Friend's Son, Obj: Cerebral Palsy
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Jim Gawel, Obj: Washington state
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland, Oregon
+	Relation: Live_In, Subj: Rapinoe, Obj: Oregon
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: United States
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Portland, Ore
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Record Searchlight
+	Relation: Live_In, Subj: Jon Lewis, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: University of Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe's Father, Obj: Shasta County
+	Relation: Live_In, Subj: Tiffeny Milbrett, Obj: Portland
+	Relation: Live_In, Subj: Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Shannon MacMillan, Obj: Portland
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: Rod Dinger, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Palo Cedro
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Rapinoe, Obj: Seattle Reign
+
+	Extracted annotations for  2  out of total  13  sentences.
+	Relations extracted from this website: 3 (Overall: 0)
+

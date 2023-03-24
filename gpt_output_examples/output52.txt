@@ -1,0 +1,524 @@
+    prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
+              f"please extract all the {relation_of_interest} relations in the format of "
+              f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
+              f"Subject Entity must  "
+              f"be a {subj_classification} and Object Entity must be a {obj_classification}  ")
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.1
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+	
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Top_Member_Employees
+Threshold       =   0.0
+Query           = bill gates microsoft
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: bill gates microsoft ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Bill_Gates
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 76 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 76 sentences 
+	Processed 10 / 76 sentences 
+	Processed 15 / 76 sentences 
+	Processed 20 / 76 sentences 
+	Processed 25 / 76 sentences 
+	Processed 30 / 76 sentences 
+	Processed 35 / 76 sentences 
+	Processed 40 / 76 sentences 
+	Processed 45 / 76 sentences 
+	Processed 50 / 76 sentences 
+	Processed 55 / 76 sentences 
+	Processed 60 / 76 sentences 
+	Processed 65 / 76 sentences 
+	Processed 70 / 76 sentences 
+	Processed 75 / 76 sentences 
+[main, len(X), X]:  26 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+
+	Extracted annotations for  16  out of total  76  sentences.
+	Relations extracted from this website: 26 (Overall: 0)
+
+URL (2 / 10): https://www.britannica.com/biography/Bill-Gates
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 41 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 41 sentences 
+	Processed 10 / 41 sentences 
+	Processed 15 / 41 sentences 
+	Processed 20 / 41 sentences 
+	Processed 25 / 41 sentences 
+	Processed 30 / 41 sentences 
+	Processed 35 / 41 sentences 
+	Processed 40 / 41 sentences 
+[main, len(X), X]:  37 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft Corporation
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Melinda Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul G Allen, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+
+	Extracted annotations for  7  out of total  41  sentences.
+	Relations extracted from this website: 12 (Overall: 0)
+
+URL (3 / 10): https://twitter.com/BillGates
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 4 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  37 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft Corporation
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Melinda Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul G Allen, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+
+	Extracted annotations for  0  out of total  4  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (4 / 10): https://news.microsoft.com/2020/03/13/microsoft-announces-change-to-its-board-of-directors/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 16 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 16 sentences 
+	Processed 10 / 16 sentences 
+	Processed 15 / 16 sentences 
+[main, len(X), X]:  39 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft Corporation
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Melinda Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul G Allen, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+
+	Extracted annotations for  3  out of total  16  sentences.
+	Relations extracted from this website: 2 (Overall: 0)
+
+URL (5 / 10): https://www.forbes.com/profile/bill-gates/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 2 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  39 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft Corporation
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Melinda Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul G Allen, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+
+	Extracted annotations for  0  out of total  2  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (6 / 10): https://www.gatesnotes.com/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 47 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 47 sentences 
+	Processed 10 / 47 sentences 
+	Processed 15 / 47 sentences 
+	Processed 20 / 47 sentences 
+	Processed 25 / 47 sentences 
+	Processed 30 / 47 sentences 
+	Processed 35 / 47 sentences 
+	Processed 40 / 47 sentences 
+	Processed 45 / 47 sentences 
+[main, len(X), X]:  39 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft Corporation
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Melinda Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul G Allen, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+
+	Extracted annotations for  0  out of total  47  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (7 / 10): https://www.forbes.com/sites/alexkonrad/2023/02/06/bill-gates-openai-microsoft-ai-hottest-topic-2023/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 111 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 111 sentences 
+	Processed 10 / 111 sentences 
+	Processed 15 / 111 sentences 
+	Processed 20 / 111 sentences 
+	Processed 25 / 111 sentences 
+	Processed 30 / 111 sentences 
+	Processed 35 / 111 sentences 
+	Processed 40 / 111 sentences 
+	Processed 45 / 111 sentences 
+	Processed 50 / 111 sentences 
+	Processed 55 / 111 sentences 
+	Processed 60 / 111 sentences 
+	Processed 65 / 111 sentences 
+	Processed 70 / 111 sentences 
+	Processed 75 / 111 sentences 
+	Processed 80 / 111 sentences 
+	Processed 85 / 111 sentences 
+	Processed 90 / 111 sentences 
+	Processed 95 / 111 sentences 
+	Processed 100 / 111 sentences 
+	Processed 105 / 111 sentences 
+	Processed 110 / 111 sentences 
+[main, len(X), X]:  43 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft Corporation
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Melinda Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Greg Brockman
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul G Allen, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Brockman
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Sam Altman
+	Relation: Top_Member_Employees, Subj: Xerox PARC, Obj: Charles Simonyi
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+
+	Extracted annotations for  4  out of total  111  sentences.
+	Relations extracted from this website: 6 (Overall: 0)
+
+URL (8 / 10): https://www.linkedin.com/in/williamhgates
+	Fetching text from url...
+	Warning (response 999): Target address https://www.linkedin.com/in/williamhgates. Failed to retrieve webpage.
+URL (9 / 10): https://www.wsj.com/articles/microsoft-directors-decided-bill-gates-needed-to-leave-board-due-to-prior-relationship-with-staffer-11621205803
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 11 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 11 sentences 
+	Processed 10 / 11 sentences 
+[main, len(X), X]:  45 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft Corporation
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Melinda Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Greg Brockman
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Engineer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul G Allen, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Brockman
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Sam Altman
+	Relation: Top_Member_Employees, Subj: Xerox PARC, Obj: Charles Simonyi
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Mr Gates
+
+	Extracted annotations for  1  out of total  11  sentences.
+	Relations extracted from this website: 2 (Overall: 0)
+
+URL (10 / 10): https://www.gatesnotes.com/Bio
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 24 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 24 sentences 
+	Processed 10 / 24 sentences 
+	Processed 15 / 24 sentences 
+	Processed 20 / 24 sentences 
+[main, len(X), X]:  48 Relation set:
+	Relation: Top_Member_Employees, Subj: Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft Corporation
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Melinda Gates, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill Gates, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Lakeside Prep School, Obj: Jensen Huang
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Greg Brockman
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Engineer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Technology Advisor
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Honeywell
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Paul G Allen, Obj: Harvard University
+	Relation: Top_Member_Employees, Subj: Paul Allen, Obj: Microsoft
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Traf-O-Data, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Brockman
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Sam Altman
+	Relation: Top_Member_Employees, Subj: Xerox PARC, Obj: Charles Simonyi
+	Relation: Top_Member_Employees, Subj: Steve Ballmer, Obj: Harvard
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Mr Gates
+	Relation: Top_Member_Employees, Subj: University of Washington, Obj: Mary Gates
+	Relation: Top_Member_Employees, Subj: United Way International, Obj: Mary Gates
+	Relation: Top_Member_Employees, Subj: Nvidia, Obj: Jensen Huang
+
+	Extracted annotations for  3  out of total  24  sentences.
+	Relations extracted from this website: 5 (Overall: 0)
+

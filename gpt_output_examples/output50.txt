@@ -1,0 +1,414 @@
+    prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
+              f"please extract all the {relation_of_interest} relations in the format of "
+              f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
+              f"Subject Entity must  "
+              f"be a {subj_classification} and Object Entity must be a {obj_classification}  ")
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.1
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+	
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Work_For
+Threshold       =   0.7
+Query           = sundar pichai google
+# of Tuples     =    35
+Loading necessary libraries...
+=========== Iteration: 0 - Query: sundar pichai google ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Sundar_Pichai
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 39 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 39 sentences 
+	Processed 10 / 39 sentences 
+	Processed 15 / 39 sentences 
+	Processed 20 / 39 sentences 
+	Processed 25 / 39 sentences 
+	Processed 30 / 39 sentences 
+	Processed 35 / 39 sentences 
+[main, len(X), X]:  15 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+
+	Extracted annotations for  12  out of total  39  sentences.
+	Relations extracted from this website: 15 (Overall: 0)
+
+URL (2 / 10): https://blog.google/perspectives/sundar-pichai/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 5 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 5 sentences 
+[main, len(X), X]:  15 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+
+	Extracted annotations for  0  out of total  5  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (3 / 10): https://www.cnbc.com/2023/02/10/google-employees-slam-ceo-sundar-pichai-for-rushed-bard-announcement.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 51 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 51 sentences 
+	Processed 10 / 51 sentences 
+	Processed 15 / 51 sentences 
+	Processed 20 / 51 sentences 
+	Processed 25 / 51 sentences 
+	Processed 30 / 51 sentences 
+	Processed 35 / 51 sentences 
+	Processed 40 / 51 sentences 
+	Processed 45 / 51 sentences 
+	Processed 50 / 51 sentences 
+[main, len(X), X]:  15 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+
+	Extracted annotations for  1  out of total  51  sentences.
+	Relations extracted from this website: 1 (Overall: 0)
+
+URL (4 / 10): https://blog.google/inside-google/message-ceo/january-update/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 39 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 39 sentences 
+	Processed 10 / 39 sentences 
+	Processed 15 / 39 sentences 
+	Processed 20 / 39 sentences 
+	Processed 25 / 39 sentences 
+	Processed 30 / 39 sentences 
+	Processed 35 / 39 sentences 
+[main, len(X), X]:  15 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+
+	Extracted annotations for  0  out of total  39  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (5 / 10): https://twitter.com/sundarpichai
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 4 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  15 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+
+	Extracted annotations for  0  out of total  4  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (6 / 10): https://www.britannica.com/biography/Sundar-Pichai
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 15 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 15 sentences 
+	Processed 10 / 15 sentences 
+	Processed 15 / 15 sentences 
+[main, len(X), X]:  20 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: GEC
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+
+	Extracted annotations for  4  out of total  15  sentences.
+	Relations extracted from this website: 7 (Overall: 0)
+
+URL (7 / 10): https://www.yahoo.com/lifestyle/alphabet-ceo-sundar-pichai-said-170709478.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 28 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 28 sentences 
+	Processed 10 / 28 sentences 
+	Processed 15 / 28 sentences 
+	Processed 20 / 28 sentences 
+	Processed 25 / 28 sentences 
+[main, len(X), X]:  25 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: Microsoft
+	Relation: Work_For, Subj: Bard, Obj: Microsoft
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Bing AI bot, Obj: Microsoft
+	Relation: Work_For, Subj: ChatGPT, Obj: OpenAI
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: GEC
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Google Employees, Obj: Google
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+
+	Extracted annotations for  3  out of total  28  sentences.
+	Relations extracted from this website: 6 (Overall: 0)
+
+URL (8 / 10): https://observer.com/2023/02/google-ceo-sundar-pichai-bard-chatbot/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 78 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 78 sentences 
+	Processed 10 / 78 sentences 
+	Processed 15 / 78 sentences 
+	Processed 20 / 78 sentences 
+	Processed 25 / 78 sentences 
+	Processed 30 / 78 sentences 
+	Processed 35 / 78 sentences 
+	Processed 40 / 78 sentences 
+	Processed 45 / 78 sentences 
+	Processed 50 / 78 sentences 
+	Processed 55 / 78 sentences 
+	Processed 60 / 78 sentences 
+	Processed 65 / 78 sentences 
+	Processed 70 / 78 sentences 
+	Processed 75 / 78 sentences 
+[main, len(X), X]:  35 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: Microsoft
+	Relation: Work_For, Subj: Bard, Obj: Microsoft
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet
+	Relation: Work_For, Subj: Bing AI bot, Obj: Microsoft
+	Relation: Work_For, Subj: ChatGPT, Obj: OpenAI
+	Relation: Work_For, Subj: Larry Page, Obj: YouTube
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Google Employees, Obj: Google
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Malik, Obj: True Ventures
+	Relation: Work_For, Subj: Malik, Obj: San Francisco-based venture capital firm
+	Relation: Work_For, Subj: Malik, Obj: A Letter From Om
+	Relation: Work_For, Subj: Pichai, Obj: GEC
+	Relation: Work_For, Subj: Om Malik, Obj: Influential Tech Writer
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google's parent company
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Sergey Brin, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Om Malik, Obj: Venture Capitalist
+
+	Extracted annotations for  12  out of total  78  sentences.
+	Relations extracted from this website: 14 (Overall: 0)
+
+URL (9 / 10): https://www.nytimes.com/2019/05/07/opinion/google-sundar-pichai-privacy.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 72 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 72 sentences 
+	Processed 10 / 72 sentences 
+	Processed 15 / 72 sentences 
+	Processed 20 / 72 sentences 
+	Processed 25 / 72 sentences 
+	Processed 30 / 72 sentences 
+	Processed 35 / 72 sentences 
+	Processed 40 / 72 sentences 
+	Processed 45 / 72 sentences 
+	Processed 50 / 72 sentences 
+	Processed 55 / 72 sentences 
+	Processed 60 / 72 sentences 
+	Processed 65 / 72 sentences 
+	Processed 70 / 72 sentences 
+[main, len(X), X]:  35 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: Microsoft
+	Relation: Work_For, Subj: Bard, Obj: Microsoft
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet
+	Relation: Work_For, Subj: Bing AI bot, Obj: Microsoft
+	Relation: Work_For, Subj: ChatGPT, Obj: OpenAI
+	Relation: Work_For, Subj: Larry Page, Obj: YouTube
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Google Employees, Obj: Google
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Malik, Obj: True Ventures
+	Relation: Work_For, Subj: Malik, Obj: San Francisco-based venture capital firm
+	Relation: Work_For, Subj: Malik, Obj: A Letter From Om
+	Relation: Work_For, Subj: Pichai, Obj: GEC
+	Relation: Work_For, Subj: Om Malik, Obj: Influential Tech Writer
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google's parent company
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Sergey Brin, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Om Malik, Obj: Venture Capitalist
+
+	Extracted annotations for  2  out of total  72  sentences.
+	Relations extracted from this website: 1 (Overall: 0)
+
+URL (10 / 10): https://www.bbc.com/news/technology-50656803
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 59 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 59 sentences 
+	Processed 10 / 59 sentences 
+	Processed 15 / 59 sentences 
+	Processed 20 / 59 sentences 
+	Processed 25 / 59 sentences 
+	Processed 30 / 59 sentences 
+	Processed 35 / 59 sentences 
+	Processed 40 / 59 sentences 
+	Processed 45 / 59 sentences 
+	Processed 50 / 59 sentences 
+	Processed 55 / 59 sentences 
+[main, len(X), X]:  37 Relation set:
+	Relation: Work_For, Subj: Alec Radford, Obj: Microsoft
+	Relation: Work_For, Subj: Bard, Obj: Microsoft
+	Relation: Work_For, Subj: Alec Radford, Obj: OpenAI
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet
+	Relation: Work_For, Subj: Bing AI bot, Obj: Microsoft
+	Relation: Work_For, Subj: ChatGPT, Obj: OpenAI
+	Relation: Work_For, Subj: Larry Page, Obj: YouTube
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: ChromeOS
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Google Employees, Obj: Google
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Malik, Obj: True Ventures
+	Relation: Work_For, Subj: Malik, Obj: San Francisco-based venture capital firm
+	Relation: Work_For, Subj: Malik, Obj: A Letter From Om
+	Relation: Work_For, Subj: Pichai, Obj: GEC
+	Relation: Work_For, Subj: Om Malik, Obj: Influential Tech Writer
+	Relation: Work_For, Subj: Pichai, Obj: General Electric Company
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google Drive
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Lakshmi, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google's parent company
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook (today Meta)
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Sergey Brin, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google Chrome
+	Relation: Work_For, Subj: Om Malik, Obj: Venture Capitalist
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: Google
+
+	Extracted annotations for  3  out of total  59  sentences.
+	Relations extracted from this website: 4 (Overall: 0)
+

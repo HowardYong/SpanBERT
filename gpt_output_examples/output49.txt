@@ -1,0 +1,1240 @@
+    prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
+              f"please extract all the {relation_of_interest} relations in the format of "
+              f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
+              f"Subject Entity must  "
+              f"be a {subj_classification} and Object Entity must be a {obj_classification}  ")
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.1
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+	
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Schools_Attended
+Threshold       =   0.7
+Query           = mark zuckerberg harvard
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: mark zuckerberg harvard ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Mark_Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 80 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 80 sentences 
+	Processed 10 / 80 sentences 
+	Processed 15 / 80 sentences 
+	Processed 20 / 80 sentences 
+	Processed 25 / 80 sentences 
+	Processed 30 / 80 sentences 
+	Processed 35 / 80 sentences 
+	Processed 40 / 80 sentences 
+	Processed 45 / 80 sentences 
+	Processed 50 / 80 sentences 
+	Processed 55 / 80 sentences 
+	Processed 60 / 80 sentences 
+	Processed 65 / 80 sentences 
+	Processed 70 / 80 sentences 
+	Processed 75 / 80 sentences 
+	Processed 80 / 80 sentences 
+[main, len(X), X]:  14 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+
+	Extracted annotations for  10  out of total  80  sentences.
+	Relations extracted from this website: 14 (Overall: 0)
+
+URL (2 / 10): https://news.harvard.edu/gazette/story/2017/05/mark-zuckerbergs-speech-as-written-for-harvards-class-of-2017/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 123 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 123 sentences 
+	Processed 10 / 123 sentences 
+	Processed 15 / 123 sentences 
+	Processed 20 / 123 sentences 
+	Processed 25 / 123 sentences 
+	Processed 30 / 123 sentences 
+	Processed 35 / 123 sentences 
+	Processed 40 / 123 sentences 
+	Processed 45 / 123 sentences 
+	Processed 50 / 123 sentences 
+	Processed 55 / 123 sentences 
+	Processed 60 / 123 sentences 
+	Processed 65 / 123 sentences 
+	Processed 70 / 123 sentences 
+	Processed 75 / 123 sentences 
+	Processed 80 / 123 sentences 
+	Processed 85 / 123 sentences 
+	Processed 90 / 123 sentences 
+	Processed 95 / 123 sentences 
+	Processed 100 / 123 sentences 
+	Processed 105 / 123 sentences 
+	Processed 110 / 123 sentences 
+	Processed 115 / 123 sentences 
+	Processed 120 / 123 sentences 
+[main, len(X), X]:  15 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+
+	Extracted annotations for  1  out of total  123  sentences.
+	Relations extracted from this website: 1 (Overall: 0)
+
+URL (3 / 10): https://www.britannica.com/biography/Mark-Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 23 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 23 sentences 
+	Processed 10 / 23 sentences 
+	Processed 15 / 23 sentences 
+	Processed 20 / 23 sentences 
+[main, len(X), X]:  18 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+
+	Extracted annotations for  5  out of total  23  sentences.
+	Relations extracted from this website: 8 (Overall: 0)
+
+URL (4 / 10): https://news.harvard.edu/gazette/story/2017/05/harvard-awards-10-honorary-degrees-at-366th-commencement/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 58 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 58 sentences 
+	Processed 10 / 58 sentences 
+	Processed 15 / 58 sentences 
+	Processed 20 / 58 sentences 
+	Processed 25 / 58 sentences 
+	Processed 30 / 58 sentences 
+	Processed 35 / 58 sentences 
+	Processed 40 / 58 sentences 
+	Processed 45 / 58 sentences 
+	Processed 50 / 58 sentences 
+	Processed 55 / 58 sentences 
+[main, len(X), X]:  39 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+
+	Extracted annotations for  14  out of total  58  sentences.
+	Relations extracted from this website: 22 (Overall: 0)
+
+URL (5 / 10): https://www.theatlantic.com/technology/archive/2019/02/and-then-there-was-thefacebookcom/582004/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 95 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 95 sentences 
+	Processed 10 / 95 sentences 
+	Processed 15 / 95 sentences 
+	Processed 20 / 95 sentences 
+	Processed 25 / 95 sentences 
+	Processed 30 / 95 sentences 
+	Processed 35 / 95 sentences 
+	Processed 40 / 95 sentences 
+	Processed 45 / 95 sentences 
+	Processed 50 / 95 sentences 
+	Processed 55 / 95 sentences 
+	Processed 60 / 95 sentences 
+	Processed 65 / 95 sentences 
+	Processed 70 / 95 sentences 
+	Processed 75 / 95 sentences 
+	Processed 80 / 95 sentences 
+	Processed 85 / 95 sentences 
+	Processed 90 / 95 sentences 
+	Processed 95 / 95 sentences 
+[main, len(X), X]:  43 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+
+	Extracted annotations for  5  out of total  95  sentences.
+	Relations extracted from this website: 5 (Overall: 0)
+
+URL (6 / 10): https://www.thecrimson.com/article/2004/6/10/mark-e-zuckerberg-06-the-whiz/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 99 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 99 sentences 
+	Processed 10 / 99 sentences 
+	Processed 15 / 99 sentences 
+	Processed 20 / 99 sentences 
+	Processed 25 / 99 sentences 
+	Processed 30 / 99 sentences 
+	Processed 35 / 99 sentences 
+	Processed 40 / 99 sentences 
+	Processed 45 / 99 sentences 
+	Processed 50 / 99 sentences 
+	Processed 55 / 99 sentences 
+	Processed 60 / 99 sentences 
+	Processed 65 / 99 sentences 
+	Processed 70 / 99 sentences 
+	Processed 75 / 99 sentences 
+	Processed 80 / 99 sentences 
+	Processed 85 / 99 sentences 
+	Processed 90 / 99 sentences 
+	Processed 95 / 99 sentences 
+[main, len(X), X]:  45 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+
+	Extracted annotations for  3  out of total  99  sentences.
+	Relations extracted from this website: 4 (Overall: 0)
+
+URL (7 / 10): https://www.forbes.com/profile/mark-zuckerberg/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 1 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  45 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+
+	Extracted annotations for  0  out of total  1  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (8 / 10): https://nymag.com/intelligencer/2016/06/mark-zuckerberg-harvard-2006-reunion.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 67 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 67 sentences 
+	Processed 10 / 67 sentences 
+	Processed 15 / 67 sentences 
+	Processed 20 / 67 sentences 
+	Processed 25 / 67 sentences 
+	Processed 30 / 67 sentences 
+	Processed 35 / 67 sentences 
+	Processed 40 / 67 sentences 
+	Processed 45 / 67 sentences 
+	Processed 50 / 67 sentences 
+	Processed 55 / 67 sentences 
+	Processed 60 / 67 sentences 
+	Processed 65 / 67 sentences 
+[main, len(X), X]:  56 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Elise Stefanik, Obj: Unknown
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Cambridge University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Some, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: High School
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+
+	Extracted annotations for  6  out of total  67  sentences.
+	Relations extracted from this website: 11 (Overall: 0)
+
+URL (9 / 10): https://www.npr.org/sections/thetwo-way/2017/05/26/530159142/mark-zuckerberg-tells-harvard-graduates-to-embrace-globalism-a-sense-of-purpose
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 25 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 25 sentences 
+	Processed 10 / 25 sentences 
+	Processed 15 / 25 sentences 
+	Processed 20 / 25 sentences 
+	Processed 25 / 25 sentences 
+[main, len(X), X]:  56 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Elise Stefanik, Obj: Unknown
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Cambridge University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Some, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: High School
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+
+	Extracted annotations for  0  out of total  25  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (10 / 10): https://www.businessinsider.com/how-mark-zuckerberg-hacked-into-the-harvard-crimson-2010-3
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 67 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 67 sentences 
+	Processed 10 / 67 sentences 
+	Processed 15 / 67 sentences 
+	Processed 20 / 67 sentences 
+	Processed 25 / 67 sentences 
+	Processed 30 / 67 sentences 
+	Processed 35 / 67 sentences 
+	Processed 40 / 67 sentences 
+	Processed 45 / 67 sentences 
+	Processed 50 / 67 sentences 
+	Processed 55 / 67 sentences 
+	Processed 60 / 67 sentences 
+	Processed 65 / 67 sentences 
+[main, len(X), X]:  57 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Elise Stefanik, Obj: Unknown
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Cambridge University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Some, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: High School
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark, Obj: TheFacebookcom
+
+	Extracted annotations for  2  out of total  67  sentences.
+	Relations extracted from this website: 2 (Overall: 0)
+
+
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Schools_Attended
+Threshold       =   0.7
+Query           = mark zuckerberg harvard
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: mark zuckerberg harvard ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Mark_Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 80 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 80 sentences 
+	Processed 10 / 80 sentences 
+	Processed 15 / 80 sentences 
+	Processed 20 / 80 sentences 
+	Processed 25 / 80 sentences 
+	Processed 30 / 80 sentences 
+	Processed 35 / 80 sentences 
+	Processed 40 / 80 sentences 
+	Processed 45 / 80 sentences 
+	Processed 50 / 80 sentences 
+	Processed 55 / 80 sentences 
+	Processed 60 / 80 sentences 
+	Processed 65 / 80 sentences 
+	Processed 70 / 80 sentences 
+	Processed 75 / 80 sentences 
+	Processed 80 / 80 sentences 
+[main, len(X), X]:  14 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+
+	Extracted annotations for  9  out of total  80  sentences.
+	Relations extracted from this website: 14 (Overall: 0)
+
+URL (2 / 10): https://news.harvard.edu/gazette/story/2017/05/mark-zuckerbergs-speech-as-written-for-harvards-class-of-2017/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 123 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 123 sentences 
+	Processed 10 / 123 sentences 
+	Processed 15 / 123 sentences 
+	Processed 20 / 123 sentences 
+	Processed 25 / 123 sentences 
+	Processed 30 / 123 sentences 
+	Processed 35 / 123 sentences 
+	Processed 40 / 123 sentences 
+	Processed 45 / 123 sentences 
+	Processed 50 / 123 sentences 
+	Processed 55 / 123 sentences 
+	Processed 60 / 123 sentences 
+	Processed 65 / 123 sentences 
+	Processed 70 / 123 sentences 
+	Processed 75 / 123 sentences 
+	Processed 80 / 123 sentences 
+	Processed 85 / 123 sentences 
+	Processed 90 / 123 sentences 
+	Processed 95 / 123 sentences 
+	Processed 100 / 123 sentences 
+	Processed 105 / 123 sentences 
+	Processed 110 / 123 sentences 
+	Processed 115 / 123 sentences 
+	Processed 120 / 123 sentences 
+[main, len(X), X]:  15 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+
+	Extracted annotations for  1  out of total  123  sentences.
+	Relations extracted from this website: 1 (Overall: 0)
+
+URL (3 / 10): https://www.britannica.com/biography/Mark-Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 23 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 23 sentences 
+	Processed 10 / 23 sentences 
+	Processed 15 / 23 sentences 
+	Processed 20 / 23 sentences 
+[main, len(X), X]:  18 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+
+	Extracted annotations for  5  out of total  23  sentences.
+	Relations extracted from this website: 8 (Overall: 0)
+
+URL (4 / 10): https://news.harvard.edu/gazette/story/2017/05/harvard-awards-10-honorary-degrees-at-366th-commencement/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 58 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 58 sentences 
+	Processed 10 / 58 sentences 
+	Processed 15 / 58 sentences 
+	Processed 20 / 58 sentences 
+	Processed 25 / 58 sentences 
+	Processed 30 / 58 sentences 
+	Processed 35 / 58 sentences 
+	Processed 40 / 58 sentences 
+	Processed 45 / 58 sentences 
+	Processed 50 / 58 sentences 
+	Processed 55 / 58 sentences 
+[main, len(X), X]:  39 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+
+	Extracted annotations for  14  out of total  58  sentences.
+	Relations extracted from this website: 22 (Overall: 0)
+
+URL (5 / 10): https://www.theatlantic.com/technology/archive/2019/02/and-then-there-was-thefacebookcom/582004/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 95 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 95 sentences 
+	Processed 10 / 95 sentences 
+	Processed 15 / 95 sentences 
+	Processed 20 / 95 sentences 
+	Processed 25 / 95 sentences 
+	Processed 30 / 95 sentences 
+	Processed 35 / 95 sentences 
+	Processed 40 / 95 sentences 
+	Processed 45 / 95 sentences 
+	Processed 50 / 95 sentences 
+	Processed 55 / 95 sentences 
+	Processed 60 / 95 sentences 
+	Processed 65 / 95 sentences 
+	Processed 70 / 95 sentences 
+	Processed 75 / 95 sentences 
+	Processed 80 / 95 sentences 
+	Processed 85 / 95 sentences 
+	Processed 90 / 95 sentences 
+	Processed 95 / 95 sentences 
+[main, len(X), X]:  43 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+
+	Extracted annotations for  4  out of total  95  sentences.
+	Relations extracted from this website: 5 (Overall: 0)
+
+URL (6 / 10): https://www.thecrimson.com/article/2004/6/10/mark-e-zuckerberg-06-the-whiz/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 99 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 99 sentences 
+	Processed 10 / 99 sentences 
+	Processed 15 / 99 sentences 
+	Processed 20 / 99 sentences 
+	Processed 25 / 99 sentences 
+	Processed 30 / 99 sentences 
+	Processed 35 / 99 sentences 
+	Processed 40 / 99 sentences 
+	Processed 45 / 99 sentences 
+	Processed 50 / 99 sentences 
+	Processed 55 / 99 sentences 
+	Processed 60 / 99 sentences 
+	Processed 65 / 99 sentences 
+	Processed 70 / 99 sentences 
+	Processed 75 / 99 sentences 
+	Processed 80 / 99 sentences 
+	Processed 85 / 99 sentences 
+	Processed 90 / 99 sentences 
+	Processed 95 / 99 sentences 
+[main, len(X), X]:  45 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+
+	Extracted annotations for  3  out of total  99  sentences.
+	Relations extracted from this website: 4 (Overall: 0)
+
+URL (7 / 10): https://www.forbes.com/profile/mark-zuckerberg/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 1 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  45 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+
+	Extracted annotations for  0  out of total  1  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (8 / 10): https://nymag.com/intelligencer/2016/06/mark-zuckerberg-harvard-2006-reunion.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 67 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 67 sentences 
+	Processed 10 / 67 sentences 
+	Processed 15 / 67 sentences 
+	Processed 20 / 67 sentences 
+	Processed 25 / 67 sentences 
+	Processed 30 / 67 sentences 
+	Processed 35 / 67 sentences 
+	Processed 40 / 67 sentences 
+	Processed 45 / 67 sentences 
+	Processed 50 / 67 sentences 
+	Processed 55 / 67 sentences 
+	Processed 60 / 67 sentences 
+	Processed 65 / 67 sentences 
+[main, len(X), X]:  56 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Elise Stefanik, Obj: Upstate New York
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Cambridge University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Some, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: High School
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+
+	Extracted annotations for  6  out of total  67  sentences.
+	Relations extracted from this website: 11 (Overall: 0)
+
+URL (9 / 10): https://www.npr.org/sections/thetwo-way/2017/05/26/530159142/mark-zuckerberg-tells-harvard-graduates-to-embrace-globalism-a-sense-of-purpose
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 25 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 25 sentences 
+	Processed 10 / 25 sentences 
+	Processed 15 / 25 sentences 
+	Processed 20 / 25 sentences 
+	Processed 25 / 25 sentences 
+[main, len(X), X]:  56 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Elise Stefanik, Obj: Upstate New York
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Cambridge University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Some, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: High School
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+
+	Extracted annotations for  0  out of total  25  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (10 / 10): https://www.businessinsider.com/how-mark-zuckerberg-hacked-into-the-harvard-crimson-2010-3
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 67 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 67 sentences 
+	Processed 10 / 67 sentences 
+	Processed 15 / 67 sentences 
+	Processed 20 / 67 sentences 
+	Processed 25 / 67 sentences 
+	Processed 30 / 67 sentences 
+	Processed 35 / 67 sentences 
+	Processed 40 / 67 sentences 
+	Processed 45 / 67 sentences 
+	Processed 50 / 67 sentences 
+	Processed 55 / 67 sentences 
+	Processed 60 / 67 sentences 
+	Processed 65 / 67 sentences 
+[main, len(X), X]:  57 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Digital Sky Technologies, Obj: Digital Sky Technologies
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Columbia, Obj: CUCommunity
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Elise Stefanik, Obj: Upstate New York
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: John Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Cambridge University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Microsoft, Obj: Microsoft Corporation
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jeff Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Silicon Valley
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Some, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: High School
+	Relation: Schools_Attended, Subj: Nick McDonell, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark, Obj: TheFacebookcom
+
+	Extracted annotations for  2  out of total  67  sentences.
+	Relations extracted from this website: 2 (Overall: 0)
+
