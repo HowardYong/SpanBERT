@@ -126,6 +126,7 @@ def main(args):
     while len(X) < args.k:
         print(f'=========== Iteration: {n_iter} - Query: {args.q} ===========')
         for i in range(len(res['items'])):
+        # for i in range(1):
             num_webpages = len(res['items'])
             webpage = res['items'][i]
             link = webpage['link']
@@ -150,7 +151,7 @@ def main(args):
             doc = nlp(text)
 
             print('\tAnnotating the webpage using spacy...')
-            relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.r, args.t)
+            relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.openai_api_key, args.r, args.t)
             for r, conf in relations.items():
                 X.add(r, conf)
 
