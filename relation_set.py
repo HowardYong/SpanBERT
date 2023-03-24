@@ -8,28 +8,39 @@ class RelationSet:
             2: ['per:employee_of'], 
             3: ['per:cities_of_residence', 'per:stateorprovinces_of_residence', 'per:countries_of_residence'],
             4: ['org:top_members/employees']}
-        self.heap = []
+        self.queue = []
         self.set = set()
         self.relation = relations[relation_type]
 
     def __len__(self):
-        return len(self.set)
+        return len(self.queue)
     
     def __str__(self):
-        for i in range(len(self.heap)):
-            relation = self.heap[i]
-            output += f'{i}) Confidence: {relation[0]}:<{20}| Subject: {relation[1][0]}:<{25}| Object: {relation[1][2]}:<{25}\n'
+        confidence_width = 30
+        subject_width = 30
+        object_width = 30
+
+        print(f"{'Confidence':<{confidence_width}}| {'Subject':<{subject_width}}| {'Object':<{object_width}}\n")
+
+        sorted_queue = sorted(self.queue, reverse=True)
+        output = ''
+        for i in range(len(sorted_queue)):
+            relation = sorted_queue[i]
+            output += f"{relation[0]:<{confidence_width}}| {relation[1][0]:<{subject_width}}| {relation[1][2]:<{object_width}}\n"
         return output
 
+    def __getitem__(self, i):
+        sorted_queue = sorted(self.queue, reverse=True)
+        return sorted_queue[i]
+
     def add(self, element, priority):
-        if element not in self.set:
-            hq.heappush(self.heap, (priority, element))
+        if element in self.set:
+            element_idx = next((index for index, (_, rel) in enumerate(self.queue) if element == rel), -1)
+            if element_idx != -1 and self.queue[element_idx][0] > priority:
+                print(f"\tRelation ({element}) has already been encountered with higher confidence. Skipping...")
+            else:
+                self.queue[element_idx] = (priority, element)
+        else:
+            hq.heappush(self.queue, (priority, element))
             self.set.add(element)
 
-    def pop(self):
-        priority, element = hq.heappop(self.heap)
-        self.set.remove(element)
-        return element
-        
-    def size(self):
-        return len(self.set)

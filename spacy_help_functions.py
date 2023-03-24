@@ -68,17 +68,15 @@ def extract_relations(doc, spanbert, r=None, conf=0.7):
                 subj_ent = tuple(filter(lambda e: e[1] in entities_of_interest[:1], ep))[0]
                 obj_ent = tuple(filter(lambda e: e[1] in entities_of_interest[1:], ep))[0]
                 examples.append({"tokens": ep[0], "subj": subj_ent, "obj": obj_ent})
-        for ex in examples:
-            print('ex: ', ex['subj'], ' ', ex['obj'])
         if len(examples) == 0:
             continue
 
         preds = spanbert.predict(examples)
         for ex, pred in list(zip(examples, preds)):
             relation = pred[0]
-            overall_num_relations += 1
             if relation == 'no_relation' or relation not in relation_of_interest:
                 continue
+            overall_num_relations += 1
             print("\t\t=== Extracted Relation ===")
             print("\t\tTokens: {}".format(ex['tokens']))
             subj = ex["subj"][0]

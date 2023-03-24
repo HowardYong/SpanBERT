@@ -56,16 +56,9 @@ def search(google_api_key, google_engine_id, q):
 
 def extract_main_text(soup):
     main_text = ''
-    '''main_content = soup.find('main')
-    if not main_content:
-        return main_text
-    
-    for tag in main_content.find_all(["div", "table"], {"class": ["toc", "infobox"]}):
-        tag.decompose()'''
-
-    paragraphs = soup.find_all('p') #main_content.find_all('p')
+    paragraphs = soup.find_all()
     if len(paragraphs) > 10000:
-        print(f'\tTrimming webpage content from {len(paragraphs)} to 10000 characters')
+        print(f'\tTrimming webpage content from {sum(paragraphs, lambda x: len(x.get_text()))} to 10000 characters')
 
     rem_char = 10000
     for p in paragraphs:
@@ -109,6 +102,10 @@ def print_parameters(args):
     print('Loading necessary libraries...')
 
 
+def update_query(query, X, old_queries=None):
+    return 'Larry Page Google'
+
+
 def main(args):
     print_parameters(args)
     nlp = spacy.load("en_core_web_lg")  
@@ -119,14 +116,16 @@ def main(args):
         model = None
     X = RelationSet(args.r)
     visited = set()
-    res = search(args.google_api_key, args.google_engine_id, args.q)
+    old_queries = set()
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
 
     n_iter = 0
+    query =  args.q
+    old_queries.add(query)
     while len(X) < args.k:
-        print(f'=========== Iteration: {n_iter} - Query: {args.q} ===========')
+        res = search(args.google_api_key, args.google_engine_id, query)
+        print(f'=========== Iteration: {n_iter} - Query: {query} ===========\n')
         for i in range(len(res['items'])):
-        # for i in range(1):
             num_webpages = len(res['items'])
             webpage = res['items'][i]
             link = webpage['link']
@@ -151,17 +150,19 @@ def main(args):
             doc = nlp(text)
 
             print('\tAnnotating the webpage using spacy...')
-            relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.openai_api_key, args.r, args.t)
+            relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.r, args.t)
             for r, conf in relations.items():
                 X.add(r, conf)
 
             print(f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
             print(f'\tRelations extracted from this website: {len(relations)} (Overall: {overall_num_relations})\n')
+        break
         n_iter += 1
+        query = update_query(query, X, old_queries)
     
-    print(f'\n================== ALL RELATIONS for {[rel for rel in X.relation]} ( {len(X)} ) =================')
+    print(f'\n================== ALL RELATIONS for {[rel for rel in X.relation]} ( {len(X)} ) =================\n')
     print(X, '\n')
-    print(f'Total # of iterations = {n_iter}')
+    print(f'Total # of iterations = {n_iter}\n\n')
     return
 
 
