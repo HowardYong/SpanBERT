@@ -1,0 +1,80 @@
+
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Schools_Attended
+Threshold       =   0.7
+Query           = mark zuckerberg harvard
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: mark zuckerberg harvard ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Mark_Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 80 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 80 sentences 
+	Processed 10 / 80 sentences 
+	Processed 15 / 80 sentences 
+	Processed 20 / 80 sentences 
+	Processed 25 / 80 sentences 
+	Processed 30 / 80 sentences 
+	Processed 35 / 80 sentences 
+	Processed 40 / 80 sentences 
+	Processed 45 / 80 sentences 
+	Processed 50 / 80 sentences 
+	Processed 55 / 80 sentences 
+	Processed 60 / 80 sentences 
+
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Schools_Attended
+Threshold       =   0.7
+Query           = mark zuckerberg harvard
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: mark zuckerberg harvard ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Mark_Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 80 sentences. Processing each sentence to identify presence of entities of interest...
+[['Mark Zuckerberg', 'Schools_Attended', 'Harvard University'], ['Eduardo Saverin', 'Schools_Attended', 'Harvard University'], ['Andrew McCollum', 'Schools_Attended', 'Harvard University'], ['Dustin Moskovitz', 'Schools_Attended', 'Harvard University'], ['Chris Hughes', 'Schools_Attended', 'Harvard University']]
+	Processed 5 / 80 sentences 
+[['Zuckerberg', 'Schools_Attended', 'Harvard University']]
+	Processed 10 / 80 sentences 
+[['Mark Zuckerberg', 'Schools_Attended', 'Harvard University']]
+	Processed 15 / 80 sentences 
+	Processed 20 / 80 sentences 
+[['He', 'Schools_Attended', 'Ardsley High School'], ['He', 'Schools_Attended', 'Phillips Exeter Academy']]
+[['He', 'Schools_Attended', 'Fencing Team']]
+[['Mark Zuckerberg', 'Schools_Attended', 'Middle School']]
+[['he', 'Schools_Attended', 'high school']]
+	Processed 25 / 80 sentences 
+[['Mark Zuckerberg', 'Schools_Attended', 'High School']]
+	Processed 30 / 80 sentences 
+[['Mark Zuckerberg', 'Schools_Attended', 'Harvard']]
+[['He', 'Schools_Attended', 'Alpha Epsilon Pi'], ['He', 'Schools_Attended', 'Kirkland House']]
+[['he', 'Schools_Attended', 'sophomore year']]
+[['he', 'Schools_Attended', 'students']]
+	Processed 35 / 80 sentences 
+[['Harvard', 'Schools_Attended', 'College']]
+[['Zuckerberg', 'Schools_Attended', 'Student Paper']]
+	Processed 40 / 80 sentences 
+[['Eduardo Saverin', 'Schools_Attended', 'Harvard University'], ['Andrew McCollum', 'Schools_Attended', 'Harvard University'], ['Dustin Moskovitz', 'Schools_Attended', 'Harvard University'], ['Chris Hughes', 'Schools_Attended', 'Harvard University'], ['Mark Zuckerberg', 'Schools_Attended', 'Harvard University']]
+[['Mark Zuckerberg', 'Schools_Attended', 'Phillips Exeter Academy']]
+[['The Photo Address Book', 'Schools_Attended', 'Students'], ['Students', 'Schools_Attended', 'The Photo Address Book'], ['The Facebook', 'Schools_Attended', 'Students'], ['Students', 'Schools_Attended', 'The Facebook']]
+	Processed 45 / 80 sentences 
+[['The three', 'Schools_Attended', 'Harvard Crimson'], ['Harvard Crimson', 'Schools_Attended', 'Harvard University']]
+	Processed 50 / 80 sentences 
+[['Zuckerberg', 'Schools_Attended', 'Harvard'], ['Dustin Moskovitz', 'Schools_Attended', 'Harvard']]
+	Processed 55 / 80 sentences 
+	Processed 60 / 80 sentences 
+[['Mark Zuckerberg', 'Schools_Attended', 'Stanford University']]
+	Processed 65 / 80 sentences 
+	Processed 70 / 80 sentences 
+	Processed 75 / 80 sentences 
+[None]

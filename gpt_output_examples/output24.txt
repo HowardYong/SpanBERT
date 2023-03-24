@@ -1,0 +1,148 @@
+    prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
+              f"please extract all the {relation_of_interest} relations in the format of "
+              f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
+              f"If the relation is not directly mentioned in the sentence, infer the correct one based on the context "
+              f"and the provided example. List all relevant relations. Subject Entity should fall under the classification "
+              f"of a SPECIFIC, EXACT, and UNIQUELY IDENTIFIABLE {subj_classification} and Object Entity should fall under the classification of a SPECIFIC, EXACT, and UNIQUELY IDENTIFIABLE {obj_classification}. ")
+
+    # if r == 1:
+    #     prompt += (
+    #         "The Subject Entity should also be a person and not a generic pronoun. "
+    #         "The Object Entity should also be an educational institution. "
+    #     )
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.01
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+	
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Schools_Attended
+Threshold       =   0.7
+Query           = mark zuckerberg harvard
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: mark zuckerberg harvard ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Mark_Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 80 sentences. Processing each sentence to identify presence of entities of interest...
+  Mark Elliot Zuckerberg (/ˈzʌkərbɜːrɡ/; born (1984-05-14)May 14, 1984) is an American business magnate, internet entrepreneur, and philanthropist.
+He is known for co-founding the social media website Facebook and its parent company Meta Platforms (formerly Facebook, Inc.), of which he is the executive chairman, chief executive officer, and controlling shareholder.[1][2]
+Zuckerberg attended Harvard University, where he launched Facebook in February 2004 with his roommates Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.
+Originally launched to select college campuses, the site expanded rapidly and eventually beyond colleges, reaching one billion users in 2012.
+Zuckerberg took the company public in May 2012 with majority shares.
+	Processed 5 / 80 sentences 
+In 2007, at age 23, he became the world's youngest self-made billionaire.
+He has used his funds to organize multiple philanthropic endeavors, including the Chan Zuckerberg Initiative.
+Zuckerberg has been listed as one of the most influential people in the world on four occasions in 2008, 2011, 2016 and 2019 respectively and nominated as a finalist in 2009, 2012, 2014, 2015, 2017, 2018, 2020, 2021 and 2022.
+He was named the Person of the Year by Time magazine in 2010, the same year when Facebook eclipsed more than half a billion users and when he himself became the subject of an Oscar winning film The Social Network depicting his creation and initial days with the social media giant even has it battled lawsuits over privacy issues.[3][4][5]
+In December 2016, Zuckerberg was ranked tenth on Forbes list of The World's Most Powerful People.[6]
+	Processed 10 / 80 sentences 
+In the Forbes 400 list of wealthiest Americans in 2022 he was ranked 11th with a wealth of $57.7 billion, down from his status as the third richest American in 2021 with a net worth of $134.5 billion.
+As of March 2023, Zuckerberg's net worth was $73 billion according to the Forbes Real Time Billionaires making him the 15th richest person in the world.[7]
+A film depicting Zuckerberg's career, The Social Network, was released in 2010.
+Zuckerberg's prominence and fast rise in the technology industry has prompted political and legal attention.
+The founding of Facebook involved Zuckerberg in multiple lawsuits regarding the creation and ownership of the website.
+	Processed 15 / 80 sentences 
+In 2013, he co-founded the pro-immigration lobbying group FWD.us.
+On April 10 and 11, 2018, Zuckerberg testified before the United States Senate Committee on Commerce, Science, and Transportation regarding the usage of personal data by Facebook in relation to the Facebook–Cambridge Analytica data breach.[8]
+Mark Elliot Zuckerberg was born on on May 14, 1984, in White Plains, New York to[9] psychiatrist Karen (née Kempner) and dentist Edward Zuckerberg.[10]
+He and his three sisters (Arielle, Randi, and Donna) were raised in a Reform Jewish household[11][12] in Dobbs Ferry, New York.[13]
+His great-grandparents were Jewish emigrants from Austria, Germany, and Poland.[14]
+	Processed 20 / 80 sentences 
+He attended high school at Ardsley High School before transferring to Phillips Exeter Academy.
+He was the captain of the fencing team.[15][16][17]
+Zuckerberg began using computers and writing software in middle school.
+In high school, he built a program that allowed all the computers between his house and his father's dental office to communicate with each other.[18][19]
+During Zuckerberg's high-school years, he worked to build a music player called the Synapse Media Player.
+	Processed 25 / 80 sentences 
+The device used machine learning to learn the user's listening habits, which was posted to Slashdot[20] and received a rating of 3 out of 5 from PC Magazine.[21]
+A New Yorker profile said of Zuckerberg: "some kids played computer games.
+Mark created them.
+"[13]
+The New Yorker noted that by the time Zuckerberg began classes at Harvard in 2002, he had already achieved a "reputation as a programming prodigy".
+	Processed 30 / 80 sentences 
+He studied psychology and computer science and belonged to Alpha Epsilon Pi and Kirkland House.[4][13][22]
+In his sophomore year, he wrote a program that he called CourseMatch, which allowed users to make class selection decisions based on the choices of other students and also to help them form study groups.
+A short time later, he created a different program he initially called Facemash that let students select the best-looking person from a choice of photos.
+Arie Hasit, Zuckerberg's roommate at the time, explained: We had books called Face Books, which included the names and pictures of everyone who lived in the student dorms.
+At first, he built a site and placed two pictures or pictures of two males and two females.
+	Processed 35 / 80 sentences 
+Visitors to the site had to choose who was "hotter" and according to the votes there would be a ranking.[23]
+The site went up over a weekend, but by Monday morning, the college shut it down, because its popularity had overwhelmed one of Harvard's network switches and prevented students from accessing the Internet.
+In addition, many students complained that their photos were being used without permission.
+Zuckerberg apologized publicly, and the student paper ran articles stating that his site was "completely improper".[23] In January 2004, Zuckerberg began writing code for a new website.[25]
+On February 4, 2004, Zuckerberg launched "Thefacebook", originally located at thefacebook.com, in partnership with his roommates Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.[26][27][28]
+	Processed 40 / 80 sentences 
+An earlier inspiration for Facebook may have come from Phillips Exeter Academy, the prep school from which Zuckerberg graduated in 2002.
+It published its own student directory, "The Photo Address Book", which students referred to as "The Facebook".
+Such photo directories were an important part of the student social experience at many private schools.
+With them, students were able to list attributes such as their class years, their friends, and their telephone numbers.[27]
+Six days after the site launched, three Harvard seniors, Cameron Winklevoss, Tyler Winklevoss, and Divya Narendra, accused Zuckerberg of intentionally misleading them into believing he would help them build a social network called HarvardConnection.com, while he was instead using their ideas to build a competing product.[29]
+	Processed 45 / 80 sentences 
+The three complained to The Harvard Crimson, and the newspaper began an investigation in response.
+While Zuckerberg tried to convince the editors not to run the story,[30] Zuckerberg broke into two of the editors' email accounts.
+He did it based on the editors' private login data logs from TheFacebook.[31][32]
+Following the official launch of the Facebook social media platform, the three filed a lawsuit against Zuckerberg that resulted in a settlement.[33]
+The agreed settlement was for 1.2 million Facebook shares and $20 million in cash.[34]
+	Processed 50 / 80 sentences 
+Zuckerberg's Facebook started off as just a "Harvard thing" until he decided to spread it to other schools, enlisting the help of roommate Dustin Moskovitz.[35]
+They began with Columbia, New York University, Stanford, Dartmouth, Cornell, University of Pennsylvania, Brown, and Yale.[36] Zuckerberg dropped out of Harvard in his sophomore year in order to complete the project.[37] Zuckerberg, Moskovitz and the other co-founders moved to Palo Alto, California, where they leased a small house that served as an office.
+Over the summer, Zuckerberg met Peter Thiel, who invested in the company.
+They got their first office in mid-2004.
+According to Zuckerberg, the group planned to return to Harvard, but they eventually decided to remain in California, where Zuckerberg appreciated the "mythical place" of Silicon Valley, the center of computer technology in California.[38][39]
+	Processed 55 / 80 sentences 
+They had already turned down offers by major corporations to buy the company.
+In an interview in 2007, Zuckerberg explained his reasoning: "It's not because of the amount of money.
+For me and my colleagues, the most important thing is that we create an open information flow for people.
+Having media corporations owned by conglomerates is just not an attractive idea to me.
+"[28]
+	Processed 60 / 80 sentences 
+The same year, speaking at Y Combinator's Startup School course at Stanford University, Zuckerberg made a controversial assertion that "young people are just smarter" and that other entrepreneurs should bias towards hiring young people.[40]
+He restated these goals to Wired magazine in 2010: "The thing I really care about is the mission, making the world open.
+"[41]
+Earlier, in April 2009, Zuckerberg sought the advice of former Netscape CFO Peter Currie about financing strategies for Facebook.[42]
+On July 21, 2010, Zuckerberg reported that the company reached the 500-million-user mark.[43]
+	Processed 65 / 80 sentences 
+When asked whether Facebook could earn more income from advertising as a result of its phenomenal growth, he explained: I guess we could ...
+If you look at how much of our page is taken up with ads compared to the average search query.
+The average for us is a little less than 10 percent of the pages and the average for search is about 20 percent taken up with ads ...
+That's the simplest thing we could do.
+But we aren't like that.
+	Processed 70 / 80 sentences 
+We make enough money.
+Right, I mean, we are keeping things running; we are growing at the rate we want to.[41]
+In 2010, Steven Levy, who wrote the 1984 book Hackers: Heroes of the Computer Revolution, wrote that Zuckerberg "clearly thinks of himself as a hacker".
+Zuckerberg said that "it's OK to break things" "to make them better".[44][45]
+Facebook instituted "hackathons" held every six to eight weeks where participants would have one night to conceive of and complete a project.[44] The company provided music, food, and beer at the hackathons, and many Facebook staff members, including Zuckerberg, regularly attended.[45]
+	Processed 75 / 80 sentences 
+"The idea is that you can build something really good in a night", Zuckerberg told Levy.
+"And that's part of the personality of Facebook now ...
+It's definitely very core to my personality.
+"[44] In 2007, Zuckerberg was added to MIT Technology Review's TR35 list as one of the top 35 innovators in the world under the age of 35.[46]
+Vanity Fair magazine named Zuckerberg numb
+	Processed 80 / 80 sentences 
+[main, len(X), X]:  12 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Arielle Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Randi Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Donna Bezos, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Silicon Valley
+
+	Extracted annotations for  6  out of total  80  sentences.
+	Relations extracted from this website: 12 (Overall: 0)
+

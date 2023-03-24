@@ -79,44 +79,45 @@ def extract_relations(doc, spanbert, openai_api_key, r=None, conf=0.7):
         if c % 5 == 0:
             print(f"\tProcessed {c} / {num_sentences} sentences ")
 
-        if spanbert:
-            entity_pairs = create_entity_pairs(sentence, entities_of_interest)
-            examples = []
-            for ep in entity_pairs:
-                if ep[1][1] not in entities_of_interest[:1] or ep[2][1] not in entities_of_interest[1:]:
-                    continue
-                examples.append({"tokens": ep[0], "subj": ep[1], "obj": ep[2]})
-            if len(examples) == 0:
-                continue
-            overall_num_relations += len(examples)
-            num_sentences_used = extract_relations_sentence_spanbert(
-                examples, num_sentences_used, res, spanbert, conf)
+        entity_pairs = create_entity_pairs(sentence, entities_of_interest)
+
+        examples = []
+        for ep in entity_pairs:
+            if ep[1][1] in entities_of_interest and ep[2][1] in entities_of_interest and ep[1][1] != ep[2][1]:
+                subj_ent = tuple(
+                    filter(lambda e: e[1] in entities_of_interest[:1], ep))[0]
+                obj_ent = tuple(
+                    filter(lambda e: e[1] in entities_of_interest[1:], ep))[0]
+                examples.append(
+                    {"tokens": ep[0], "subj": subj_ent, "obj": obj_ent})
+        if len(examples) == 0:
+            continue
+
+        response = extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_interest, r,
+                                                   openai_api_key)
+
+        extracted_relations_list = None
+        extracted_relations_string = '[' + \
+            re.sub(r'[\n.]', '', response.choices[0].text.strip()) + ']'
+        try:
+            extracted_relations_list = ast.literal_eval(
+                extracted_relations_string)
+        except (SyntaxError, AssertionError, ValueError):
+            continue
+
+        if extracted_relations_list and extracted_relations_list[0] and len(extracted_relations_list[0]) == 3 and extracted_relations_list[0][1] == relation_of_interest:
+            # if we get multiple relations from 1 sentence, we only +=1 right? spanbert doesn't
+            num_sentences_used += 1
         else:
-            response = extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_interest, r,
-                                                       openai_api_key)
+            continue
 
-            extracted_relations_list = None
-            extracted_relations_string = '[' + re.sub(
-                r'[\n.]', '', response.choices[0].text.strip()) + ']'
-            try:
-                extracted_relations_list = ast.literal_eval(
-                    extracted_relations_string)
-            except (SyntaxError, AssertionError, ValueError):
-                continue
+        gpt3_confidence = 1.00
+        for extracted_relation in extracted_relations_list:
+            if len(extracted_relation) == 3 and extracted_relation[0] and extracted_relation[1] == relation_of_interest and extracted_relation[2]:
+                subj, rel, obj = extracted_relation
+                res[(subj, rel, obj)] = gpt3_confidence
 
-            if extracted_relations_list and len(extracted_relations_list[0]) == 3 and extracted_relations_list[0][
-                    1] == relation_of_interest:
-                # if we get multiple relations from 1 sentence, we only +=1 right? spanbert doesn't
-                num_sentences_used += 1
-            else:
-                continue
-
-            gpt3_confidence = 1.00
-            for extracted_relation in extracted_relations_list:
-                if len(extracted_relation) == 3 and extracted_relation[0] and extracted_relation[
-                        1] == relation_of_interest and extracted_relation[2]:
-                    subj, rel, obj = extracted_relation
-                    res[(subj, rel, obj)] = gpt3_confidence
+        # exit()
 
     return res, num_sentences_used, overall_num_relations
 
@@ -129,15 +130,13 @@ def extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_
 
     prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
               f"please extract all the {relation_of_interest} relations in the format of "
-              f"[\"SUBJECT ENTITY\", \"{relation_of_interest}\", \"OBJECT ENTITY\"] from the sentence: '{sentence}'. "
-              f"If the relation is not directly mentioned in the sentence, infer the correct one based on the context "
-              f"and the provided example. List all relevant relations. SUBJECT ENTITY should fall under the classification "
-              f"of a SPECIFIC, EXACT, NON-GENERIC, and UNIQUELY IDENTIFIABLE {subj_classification} and "
-              f"OBJECT ENTITY should fall under the classification of a SPECIFIC, EXACT, UNIQUE, and IDENTIFIABLE {obj_classification}. ")
+              f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
+              f"List all relevant relations. Subject Entity should fall under the classification "
+              f"of a {subj_classification} and Object Entity should fall under the classification of a {obj_classification}. ")
 
     model = 'text-davinci-003'
     max_tokens = 100
-    temperature = 0.2
+    temperature = 0.25
     top_p = 1
     frequency_penalty = 0
     presence_penalty = 0
