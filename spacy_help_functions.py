@@ -13,14 +13,14 @@ else:
     ssl._create_default_https_context = _create_unverified_https_context
 
 nlp = spacy.load("en_core_web_lg")
-spacy2bert = {
+SPACY2BERT = {
     "ORG": "ORGANIZATION",
     "PERSON": "PERSON",
     "GPE": "LOCATION",
     "LOC": "LOCATION",
     "DATE": "DATE"
 }
-bert2spacy = {
+BERT2SPACY = {
     "ORGANIZATION": "ORG",
     "PERSON": "PERSON",
     "LOCATION": "LOC",
@@ -29,16 +29,33 @@ bert2spacy = {
     "STATE_OR_PROVINCE": "GPE",
     "DATE": "DATE"
 }
+ENTITIES_OF_INTEREST = ["ORGANIZATION", "PERSON",
+                        "LOCATION", "CITY", "STATE_OR_PROVINCE", "COUNTRY"]
+RELATIONS_OF_INTEREST = {
+    1: ['per:schools_attended'],
+    2: ['per:employee_of'],
+    3: ['per:countries_of_residence', 'per:cities_of_residence', 'per:stateorprovinces_of_residence', ''],
+    4: ['org:top_members/employees']
+}
+RELATIONS_TO_ENTITIES = {
+    1: [ENTITIES_OF_INTEREST[1], ENTITIES_OF_INTEREST[0]],
+    2: [ENTITIES_OF_INTEREST[1], ENTITIES_OF_INTEREST[0]],
+    3: ENTITIES_OF_INTEREST[1:],
+    4: [ENTITIES_OF_INTEREST[0], ENTITIES_OF_INTEREST[1]],
+}
 
 
 def get_entities(sentence, entities_of_interest):
-    return [(e.text, spacy2bert[e.label_]) for e in sentence.ents if e.label_ in spacy2bert]
+    return [(e.text, SPACY2BERT[e.label_]) for e in sentence.ents if e.label_ in SPACY2BERT]
 
 
-def extract_doc_relations_spanbert(doc, spanbert, entities_of_interest=None, conf=0.7):
+def extract_relations(doc, spanbert, r=None, conf=0.7):
     res = defaultdict(int)
+    entities_of_interest = RELATIONS_TO_ENTITIES[r]
+    relation_of_interest = RELATIONS_OF_INTEREST[r]
     num_sentences = len([s for s in doc.sents])
     num_sentences_used = 0
+    overall_num_relations = 0
 
     print("\tExtracted {} sentences. Processing each sentence to identify presence of entities of interest...".format(num_sentences))
     c = 0
@@ -55,11 +72,12 @@ def extract_doc_relations_spanbert(doc, spanbert, entities_of_interest=None, con
             examples.append({"tokens": ep[0], "subj": ep[1], "obj": ep[2]})
         if len(examples) == 0:
             continue
+        overall_num_relations += len(examples)
 
         preds = spanbert.predict(examples)
         for ex, pred in list(zip(examples, preds)):
             relation = pred[0]
-            if relation == 'no_relation':
+            if relation == 'no_relation':  # or relation not in relation_of_interest
                 continue
             print("\t\t=== Extracted Relation ===")
             print("\t\tTokens: {}".format(ex['tokens']))
@@ -80,36 +98,43 @@ def extract_doc_relations_spanbert(doc, spanbert, entities_of_interest=None, con
                 print(
                     "\t\tConfidence is lower than threshold confidence. Ignoring this.")
             print("\t\t==========")
-    return res, num_sentences_used
+    return res, num_sentences_used, overall_num_relations
 
 
-def extract_doc_relations_gpt3(doc, openai_api_key, relation, entities_of_interest=None):
+def extract_doc_relations_gpt3(doc, openai_api_key, relation, r=None):
     res = defaultdict(int)
     num_sentences = len([s for s in doc.sents])
     num_sentences_used = 0
+    overall_num_relations = 0
 
     print("\tExtracted {} sentences. Processing each sentence to identify presence of entities of interest...".format(num_sentences))
     c = 0
+    entities_of_interest = RELATIONS_TO_ENTITIES[r]
     for sentence in doc.sents:
         c += 1
         if c % 5 == 0:
             print(f"\tProcessed {c} / {num_sentences} sentences ")
 
+        print("SENTENCE IS ")
+        print(sentence)
         entity_pairs = create_entity_pairs(sentence, entities_of_interest)
+        print(entity_pairs)
         for ep in entity_pairs:
+            # print("current ep: ", ep)
             if ep[1][1] not in entities_of_interest[:1] or ep[2][1] not in entities_of_interest[1:]:
                 continue
+            overall_num_relations += 1
             extracted_relation = extract_sentence_relations_gpt3(
                 sentence, openai_api_key, relation)
             if extracted_relation:
                 num_sentences_used += 1
                 print("extracted relation was valid, adding ", extracted_relation)
-                for relation in extracted_relation:
-                    res[extracted_relation] = 1.0
+                for r in extracted_relation:
+                    res[tuple(r)] = 1.0
             else:
                 print("extracted relation was invalid")
 
-    return res, num_sentences_used
+    return res, num_sentences_used, overall_num_relations
 
 
 def extract_sentence_relations_gpt3(sentence, openai_api_key, relation_type):
@@ -139,9 +164,9 @@ def extract_sentence_relations_gpt3(sentence, openai_api_key, relation_type):
 
     prompt = f"Given the following example of a relation: {examples[relation_type]}, please extract all the {relation_type} relations in the format of [\"Entity1\", \"{relation_type}\", \"Entity2\"] from the sentence: '{sentence}'. If the relation is not directly mentioned in the sentence, infer the correct one based on the context and the provided example. List all relevant relations. Entity1 should fall under the classification of {entity_classification} and Entity2 should fall under the classification of {object_classification}."
 
-    print("my prompt is: ")
-    print(prompt)
-    print("END PROMPT\n")
+    # print("my prompt is: ")
+    # print(prompt)
+    # print("END PROMPT\n")
 
     model = 'text-davinci-003'
     max_tokens = 100
@@ -179,7 +204,7 @@ def create_entity_pairs(sents_doc, entities_of_interest, window_size=40):
     Output: list of extracted entity pairs: (text, entity1, entity2)
     '''
     if entities_of_interest is not None:
-        entities_of_interest = {bert2spacy[b] for b in entities_of_interest}
+        entities_of_interest = {BERT2SPACY[b] for b in entities_of_interest}
     ents = sents_doc.ents  # get entities for given sentence
 
     length_doc = len(sents_doc)
@@ -229,9 +254,9 @@ def create_entity_pairs(sents_doc, entities_of_interest, window_size=40):
                 x = [token.text for token in sents_doc[left_r:right_r]]
                 gap = sents_doc.start + left_r
                 e1_info = (
-                    e1.text, spacy2bert[e1.label_], (e1.start - gap, e1.end - gap - 1))
+                    e1.text, SPACY2BERT[e1.label_], (e1.start - gap, e1.end - gap - 1))
                 e2_info = (
-                    e2.text, spacy2bert[e2.label_], (e2.start - gap, e2.end - gap - 1))
+                    e2.text, SPACY2BERT[e2.label_], (e2.start - gap, e2.end - gap - 1))
                 if e1.start == e1.end:
                     assert x[e1.start -
                              gap] == e1.text, "{}, {}".format(e1_info, x)

@@ -18,6 +18,9 @@ import re
 from spanbert import SpanBERT
 from spacy_help_functions import *
 from relation_set import RelationSet
+from spanbert import SpanBERT
+from spacy_help_functions import *
+from relation_set import RelationSet
 from googleapiclient.discovery import build
 import requests
 from bs4 import BeautifulSoup
@@ -123,6 +126,7 @@ def main(args):
     else:
         model = None
     X = RelationSet()
+    X = RelationSet()
     visited = set()
     res = search(args.google_api_key, args.google_engine_id, args.q)
     headers = {
@@ -159,19 +163,21 @@ def main(args):
 
             print('\tAnnotating the webpage using spacy...')
             if args.spanbert:
-                relations, num_sentences_used = extract_doc_relations_spanbert(
-                    doc, model, relation_to_entities[args.r-1], args.t)
+                relations, num_sentences_used, overall_num_relations = extract_relations(
+                    doc, model, args.r, args.t)
             else:
-                relations, num_sentences_used = extract_doc_relations_gpt3(
-                    doc, args.openai_api_key, relations_of_interest[args.r-1], args.t)
+                print("ASDF")
+                print(relations_of_interest[args.r-1])
+                relations, num_sentences_used, overall_num_relations = extract_doc_relations_gpt3(
+                    doc, args.openai_api_key, relations_of_interest[args.r-1], args.r)
             for r, conf in relations.items():
                 X.add(r, conf)
-            print('[main, X]: ', X)
+            print('[main, len(X), X]: ', len(X), X)
 
             print(
                 f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
             print(
-                f'\tRelations extracted from this website: {len(relations)} (Overall: {len(X)})\n')
+                f'\tRelations extracted from this website: {len(relations)} (Overall: {overall_num_relations})\n')
         n_iter += 1
     return
 
