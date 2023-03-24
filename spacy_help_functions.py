@@ -117,8 +117,6 @@ def extract_relations(doc, spanbert, openai_api_key, r=None, conf=0.7):
                 subj, rel, obj = extracted_relation
                 res[(subj, rel, obj)] = gpt3_confidence
 
-        # exit()
-
     return res, num_sentences_used, overall_num_relations
 
 
@@ -131,12 +129,12 @@ def extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_
     prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
               f"please extract all the {relation_of_interest} relations in the format of "
               f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
-              f"List all relevant relations. Subject Entity should fall under the classification "
-              f"of a {subj_classification} and Object Entity should fall under the classification of a {obj_classification}. ")
+              f"Subject Entity must  "
+              f"be a {subj_classification} and Object Entity must be a {obj_classification}  ")
 
     model = 'text-davinci-003'
     max_tokens = 100
-    temperature = 0.25
+    temperature = 0.05
     top_p = 1
     frequency_penalty = 0
     presence_penalty = 0
