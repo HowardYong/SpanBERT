@@ -71,7 +71,8 @@ def extract_relations(doc, spanbert, openai_api_key, r=None, conf=0.7):
     num_sentences_used = 0
     overall_num_relations = 0
 
-    print("\tExtracted {} sentences. Processing each sentence to identify presence of entities of interest...".format(num_sentences))
+    print("\tExtracted {} sentences. Processing each sentence to identify presence of entities of interest...".format(
+        num_sentences))
     c = 0
     for sentence in doc.sents:
         c += 1
@@ -91,38 +92,10 @@ def extract_relations(doc, spanbert, openai_api_key, r=None, conf=0.7):
             num_sentences_used = extract_relations_sentence_spanbert(
                 examples, num_sentences_used, res, spanbert, conf)
         else:
-            openai.api_key = openai_api_key
-            gpt3_confidence = 1.00
+            response = extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_interest, r,
+                                                       openai_api_key)
+
             extracted_relations_list = None
-
-            subj_classification = entities_of_interest[0]
-            obj_classification = ' or '.join(
-                entities_of_interest[1:]) if r == 3 else entities_of_interest[1]
-
-            prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
-                      f"please extract all the {relation_of_interest} relations in the format of "
-                      f"[\"Entity1\", \"{relation_of_interest}\", \"Entity2\"] from the sentence: '{sentence}'. "
-                      f"If the relation is not directly mentioned in the sentence, infer the correct one based on the context "
-                      f"and the provided example. List all relevant relations. Entity1 should fall under the classification "
-                      f"of a SPECIFIC, EXACT, UNIQUE, and IDENTIFIABLE   {subj_classification} and Entity2 should fall under the classification of a SPECIFIC, EXACT, UNIQUE, and IDENTIFIABLE {obj_classification}. ")
-
-            model = 'text-davinci-003'
-            max_tokens = 100
-            temperature = 0.2
-            top_p = 1
-            frequency_penalty = 0
-            presence_penalty = 0
-
-            response = openai.Completion.create(
-                model=model,
-                prompt=prompt,
-                max_tokens=max_tokens,
-                temperature=temperature,
-                top_p=top_p,
-                frequency_penalty=frequency_penalty,
-                presence_penalty=presence_penalty
-            )
-
             extracted_relations_string = '[' + re.sub(
                 r'[\n.]', '', response.choices[0].text.strip()) + ']'
             try:
@@ -131,18 +104,55 @@ def extract_relations(doc, spanbert, openai_api_key, r=None, conf=0.7):
             except (SyntaxError, AssertionError, ValueError):
                 continue
 
-            if extracted_relations_list and len(extracted_relations_list[0]) == 3 and extracted_relations_list[0][1] == relation_of_interest:
+            if extracted_relations_list and len(extracted_relations_list[0]) == 3 and extracted_relations_list[0][
+                    1] == relation_of_interest:
                 # if we get multiple relations from 1 sentence, we only +=1 right? spanbert doesn't
                 num_sentences_used += 1
             else:
                 continue
 
+            gpt3_confidence = 1.00
             for extracted_relation in extracted_relations_list:
-                if len(extracted_relation) == 3 and extracted_relation[0] and extracted_relation[1] == relation_of_interest and extracted_relation[2]:
+                if len(extracted_relation) == 3 and extracted_relation[0] and extracted_relation[
+                        1] == relation_of_interest and extracted_relation[2]:
                     subj, rel, obj = extracted_relation
                     res[(subj, rel, obj)] = gpt3_confidence
 
     return res, num_sentences_used, overall_num_relations
+
+
+def extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_interest, r, openai_api_key):
+    openai.api_key = openai_api_key
+    subj_classification = entities_of_interest[0]
+    obj_classification = ' or '.join(
+        entities_of_interest[1:]) if r == 3 else entities_of_interest[1]
+
+    prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
+              f"please extract all the {relation_of_interest} relations in the format of "
+              f"[\"SUBJECT ENTITY\", \"{relation_of_interest}\", \"OBJECT ENTITY\"] from the sentence: '{sentence}'. "
+              f"If the relation is not directly mentioned in the sentence, infer the correct one based on the context "
+              f"and the provided example. List all relevant relations. SUBJECT ENTITY should fall under the classification "
+              f"of a SPECIFIC, EXACT, NON-GENERIC, and UNIQUELY IDENTIFIABLE {subj_classification} and "
+              f"OBJECT ENTITY should fall under the classification of a SPECIFIC, EXACT, UNIQUE, and IDENTIFIABLE {obj_classification}. ")
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.2
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+
+    response = openai.Completion.create(
+        model=model,
+        prompt=prompt,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        top_p=top_p,
+        frequency_penalty=frequency_penalty,
+        presence_penalty=presence_penalty
+    )
+
+    return response
 
 
 def extract_relations_sentence_spanbert(examples, num_sentences_used, res, spanbert, conf):
