@@ -30,7 +30,7 @@ ENTITIES_OF_INTEREST = ["ORGANIZATION", "PERSON", "LOCATION", "CITY", "STATE_OR_
 RELATIONS_OF_INTEREST = {
     1: ['per:schools_attended'],
     2: ['per:employee_of'],
-    3: ['per:countries_of_residence', 'per:cities_of_residence', 'per:stateorprovinces_of_residence', ''],
+    3: ['per:countries_of_residence', 'per:cities_of_residence', 'per:stateorprovinces_of_residence'],
     4: ['org:top_members/employees']
 }
 RELATIONS_TO_ENTITIES = {
@@ -49,6 +49,7 @@ def extract_relations(doc, spanbert, r=None, conf=0.7):
     res = defaultdict(int)
     entities_of_interest = RELATIONS_TO_ENTITIES[r]
     relation_of_interest = RELATIONS_OF_INTEREST[r]
+
     num_sentences = len([s for s in doc.sents])
     num_sentences_used = 0
     overall_num_relations = 0
@@ -59,21 +60,24 @@ def extract_relations(doc, spanbert, r=None, conf=0.7):
         c += 1
         if c % 5 == 0:
             print(f"\tProcessed {c} / {num_sentences} sentences ")
-        
+
         entity_pairs = create_entity_pairs(sentence, entities_of_interest)
         examples = []
         for ep in entity_pairs:
-            if ep[1][1] not in entities_of_interest[:1] or ep[2][1] not in entities_of_interest[1:]:
-                continue
-            examples.append({"tokens": ep[0], "subj": ep[1], "obj": ep[2]})
+            if ep[1][1] in entities_of_interest and ep[2][1] in entities_of_interest and ep[1][1] != ep[2][1]:
+                subj_ent = tuple(filter(lambda e: e[1] in entities_of_interest[:1], ep))[0]
+                obj_ent = tuple(filter(lambda e: e[1] in entities_of_interest[1:], ep))[0]
+                examples.append({"tokens": ep[0], "subj": subj_ent, "obj": obj_ent})
+        for ex in examples:
+            print('ex: ', ex['subj'], ' ', ex['obj'])
         if len(examples) == 0:
             continue
-        overall_num_relations += len(examples)
 
         preds = spanbert.predict(examples)
         for ex, pred in list(zip(examples, preds)):
             relation = pred[0]
-            if relation == 'no_relation': #  or relation not in relation_of_interest
+            overall_num_relations += 1
+            if relation == 'no_relation' or relation not in relation_of_interest:
                 continue
             print("\t\t=== Extracted Relation ===")
             print("\t\tTokens: {}".format(ex['tokens']))
@@ -102,7 +106,6 @@ def create_entity_pairs(sents_doc, entities_of_interest, window_size=40):
     if entities_of_interest is not None:
         entities_of_interest = {BERT2SPACY[b] for b in entities_of_interest}
     ents = sents_doc.ents # get entities for given sentence
-
     length_doc = len(sents_doc)
     entity_pairs = []
     for i in range(len(ents)):
@@ -118,7 +121,7 @@ def create_entity_pairs(sents_doc, entities_of_interest, window_size=40):
                 continue
 
             if (1 <= (e2.start - e1.end) <= window_size):
-
+                # Find start of sentence
                 punc_token = False
                 start = e1.start - 1 - sents_doc.start
                 if start > 0:
@@ -157,3 +160,4 @@ def create_entity_pairs(sents_doc, entities_of_interest, window_size=40):
                     assert x[e2.start-gap] == e2.text, "{}, {}".format(e2_info, x)
                 entity_pairs.append((x, e1_info, e2_info))
     return entity_pairs
+

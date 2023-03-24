@@ -56,16 +56,19 @@ def search(google_api_key, google_engine_id, q):
 
 def extract_main_text(soup):
     main_text = ''
-    main_content = soup.find('main')
+    '''main_content = soup.find('main')
     if not main_content:
         return main_text
     
     for tag in main_content.find_all(["div", "table"], {"class": ["toc", "infobox"]}):
-        tag.decompose()
+        tag.decompose()'''
 
-    pragraphs = main_content.find_all('p')
+    paragraphs = soup.find_all('p') #main_content.find_all('p')
+    if len(paragraphs) > 10000:
+        print(f'\tTrimming webpage content from {len(paragraphs)} to 10000 characters')
+
     rem_char = 10000
-    for p in pragraphs:
+    for p in paragraphs:
         if rem_char <= 0:
             break
         p_text = format_text(p.get_text())
@@ -78,10 +81,13 @@ def extract_main_text(soup):
     return main_text
 
 
-def format_text(text):
-    text = re.sub(r'\s+', ' ', text)
-    text = re.sub(r'[\t\r\n]+', ' ', text)
-    return text.strip()
+def format_text(raw_text_str):
+    preprocessed_text = re.sub(u'\xa0', ' ', raw_text_str) 
+    preprocessed_text = re.sub('\t+', ' ', preprocessed_text) 
+    preprocessed_text = re.sub('\n+', ' ', preprocessed_text) 
+    preprocessed_text = re.sub(' +', ' ', preprocessed_text) 
+    preprocessed_text = preprocessed_text.replace('\u200b', '')
+    return preprocessed_text.strip()
 
 
 def print_parameters(args):
@@ -111,7 +117,7 @@ def main(args):
         model = SpanBERT("./pretrained_spanbert")  
     else:
         model = None
-    X = RelationSet()
+    X = RelationSet(args.r)
     visited = set()
     res = search(args.google_api_key, args.google_engine_id, args.q)
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
@@ -147,12 +153,14 @@ def main(args):
             relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.r, args.t)
             for r, conf in relations.items():
                 X.add(r, conf)
-            print('[main, len(X), X]: ', len(X), X)
 
             print(f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
             print(f'\tRelations extracted from this website: {len(relations)} (Overall: {overall_num_relations})\n')
         n_iter += 1
-        break
+    
+    print(f'\n================== ALL RELATIONS for {[rel for rel in X.relation]} ( {len(X)} ) =================')
+    print(X, '\n')
+    print(f'Total # of iterations = {n_iter}')
     return
 
 
