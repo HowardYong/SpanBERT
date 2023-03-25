@@ -54,7 +54,7 @@ RELATION_EXAMPLES = {
     1: '["Jeff Bezos", "Schools_Attended", "Princeton University"]',
     2: '["Alec Radford", "Work_For", "OpenAI"]',
     3: '["Mariah Carey", "Live_In", "New York City"]',
-    4: '["Jensen Huang", "Top_Member_Employees", "Nvidia"]'
+    4: '["Nvidia", "Top_Member_Employees", "Jensen Huang"]'
 }
 
 
@@ -140,7 +140,7 @@ def extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_
 
     model = 'text-davinci-003'
     max_tokens = 100
-    temperature = 0.15
+    temperature = 0.2
     top_p = 1
     frequency_penalty = 0
     presence_penalty = 0

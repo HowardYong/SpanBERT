@@ -1,0 +1,862 @@
+
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Top_Member_Employees
+Threshold       =   0.0
+Query           = bill gates microsoft
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: bill gates microsoft ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Bill_Gates
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 77 sentences. Processing each sentence to identify presence of entities of interest...
+Please extract all the Top_Member_Employees relations from the sentence: 'He is a co-founder of Microsoft, along with his late childhood friend Paul Allen.[2][3]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: He is a co-founder of Microsoft, along with his late childhood friend Paul Allen.[2][3]
+		Subject: Microsoft		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: He is a co-founder of Microsoft, along with his late childhood friend Paul Allen.[2][3]
+		Subject: Microsoft		Object: Paul Allen
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'In 1975, he and Allen founded Microsoft in Albuquerque, New Mexico.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: In 1975, he and Allen founded Microsoft in Albuquerque, New Mexico.
+		Subject: Microsoft		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+	Processed 10 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'In June 2008, Gates transitioned to a part-time role at Microsoft and full-time work at the Bill & Melinda Gates Foundation, the private charitable foundation he and his then-wife Melinda established in 2000.[10]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: In June 2008, Gates transitioned to a part-time role at Microsoft and full-time work at the Bill & Melinda Gates Foundation, the private charitable foundation he and his then-wife Melinda established in 2000.[10]
+		Subject: Microsoft		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: In June 2008, Gates transitioned to a part-time role at Microsoft and full-time work at the Bill & Melinda Gates Foundation, the private charitable foundation he and his then-wife Melinda established in 2000.[10]
+		Subject: Bill & Melinda Gates Foundation		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In June 2008, Gates transitioned to a part-time role at Microsoft and full-time work at the Bill & Melinda Gates Foundation, the private charitable foundation he and his then-wife Melinda established in 2000.[10]
+		Subject: Bill & Melinda Gates Foundation		Object: Melinda Gates
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'He stepped down as chairman of the board of Microsoft in February 2014 and assumed a new post as technology adviser to support the newly appointed CEO Satya Nadella.[11]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: He stepped down as chairman of the board of Microsoft in February 2014 and assumed a new post as technology adviser to support the newly appointed CEO Satya Nadella.[11]
+		Subject: Microsoft		Object: Satya Nadella
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'In March 2020, Gates left his board positions at Microsoft and Berkshire Hathaway to focus on his philanthropic efforts on climate change, global health and development, and education.[12]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: In March 2020, Gates left his board positions at Microsoft and Berkshire Hathaway to focus on his philanthropic efforts on climate change, global health and development, and education.[12]
+		Subject: Microsoft		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: In March 2020, Gates left his board positions at Microsoft and Berkshire Hathaway to focus on his philanthropic efforts on climate change, global health and development, and education.[12]
+		Subject: Berkshire Hathaway		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'In October 2017, he was surpassed by Amazon founder and CEO Jeff Bezos, who had an estimated net worth of US$90.6 billion compared to Gates's net worth of US$89.9 billion at the time.[16]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: In October 2017, he was surpassed by Amazon founder and CEO Jeff Bezos, who had an estimated net worth of US$90.6 billion compared to Gates's net worth of US$89.9 billion at the time.[16]
+		Subject: Amazon		Object: Jeff Bezos
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'In 2010, Gates and Warren Buffett founded The Giving Pledge, whereby they and other billionaires pledge to give at least half of their wealth to philanthropy.[21]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: In 2010, Gates and Warren Buffett founded The Giving Pledge, whereby they and other billionaires pledge to give at least half of their wealth to philanthropy.[21]
+		Subject: The Giving Pledge		Object: Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In 2010, Gates and Warren Buffett founded The Giving Pledge, whereby they and other billionaires pledge to give at least half of their wealth to philanthropy.[21]
+		Subject: The Giving Pledge		Object: Warren Buffett
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 77 sentences 
+	Processed 30 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'The family encouraged competition; one visitor reported that "it didn't matter whether it was hearts or pickleball or swimming to the dock; there was always a reward for winning and there was always a penalty for losing".[31] At 13, he enrolled in the private Lakeside prep school,[32][33] where he wrote his first software program.[34]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+	Processed 35 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'After the Mothers Club donation was exhausted, Gates and other students sought time on systems including DEC PDP minicomputers.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: After the Mothers Club donation was exhausted, Gates and other students sought time on systems including DEC PDP minicomputers.
+		Subject: Mothers Club		Object: Gates
+		Adding to set of extracted relations.
+		==========
+	Processed 40 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'One of these systems was a PDP-10 belonging to Computer Center Corporation (CCC) which banned Gates, Paul Allen, Ric Weiland, and Gates's best friend and first business partner Kent Evans, for the summer after it caught them exploiting bugs in the operating system to obtain free computer time.[37][25]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: One of these systems was a PDP-10 belonging to Computer Center Corporation (CCC) which banned Gates, Paul Allen, Ric Weiland, and Gates's best friend and first business partner Kent Evans, for the summer after it caught them exploiting bugs in the operating system to obtain free computer time.[37][25]
+		Subject: Computer Center Corporation (CCC)		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: One of these systems was a PDP-10 belonging to Computer Center Corporation (CCC) which banned Gates, Paul Allen, Ric Weiland, and Gates's best friend and first business partner Kent Evans, for the summer after it caught them exploiting bugs in the operating system to obtain free computer time.[37][25]
+		Subject: Computer Center Corporation (CCC)		Object: Paul Allen
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: One of these systems was a PDP-10 belonging to Computer Center Corporation (CCC) which banned Gates, Paul Allen, Ric Weiland, and Gates's best friend and first business partner Kent Evans, for the summer after it caught them exploiting bugs in the operating system to obtain free computer time.[37][25]
+		Subject: Computer Center Corporation (CCC)		Object: Ric Weiland
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: One of these systems was a PDP-10 belonging to Computer Center Corporation (CCC) which banned Gates, Paul Allen, Ric Weiland, and Gates's best friend and first business partner Kent Evans, for the summer after it caught them exploiting bugs in the operating system to obtain free computer time.[37][25]
+		Subject: Computer Center Corporation (CCC)		Object: Kent Evans
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'The following year, a Lakeside teacher enlisted Gates and Evans to automate the school's class-scheduling system, providing them computer time and royalties in return.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: The following year, a Lakeside teacher enlisted Gates and Evans to automate the school's class-scheduling system, providing them computer time and royalties in return.
+		Subject: Lakeside		Object: Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: The following year, a Lakeside teacher enlisted Gates and Evans to automate the school's class-scheduling system, providing them computer time and royalties in return.
+		Subject: Lakeside		Object: Evans
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'Towards the end of their junior year, Evans was killed in a mountain climbing accident, which Gates has described as one of the saddest days of his life.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+Please extract all the Top_Member_Employees relations from the sentence: 'At 17, Gates formed a venture with Allen called Traf-O-Data to make traffic counters based on the Intel 8008 processor.[38]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+	Processed 50 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'While at Harvard, he met fellow student Steve Ballmer.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: While at Harvard, he met fellow student Steve Ballmer.
+		Subject: Harvard		Object: Steve Ballmer
+		Adding to set of extracted relations.
+		==========
+	Processed 55 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'Gates left Harvard after two years while Ballmer stayed and graduated magna cum laude.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Gates left Harvard after two years while Ballmer stayed and graduated magna cum laude.
+		Subject: Harvard		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Gates left Harvard after two years while Ballmer stayed and graduated magna cum laude.
+		Subject: Harvard		Object: Steve Ballmer
+		Duplicate. Ignoring this.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'Years later, Ballmer succeeded Gates as Microsoft's CEO and maintained that position from 2000 until his resignation in 2014.[45][46]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Years later, Ballmer succeeded Gates as Microsoft's CEO and maintained that position from 2000 until his resignation in 2014.[45][46]
+		Subject: Microsoft		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Years later, Ballmer succeeded Gates as Microsoft's CEO and maintained that position from 2000 until his resignation in 2014.[45][46]
+		Subject: Microsoft		Object: Steve Ballmer
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'His solution was formalized and published in collaboration with Harvard computer scientist Christos Papadimitriou.[49]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: His solution was formalized and published in collaboration with Harvard computer scientist Christos Papadimitriou.[49]
+		Subject: Harvard		Object: Christos Papadimitriou
+		Adding to set of extracted relations.
+		==========
+	Processed 60 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'Gates remained in contact with Paul Allen and joined him at Honeywell during the summer of 1974.[50]'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Gates remained in contact with Paul Allen and joined him at Honeywell during the summer of 1974.[50]
+		Subject: Honeywell		Object: Paul Allen
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'In 1975, the MITS Altair 8800 was released based on the Intel 8080 CPU, and Gates and Allen saw the opportunity to start their own computer software company.[51] Gates dropped out of Harvard that same year.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: In 1975, the MITS Altair 8800 was released based on the Intel 8080 CPU, and Gates and Allen saw the opportunity to start their own computer software company.[51] Gates dropped out of Harvard that same year.
+		Subject: MITS Altair 8800		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In 1975, the MITS Altair 8800 was released based on the Intel 8080 CPU, and Gates and Allen saw the opportunity to start their own computer software company.[51] Gates dropped out of Harvard that same year.
+		Subject: MITS Altair 8800		Object: Paul Allen
+		Adding to set of extracted relations.
+		==========
+	Processed 65 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'In reality, Gates and Allen did not have an Altair and had not written code for it; they merely wanted to gauge MITS's interest.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+Please extract all the Top_Member_Employees relations from the sentence: 'MITS president Ed Roberts agreed to meet them for a demonstration, and over the course of a few weeks they developed an Altair emulator that ran on a minicomputer, and then the BASIC interpreter.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: MITS president Ed Roberts agreed to meet them for a demonstration, and over the course of a few weeks they developed an Altair emulator that ran on a minicomputer, and then the BASIC interpreter.
+		Subject: MITS		Object: Ed Roberts
+		Adding to set of extracted relations.
+		==========
+	Processed 70 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'MITS hired Allen,[55] and Gates took a leave of absence from Harvard to work with him at MITS in November 1975.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: MITS hired Allen,[55] and Gates took a leave of absence from Harvard to work with him at MITS in November 1975.
+		Subject: MITS		Object: Allen
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: MITS hired Allen,[55] and Gates took a leave of absence from Harvard to work with him at MITS in November 1975.
+		Subject: MITS		Object: Gates
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'Allen named their partnership "Micro-Soft", a combination of "microcomputer" and "software", and their first office was in Albuquerque.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+	Processed 75 / 77 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'Microsoft's Altair BASIC was popular with computer hobbyists, but Gates discovered that a pre-market copy had leaked out and was being widely copied and distributed.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Microsoft's Altair BASIC was popular with computer hobbyists, but Gates discovered that a pre-market copy had leaked out and was being widely copied and distributed.
+		Subject: Microsoft		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+[main, len(X), X]:  26 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+
+	Extracted annotations for  19  out of total  77  sentences.
+	Relations extracted from this website: 26 (Overall: 32)
+
+URL (2 / 10): https://www.britannica.com/biography/Bill-Gates
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 41 sentences. Processing each sentence to identify presence of entities of interest...
+Please extract all the Top_Member_Employees relations from the sentence: 'Bill Gates cofounded Microsoft Corporation, the world’s largest personal-computer software company.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Bill Gates cofounded Microsoft Corporation, the world’s largest personal-computer software company.
+		Subject: Microsoft Corporation		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 41 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'Bill Gates attended Harvard University.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Bill Gates attended Harvard University.
+		Subject: Harvard University		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'However, he dropped out in his junior year to found Microsoft with his friend Paul Allen.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: However, he dropped out in his junior year to found Microsoft with his friend Paul Allen.
+		Subject: Microsoft		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'Bill Gates founded the software company Microsoft Corporation with his friend Paul Allen.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Bill Gates founded the software company Microsoft Corporation with his friend Paul Allen.
+		Subject: Microsoft Corporation		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Bill Gates founded the software company Microsoft Corporation with his friend Paul Allen.
+		Subject: Microsoft Corporation		Object: Paul Allen
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'Bill Gates, in full William Henry Gates III, (born October 28, 1955, Seattle, Washington, U.S.), American computer programmer and entrepreneur who cofounded Microsoft Corporation, the world’s largest personal-computer software company.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Bill Gates, in full William Henry Gates III, (born October 28, 1955, Seattle, Washington, U.S.), American computer programmer and entrepreneur who cofounded Microsoft Corporation, the world’s largest personal-computer software company.
+		Subject: Microsoft Corporation		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+	Processed 10 / 41 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'In 1975 Gates, then a sophomore at Harvard University, joined his hometown friend Paul G. Allen to develop software for the first microcomputers.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: In 1975 Gates, then a sophomore at Harvard University, joined his hometown friend Paul G. Allen to develop software for the first microcomputers.
+		Subject: Harvard University		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'With the success of this project, Gates left Harvard during his junior year and, with Allen, formed Microsoft.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: With the success of this project, Gates left Harvard during his junior year and, with Allen, formed Microsoft.
+		Subject: Microsoft		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: With the success of this project, Gates left Harvard during his junior year and, with Allen, formed Microsoft.
+		Subject: Microsoft		Object: Paul Allen
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 41 sentences 
+	Processed 20 / 41 sentences 
+	Processed 25 / 41 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'With his then wife, Melinda, he launched the William H. Gates Foundation (renamed the Bill & Melinda Gates Foundation in 1999) in 1994 to fund global health programs as well as projects in the Pacific Northwest.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: With his then wife, Melinda, he launched the William H. Gates Foundation (renamed the Bill & Melinda Gates Foundation in 1999) in 1994 to fund global health programs as well as projects in the Pacific Northwest.
+		Subject: William H Gates Foundation		Object: William H Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: With his then wife, Melinda, he launched the William H. Gates Foundation (renamed the Bill & Melinda Gates Foundation in 1999) in 1994 to fund global health programs as well as projects in the Pacific Northwest.
+		Subject: Bill & Melinda Gates Foundation		Object: Bill & Melinda Gates
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 41 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'After a short transition period, Gates relinquished day-to-day oversight of Microsoft in June 2008—although he remained chairman of the board—in order to devote more time to the Bill & Melinda Gates Foundation.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: After a short transition period, Gates relinquished day-to-day oversight of Microsoft in June 2008—although he remained chairman of the board—in order to devote more time to the Bill & Melinda Gates Foundation.
+		Subject: Microsoft		Object: Bill Gates
+		Duplicate. Ignoring this.
+		==========
+	Processed 35 / 41 sentences 
+	Processed 40 / 41 sentences 
+[main, len(X), X]:  31 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill & Melinda Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard University, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: William H Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+
+	Extracted annotations for  9  out of total  41  sentences.
+	Relations extracted from this website: 7 (Overall: 12)
+
+URL (3 / 10): https://twitter.com/BillGates
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 4 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  31 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill & Melinda Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard University, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: William H Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+
+	Extracted annotations for  0  out of total  4  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (4 / 10): https://news.microsoft.com/2020/03/13/microsoft-announces-change-to-its-board-of-directors/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 16 sentences. Processing each sentence to identify presence of entities of interest...
+Please extract all the Top_Member_Employees relations from the sentence: 'March 13, 2020 | Microsoft News Center REDMOND, Wash. — March 13, 2020 — Microsoft Corp. today announced that Co-Founder and Technology Advisor Bill Gates stepped down from the company’s Board of Directors to dedicate more time to his philanthropic priorities including global health, development, education, and his increasing engagement in tackling climate change.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: March 13, 2020 | Microsoft News Center REDMOND, Wash. — March 13, 2020 — Microsoft Corp. today announced that Co-Founder and Technology Advisor Bill Gates stepped down from the company’s Board of Directors to dedicate more time to his philanthropic priorities including global health, development, education, and his increasing engagement in tackling climate change.
+		Subject: Microsoft Corp		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 16 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'And Microsoft will continue to benefit from Bill’s ongoing technical passion and advice to drive our products and services forward.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: And Microsoft will continue to benefit from Bill’s ongoing technical passion and advice to drive our products and services forward.
+		Subject: Microsoft		Object: Bill
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 16 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'I am grateful for Bill’s friendship and look forward to continuing to work alongside him to realize our mission to empower every person and every organization on the planet to achieve more,” said Microsoft CEO Satya Nadella.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: I am grateful for Bill’s friendship and look forward to continuing to work alongside him to realize our mission to empower every person and every organization on the planet to achieve more,” said Microsoft CEO Satya Nadella.
+		Subject: Microsoft		Object: Satya Nadella
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: '“On behalf of our shareholders and the Board, I want to express my deep appreciation to Bill for all his contributions to Microsoft.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: “On behalf of our shareholders and the Board, I want to express my deep appreciation to Bill for all his contributions to Microsoft.
+		Subject: Microsoft		Object: Bill
+		Duplicate. Ignoring this.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'He leaves an enduring legacy of curiosity and insight that serves as an inspiration for us all,” said John W. Thompson, Microsoft independent board chair.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: He leaves an enduring legacy of curiosity and insight that serves as an inspiration for us all,” said John W. Thompson, Microsoft independent board chair.
+		Subject: Microsoft		Object: John W Thompson
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'With Gates’ departure, the Board will consist of 12 members, including John W. Thompson, Microsoft independent chair; Reid Hoffman, partner at Greylock Partners; Hugh Johnston, vice chairman and chief financial officer of PepsiCo; Teri L. List-Stoll, executive vice president and chief financial officer of Gap, Inc.; Satya Nadella, chief executive officer of Microsoft; Sandra E. Peterson, operating partner, Clayton, Dubilier & Rice; Penny Pritzker, founder and chairman, PSP Partners; Charles W. Scharf, chief executive officer and president of Wells Fargo & Co.; Arne Sorenson, president and CEO, Marriott International Inc.; John W. Stanton, chairman of Trilogy Equity Partners; Emma Walmsley, CEO of GlaxoSmithKline plc (GSK); and Padmasree Warrior, founder, CEO and president, Fable Group Inc. About Microsoft Microsoft (Nasdaq “MSFT” @microsoft) enables digital transformation for the era of an intelligent cloud and an intelligent edge.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+	Processed 15 / 16 sentences 
+[main, len(X), X]:  34 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill & Melinda Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: John W Thompson
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard University, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: William H Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+
+	Extracted annotations for  5  out of total  16  sentences.
+	Relations extracted from this website: 4 (Overall: 5)
+
+URL (5 / 10): https://www.forbes.com/profile/bill-gates/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 2 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  34 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill & Melinda Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: John W Thompson
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard University, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: William H Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+
+	Extracted annotations for  0  out of total  2  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (6 / 10): https://www.gatesnotes.com/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 47 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 47 sentences 
+	Processed 10 / 47 sentences 
+	Processed 15 / 47 sentences 
+	Processed 20 / 47 sentences 
+	Processed 25 / 47 sentences 
+	Processed 30 / 47 sentences 
+	Processed 35 / 47 sentences 
+	Processed 40 / 47 sentences 
+	Processed 45 / 47 sentences 
+[main, len(X), X]:  34 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill & Melinda Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: John W Thompson
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard University, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: William H Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+
+	Extracted annotations for  0  out of total  47  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (7 / 10): https://www.forbes.com/sites/alexkonrad/2023/02/06/bill-gates-openai-microsoft-ai-hottest-topic-2023/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 111 sentences. Processing each sentence to identify presence of entities of interest...
+Please extract all the Top_Member_Employees relations from the sentence: 'Bill Gates, Co-chair, Bill & Melinda Gates Foundation In 2020, Bill Gates left the board of directors of Microsoft, the tech giant he cofounded in 1975.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Bill Gates, Co-chair, Bill & Melinda Gates Foundation In 2020, Bill Gates left the board of directors of Microsoft, the tech giant he cofounded in 1975.
+		Subject: Microsoft		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'In the summer of 2022, Gates met with OpenAI cofounder and president Greg Brockman to review some of the generative AI products coming out of the startup unicorn, which recently announced a “multiyear, multibillion” dollar deepened partnership with Microsoft.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: In the summer of 2022, Gates met with OpenAI cofounder and president Greg Brockman to review some of the generative AI products coming out of the startup unicorn, which recently announced a “multiyear, multibillion” dollar deepened partnership with Microsoft.
+		Subject: OpenAI		Object: Greg Brockman
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 111 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'You can read more about OpenAI and the race to bring AI to work — including comments from Brockman, CEO Sam Altman and many other players — in our print feature here.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: You can read more about OpenAI and the race to bring AI to work — including comments from Brockman, CEO Sam Altman and many other players — in our print feature here.
+		Subject: OpenAI		Object: Brockman
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: You can read more about OpenAI and the race to bring AI to work — including comments from Brockman, CEO Sam Altman and many other players — in our print feature here.
+		Subject: OpenAI		Object: Sam Altman
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 111 sentences 
+	Processed 15 / 111 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'And I got to know Greg [Brockman] through OpenAI and some of the other people there, like Ilya [Sutskever, Brockman’s cofounder and chief scientist].'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: And I got to know Greg [Brockman] through OpenAI and some of the other people there, like Ilya [Sutskever, Brockman’s cofounder and chief scientist].
+		Subject: OpenAI		Object: Greg Brockman
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: And I got to know Greg [Brockman] through OpenAI and some of the other people there, like Ilya [Sutskever, Brockman’s cofounder and chief scientist].
+		Subject: OpenAI		Object: Ilya Sutskever
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 111 sentences 
+	Processed 25 / 111 sentences 
+	Processed 30 / 111 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'Then you have the PC with a graphics interface, which are things like Windows and Mac, and which for me really began as I spent time with Charles Simonyi at Xerox PARC.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Then you have the PC with a graphics interface, which are things like Windows and Mac, and which for me really began as I spent time with Charles Simonyi at Xerox PARC.
+		Subject: Xerox PARC		Object: Charles Simonyi
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 111 sentences 
+	Processed 40 / 111 sentences 
+	Processed 45 / 111 sentences 
+	Processed 50 / 111 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'One of the things I challenged Greg [Brockman] with early in the summer: “Hey, can OpenAI’s model]] pass the AP Biology tests?”'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: One of the things I challenged Greg [Brockman] with early in the summer: “Hey, can OpenAI’s model]] pass the AP Biology tests?”
+		Subject: OpenAI		Object: Greg Brockman
+		Duplicate. Ignoring this.
+		==========
+	Processed 55 / 111 sentences 
+	Processed 60 / 111 sentences 
+	Processed 65 / 111 sentences 
+	Processed 70 / 111 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: '[Nadella, Microsoft’s CEO] is super nice about getting input from me on technological things.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: [Nadella, Microsoft’s CEO] is super nice about getting input from me on technological things.
+		Subject: Microsoft		Object: Nadella
+		Adding to set of extracted relations.
+		==========
+	Processed 75 / 111 sentences 
+	Processed 80 / 111 sentences 
+	Processed 85 / 111 sentences 
+	Processed 90 / 111 sentences 
+	Processed 95 / 111 sentences 
+	Processed 100 / 111 sentences 
+	Processed 105 / 111 sentences 
+	Processed 110 / 111 sentences 
+[main, len(X), X]:  40 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill & Melinda Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: John W Thompson
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Brockman
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Nadella
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard University, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: William H Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Greg Brockman
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Sam Altman
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Ilya Sutskever
+	Relation: Top_Member_Employees, Subj: Xerox PARC, Obj: Charles Simonyi
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+
+	Extracted annotations for  7  out of total  111  sentences.
+	Relations extracted from this website: 7 (Overall: 9)
+
+URL (8 / 10): https://www.linkedin.com/in/williamhgates
+	Fetching text from url...
+	Warning (response 999): Target address https://www.linkedin.com/in/williamhgates. Failed to retrieve webpage.
+URL (9 / 10): https://www.wsj.com/articles/microsoft-directors-decided-bill-gates-needed-to-leave-board-due-to-prior-relationship-with-staffer-11621205803
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 11 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 11 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'Microsoft Corp. board members decided that Bill Gates needed to step down from its board in 2020 as they pursued an investigation into the billionaire’s prior romantic relationship with a female Microsoft employee that was deemed inappropriate, people familiar with the matter said.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Microsoft Corp. board members decided that Bill Gates needed to step down from its board in 2020 as they pursued an investigation into the billionaire’s prior romantic relationship with a female Microsoft employee that was deemed inappropriate, people familiar with the matter said.
+		Subject: Microsoft Corp		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Microsoft Corp. board members decided that Bill Gates needed to step down from its board in 2020 as they pursued an investigation into the billionaire’s prior romantic relationship with a female Microsoft employee that was deemed inappropriate, people familiar with the matter said.
+		Subject: Microsoft Corp		Object: Female Microsoft Employee
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'Members of the board tasked with the matter hired a law firm to conduct an investigation in late 2019 after a Microsoft engineer alleged in a letter that she had a sexual relationship over years with Mr. Gates, the people said.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Members of the board tasked with the matter hired a law firm to conduct an investigation in late 2019 after a Microsoft engineer alleged in a letter that she had a sexual relationship over years with Mr. Gates, the people said.
+		Subject: Microsoft		Object: Mr Gates
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 11 sentences 
+[main, len(X), X]:  42 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill & Melinda Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: John W Thompson
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Brockman
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Nadella
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard University, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: William H Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Greg Brockman
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Sam Altman
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Ilya Sutskever
+	Relation: Top_Member_Employees, Subj: Xerox PARC, Obj: Charles Simonyi
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Female Microsoft Employee
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Mr Gates
+
+	Extracted annotations for  2  out of total  11  sentences.
+	Relations extracted from this website: 3 (Overall: 3)
+
+URL (10 / 10): https://www.gatesnotes.com/Bio
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 24 sentences. Processing each sentence to identify presence of entities of interest...
+Please extract all the Top_Member_Employees relations from the sentence: 'He dropped out of college to start Microsoft with his childhood friend Paul Allen.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: He dropped out of college to start Microsoft with his childhood friend Paul Allen.
+		Subject: Microsoft		Object: Bill Gates
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 24 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'His late mother, Mary Gates, was a schoolteacher, University of Washington regent, and chairwoman of United Way International.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: His late mother, Mary Gates, was a schoolteacher, University of Washington regent, and chairwoman of United Way International.
+		Subject: University of Washington		Object: Mary Gates
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: His late mother, Mary Gates, was a schoolteacher, University of Washington regent, and chairwoman of United Way International.
+		Subject: United Way International		Object: Mary Gates
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 24 sentences 
+Please extract all the Top_Member_Employees relations from the sentence: 'When Bill and Paul Allen started Microsoft, their vision of “a computer on every desktop and in every home” seemed farfetched to most people.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: When Bill and Paul Allen started Microsoft, their vision of “a computer on every desktop and in every home” seemed farfetched to most people.
+		Subject: Microsoft		Object: Bill
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: When Bill and Paul Allen started Microsoft, their vision of “a computer on every desktop and in every home” seemed farfetched to most people.
+		Subject: Microsoft		Object: Paul Allen
+		Adding to set of extracted relations.
+		==========
+Please extract all the Top_Member_Employees relations from the sentence: 'Bill is passionate about Microsoft’s work and will always be involved with the company, including his present role as a member of the board and technology advisor.'. Output Format: ["ORGANIZATION", "Top_Member_Employees", "PERSON"]  Output Example: ["Nvidia", "Top_Member_Employees", "Jensen Huang"]
+		=== Extracted Relation ===
+		Sentence: Bill is passionate about Microsoft’s work and will always be involved with the company, including his present role as a member of the board and technology advisor.
+		Subject: Microsoft		Object: Bill
+		Duplicate. Ignoring this.
+		==========
+	Processed 15 / 24 sentences 
+	Processed 20 / 24 sentences 
+[main, len(X), X]:  44 Relation set:
+	Relation: Top_Member_Employees, Subj: Amazon, Obj: Jeff Bezos
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Melinda Gates
+	Relation: Top_Member_Employees, Subj: Berkshire Hathaway, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill & Melinda Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Evans
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Harvard, Obj: Christos Papadimitriou
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Allen
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Ric Weiland
+	Relation: Top_Member_Employees, Subj: Computer Center Corporation (CCC), Obj: Kent Evans
+	Relation: Top_Member_Employees, Subj: Bill & Melinda Gates Foundation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: John W Thompson
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Brockman
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Steve Ballmer
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Nadella
+	Relation: Top_Member_Employees, Subj: Honeywell, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Satya Nadella
+	Relation: Top_Member_Employees, Subj: MITS Altair 8800, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Ed Roberts
+	Relation: Top_Member_Employees, Subj: MITS, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Harvard University, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corporation, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: William H Gates Foundation, Obj: William H Gates
+	Relation: Top_Member_Employees, Subj: Lakeside, Obj: Gates
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Bill Gates
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Paul Allen
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Greg Brockman
+	Relation: Top_Member_Employees, Subj: The Giving Pledge, Obj: Warren Buffett
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Sam Altman
+	Relation: Top_Member_Employees, Subj: OpenAI, Obj: Ilya Sutskever
+	Relation: Top_Member_Employees, Subj: Xerox PARC, Obj: Charles Simonyi
+	Relation: Top_Member_Employees, Subj: Mothers Club, Obj: Gates
+	Relation: Top_Member_Employees, Subj: Microsoft Corp, Obj: Female Microsoft Employee
+	Relation: Top_Member_Employees, Subj: Microsoft, Obj: Mr Gates
+	Relation: Top_Member_Employees, Subj: University of Washington, Obj: Mary Gates
+	Relation: Top_Member_Employees, Subj: United Way International, Obj: Mary Gates
+
+	Extracted annotations for  4  out of total  24  sentences.
+	Relations extracted from this website: 5 (Overall: 6)
+

@@ -1,0 +1,1366 @@
+    prompt = (f"Please extract all the {relation_of_interest} relations from the sentence: '{sentence}'. "
+              f"Output Format: [\"{subj_classification}\", \"{relation_of_interest}\", \"{obj_classification}\"]  "
+              f"Output Example: {RELATION_EXAMPLES[r]}")
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.25
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+	
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Schools_Attended
+Threshold       =   0.7
+Query           = mark zuckerberg harvard
+# of Tuples     =    10
+Loading necessary libraries...
+=========== Iteration: 0 - Query: mark zuckerberg harvard ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Mark_Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 80 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Zuckerberg attended Harvard University, where he launched Facebook in February 2004 with his roommates Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.
+		Subject: Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 80 sentences 
+	Processed 10 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: In December 2016, Zuckerberg was ranked tenth on Forbes list of The World's Most Powerful People.[6]
+		Subject: Mark Zuckerberg		Object: Forbes
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: A film depicting Zuckerberg's early career, legal troubles and initial sucess with the site, The Social Network, was released in 2010 and won multiple Academy Awards.
+		Subject: Mark Zuckerberg		Object: The Social Network
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: The founding of Facebook involved Zuckerberg in multiple lawsuits regarding the creation and ownership of the website as well as issues of user privacy.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: On April 10 and 11, 2018, Zuckerberg testified before the United States Senate Committee on Commerce, Science, and Transportation regarding the usage of personal data by Facebook in relation to the Facebook–Cambridge Analytica data breach.[8]
+		Subject: Mark Zuckerberg		Object: United States Senate Committee on Commerce, Science, and Transportation
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 80 sentences 
+	Processed 25 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: During Zuckerberg's high-school years, he worked to build a music player called the Synapse Media Player.
+		Subject: Mark Zuckerberg		Object: High School
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: A New Yorker profile said of Zuckerberg: "some kids played computer games.
+		Subject: Mark Zuckerberg		Object: N/A
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: The New Yorker noted that by the time Zuckerberg began classes at Harvard in 2002, he had already achieved a "reputation as a programming prodigy".
+		Subject: Mark Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Arie Hasit, Zuckerberg's roommate at the time, explained: We had books called Face Books, which included the names and pictures of everyone who lived in the student dorms.
+		Subject: Arie Hasit		Object: Student Dorms
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 80 sentences 
+	Processed 40 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: An earlier inspiration for Facebook may have come from Phillips Exeter Academy, the prep school from which Zuckerberg graduated in 2002.
+		Subject: Mark Zuckerberg		Object: Phillips Exeter Academy
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: Six days after the site launched, three Harvard seniors, Cameron Winklevoss, Tyler Winklevoss, and Divya Narendra, accused Zuckerberg of intentionally misleading them into believing he would help them build a social network called HarvardConnection.com, while he was instead using their ideas to build a competing product.[29]
+		Subject: Cameron Winklevoss		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Six days after the site launched, three Harvard seniors, Cameron Winklevoss, Tyler Winklevoss, and Divya Narendra, accused Zuckerberg of intentionally misleading them into believing he would help them build a social network called HarvardConnection.com, while he was instead using their ideas to build a competing product.[29]
+		Subject: Tyler Winklevoss		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Six days after the site launched, three Harvard seniors, Cameron Winklevoss, Tyler Winklevoss, and Divya Narendra, accused Zuckerberg of intentionally misleading them into believing he would help them build a social network called HarvardConnection.com, while he was instead using their ideas to build a competing product.[29]
+		Subject: Divya Narendra		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 50 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: Zuckerberg's Facebook started off as just a "Harvard thing" until he decided to spread it to other schools, enlisting the help of roommate Dustin Moskovitz.[35]
+		Subject: Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 55 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: According to Zuckerberg, the group planned to return to Harvard, but they eventually decided to remain in California, where Zuckerberg appreciated the "mythical place" of Silicon Valley, the center of computer technology in California.[38][39]
+		Subject: Zuckerberg		Object: Harvard
+		Duplicate. Ignoring this.
+		==========
+	Processed 60 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: Earlier, in April 2009, Zuckerberg sought the advice of former Netscape CFO Peter Currie about financing strategies for Facebook.[42]
+		Subject: Peter Currie		Object: Netscape
+		Adding to set of extracted relations.
+		==========
+	Processed 65 / 80 sentences 
+	Processed 70 / 80 sentences 
+	Processed 75 / 80 sentences 
+		=== Extracted Relation ===
+		Sentence: Facebook instituted "hackathons" held every six to eight weeks where participants would have one night to conceive of and complete a project.[44] The company provided music, food, and beer at the hackathons, and many Facebook staff members, including Zuckerberg, regularly attended.[45]
+		Subject: Mark Zuckerberg		Object: Facebook
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: "[44] In 2007, Zuckerberg was added to MIT Technology Review's TR35 list as one of the top 35 innovators in the world under the age of 35.[46]
+		Subject: Mark Zuckerberg		Object: MIT Technology Review
+		Adding to set of extracted relations.
+		==========
+	Processed 80 / 80 sentences 
+[main, len(X), X]:  17 Relation set:
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+
+	Extracted annotations for  16  out of total  80  sentences.
+	Relations extracted from this website: 17 (Overall: 18)
+
+URL (2 / 10): https://news.harvard.edu/gazette/story/2017/05/mark-zuckerbergs-speech-as-written-for-harvards-class-of-2017/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 123 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: The challenge for our generation is creating a world where everyone has a sense of purpose," said Mark Zuckerberg, who was the principal speaker at Harvard's 366th Commencement on May 25.
+		Subject: Mark Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Kris Snibbe/Harvard Staff Photographer DateMay 25, 2017December 19, 2017 View all of Commencement 2017 President Faust, Board of Overseers, faculty, alumni, friends, proud parents, members of the ad board, and graduates of the greatest university in the world, I’m honored to be with you today because, let’s face it, you accomplished something I never could.
+		Subject: Kris Snibbe		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 123 sentences 
+	Processed 10 / 123 sentences 
+	Processed 15 / 123 sentences 
+	Processed 20 / 123 sentences 
+		=== Extracted Relation ===
+		Sentence: But my best memory from Harvard was meeting Priscilla.
+		Subject: Priscilla		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 123 sentences 
+	Processed 30 / 123 sentences 
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg's 2017 Harvard Commencement Address We’ve all started lifelong friendships here, and some of us even families.
+		Subject: Mark Zuckerberg		Object: Harvard
+		Duplicate. Ignoring this.
+		==========
+	Processed 35 / 123 sentences 
+	Processed 40 / 123 sentences 
+	Processed 45 / 123 sentences 
+	Processed 50 / 123 sentences 
+	Processed 55 / 123 sentences 
+	Processed 60 / 123 sentences 
+	Processed 65 / 123 sentences 
+	Processed 70 / 123 sentences 
+	Processed 75 / 123 sentences 
+	Processed 80 / 123 sentences 
+	Processed 85 / 123 sentences 
+	Processed 90 / 123 sentences 
+	Processed 95 / 123 sentences 
+	Processed 100 / 123 sentences 
+	Processed 105 / 123 sentences 
+	Processed 110 / 123 sentences 
+	Processed 115 / 123 sentences 
+	Processed 120 / 123 sentences 
+[main, len(X), X]:  19 Relation set:
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+
+	Extracted annotations for  4  out of total  123  sentences.
+	Relations extracted from this website: 3 (Overall: 4)
+
+URL (3 / 10): https://www.britannica.com/biography/Mark-Zuckerberg
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 23 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg is famous for being cofounder and chief executive officer of Facebook, the world’s largest social network Web site.
+		Subject: Mark Zuckerberg		Object: Facebook
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 23 sentences 
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg dropped out of college in 2004 to devote himself to Facebook, which he had founded at Harvard University with four fellow students there—Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg dropped out of college in 2004 to devote himself to Facebook, which he had founded at Harvard University with four fellow students there—Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.
+		Subject: Eduardo Saverin		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg dropped out of college in 2004 to devote himself to Facebook, which he had founded at Harvard University with four fellow students there—Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.
+		Subject: Andrew McCollum		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg dropped out of college in 2004 to devote himself to Facebook, which he had founded at Harvard University with four fellow students there—Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.
+		Subject: Dustin Moskovitz		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg dropped out of college in 2004 to devote himself to Facebook, which he had founded at Harvard University with four fellow students there—Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.
+		Subject: Chris Hughes		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 23 sentences 
+	Processed 15 / 23 sentences 
+		=== Extracted Relation ===
+		Sentence: Zuckerberg dropped out of Harvard to concentrate on the fledgling company, of which he became CEO and president.
+		Subject: Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 23 sentences 
+[main, len(X), X]:  23 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+
+	Extracted annotations for  3  out of total  23  sentences.
+	Relations extracted from this website: 7 (Overall: 7)
+
+URL (4 / 10): https://news.harvard.edu/gazette/story/2017/05/harvard-awards-10-honorary-degrees-at-366th-commencement/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 58 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: View all of Commencement 2017 Facebook founder and CEO Mark Zuckerberg will be the principal speaker at the Afternoon Program, sharing Harvard’s 366th Commencement Day spotlight with a host of honorees at the top of their fields.  
+		Subject: Mark Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg, Doctor of Laws Mark Zuckerberg, who founded Facebook in 2004, is the featured speaker at the Afternoon Program of Harvard’s 366th Commencement.
+		Subject: Mark Zuckerberg		Object: Harvard
+		Duplicate. Ignoring this.
+		==========
+	Processed 10 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: Over their lifetimes, he and his wife, Priscilla Chan, a pediatrician and 2007 Harvard College graduate, have pledged to donate 99 percent of their Facebook shares through the Chan Zuckerberg Initiative (CZI), which is committed to advancing human potential and promoting equal opportunity.
+		Subject: Priscilla Chan		Object: Harvard College
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Zuckerberg studied computer science at Harvard University before moving Facebook to Palo Alto, Calif.  Norman R. Augustine, Doctor of Laws Norman Augustine is the former chairman and CEO of Lockheed Martin Corp. and has held numerous positions in the aerospace industry and government, including assistant director of defense research and engineering in the Office of the Secretary of Defense, and under secretary and acting secretary of the Army.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Zuckerberg studied computer science at Harvard University before moving Facebook to Palo Alto, Calif.  Norman R. Augustine, Doctor of Laws Norman Augustine is the former chairman and CEO of Lockheed Martin Corp. and has held numerous positions in the aerospace industry and government, including assistant director of defense research and engineering in the Office of the Secretary of Defense, and under secretary and acting secretary of the Army.
+		Subject: Norman R Augustine		Object: Doctor of Laws
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 58 sentences 
+	Processed 20 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: Sandra M. Gilbert, Doctor of Laws Sandra Gilbert is a distinguished professor emerita of English at the University of California, Davis.
+		Subject: Sandra M Gilbert		Object: University of California, Davis
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: Gilbert has taught at Indiana University, Princeton University, and University of California, Davis, among others, and was the first M.H. Abrams Distinguished Visiting Professor at Cornell University.
+		Subject: Gilbert		Object: Indiana University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Gilbert has taught at Indiana University, Princeton University, and University of California, Davis, among others, and was the first M.H. Abrams Distinguished Visiting Professor at Cornell University.
+		Subject: Gilbert		Object: Princeton University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Gilbert has taught at Indiana University, Princeton University, and University of California, Davis, among others, and was the first M.H. Abrams Distinguished Visiting Professor at Cornell University.
+		Subject: Gilbert		Object: University of California, Davis
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Gilbert has taught at Indiana University, Princeton University, and University of California, Davis, among others, and was the first M.H. Abrams Distinguished Visiting Professor at Cornell University.
+		Subject: Gilbert		Object: Cornell University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In 2013, Gilbert was named a co-winner of the National Book Critics Circle Award for Lifetime Achievement.  
+		Subject: Gilbert		Object: National Book Critics Circle Award
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: In 2004, Jones was recognized with the Harvard Foundation Humanitarian Award.
+		Subject: Jones		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: Earlier this year, Jones starred in the American Repertory Theater’s “Night of the Iguana” at Harvard.  
+		Subject: Jones		Object: Harvard
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Walter E. Massey, Doctor of Laws Walter Massey is chancellor of the School of the Art Institute of Chicago (SAIC), having previously served as its president.
+		Subject: Walter E Massey		Object: School of the Art Institute of Chicago (SAIC)
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Massey has served at University of Illinois, Urbana-Champaign, Brown University, and in the University of California system.
+		Subject: Massey		Object: University of Illinois, Urbana-Champaign
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Massey has served at University of Illinois, Urbana-Champaign, Brown University, and in the University of California system.
+		Subject: Massey		Object: Brown University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Massey has served at University of Illinois, Urbana-Champaign, Brown University, and in the University of California system.
+		Subject: Massey		Object: University of California system
+		Adding to set of extracted relations.
+		==========
+	Processed 40 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: Massey holds honorary degrees from 39 universities, and is also a trustee emeritus of the University of Chicago and Brown University.  
+		Subject: Massey		Object: University of Chicago
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Massey holds honorary degrees from 39 universities, and is also a trustee emeritus of the University of Chicago and Brown University.  
+		Subject: Massey		Object: Brown University
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Michael Rabin, Doctor of Science Michael Rabin is the Thomas J. Watson Sr. Research Professor of Computer Science at Harvard University and helped shape the field of theoretical computer science.
+		Subject: Michael Rabin		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: Prior to joining the Harvard University faculty in 1981, Rabin served as the H.B. Fine Instructor in Mathematics and member of the Institute for Advanced Studies at Princeton before joining the mathematics department at Hebrew University.
+		Subject: Rabin		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Prior to joining the Harvard University faculty in 1981, Rabin served as the H.B. Fine Instructor in Mathematics and member of the Institute for Advanced Studies at Princeton before joining the mathematics department at Hebrew University.
+		Subject: Rabin		Object: Princeton Institute for Advanced Studies
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Prior to joining the Harvard University faculty in 1981, Rabin served as the H.B. Fine Instructor in Mathematics and member of the Institute for Advanced Studies at Princeton before joining the mathematics department at Hebrew University.
+		Subject: Rabin		Object: Hebrew University
+		Adding to set of extracted relations.
+		==========
+	Processed 50 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: In 2016, Williams received the 44th Life Achievement Award from the American Film Institute — the first composer to receive this honor.   
+		Subject: Williams		Object: American Film Institute
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Huda Y. Zoghbi, Doctor of Science Huda Zoghbi is a professor in the departments of pediatrics, molecular and human genetics, neurology, and neuroscience at Baylor College of Medicine.
+		Subject: Huda Y Zoghbi		Object: Baylor College of Medicine
+		Adding to set of extracted relations.
+		==========
+	Processed 55 / 58 sentences 
+		=== Extracted Relation ===
+		Sentence: Sviatlana Tsikhanouskaya says fights in homeland, Ukraine are linked by desire for democracy, independence from Russia Survey finds 95% who receive abnormal test results still favor immediate access through online portal Newly approved Harvard-wide policies foster a culture of respect, and a community where individuals can thrive View all of Commencement 2017 Photo by Justin Ide
+		Subject: Sviatlana Tsikhanouskaya		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+[main, len(X), X]:  44 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Gilbert, Obj: National Book Critics Circle Award
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Chicago
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton Institute for Advanced Studies
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+
+	Extracted annotations for  17  out of total  58  sentences.
+	Relations extracted from this website: 23 (Overall: 26)
+
+URL (5 / 10): https://www.theatlantic.com/technology/archive/2019/02/and-then-there-was-thefacebookcom/582004/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 95 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: After all, it only existed in one place on Earth: Harvard University, where Mark Zuckerberg was a sophomore.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 95 sentences 
+	Processed 10 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: Sarah Goodin was there in Kirkland House too.
+		Subject: Sarah Goodin		Object: Kirkland House
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: “Supposedly, I am the first woman on Facebook,” Goodin, now an exhibit developer and interactive designer at the California Academy of Sciences, told me.
+		Subject: Goodin		Object: California Academy of Sciences
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: I don’t know for sure, but she was probably how I ended up on Facebook, because I, too, was in Kirkland House and was friends with Sarah Goodin.
+		Subject: Sarah Goodin		Object: Kirkland House
+		Duplicate. Ignoring this.
+		==========
+	Processed 25 / 95 sentences 
+	Processed 30 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: Everything about Facebook has changed from then to now, except Mark Zuckerberg and the network’s ability to spread.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: The education of Mark Zuckerberg Let’s stipulate that TheFacebook’s origins are contested by multiple people—famously, the Winklevosses, and less famously, Aaron Greenspan, another Harvard programmer.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Duplicate. Ignoring this.
+		==========
+	Processed 35 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: And competing systems existed at other universities, including Greenspan’s houseSYSTEM at Harvard and Columbia’s CUCommunity.
+		Subject: Greenspan		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: And competing systems existed at other universities, including Greenspan’s houseSYSTEM at Harvard and Columbia’s CUCommunity.
+		Subject: Greenspan		Object: Columbia
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: And competing systems existed at other universities, including Greenspan’s houseSYSTEM at Harvard and Columbia’s CUCommunity.
+		Subject: CUCommunity		Object: Columbia
+		Adding to set of extracted relations.
+		==========
+	Processed 40 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: The computer-science professor Harry Lewis was Harvard College’s dean from 1995 until June 2003.
+		Subject: Harry Lewis		Object: Harvard College
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: Zuckerberg had scraped the Harvard Crimson archives and created a network map connecting people who’d been mentioned together in Crimson stories.
+		Subject: Zuckerberg		Object: Harvard Crimson
+		Adding to set of extracted relations.
+		==========
+	Processed 50 / 95 sentences 
+	Processed 55 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: Charlie Cheever was one of the first Harvard alumni to join TheFacebook, and eventually one of its key early employees.
+		Subject: Charlie Cheever		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 60 / 95 sentences 
+	Processed 65 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: “It was really just a directory,” recalled Meagan Marks, another Harvard student who became an early Facebook employee in 2006.
+		Subject: Meagan Marks		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 70 / 95 sentences 
+	Processed 75 / 95 sentences 
+		=== Extracted Relation ===
+		Sentence: “I don’t remember anything like ‘I’m going on Facebook to do this,’” Teddy Wright, another Kirkland resident, who is now a teaching associate at the University of Washington School of Social Work, told me.
+		Subject: Teddy Wright		Object: University of Washington School of Social Work
+		Adding to set of extracted relations.
+		==========
+	Processed 80 / 95 sentences 
+	Processed 85 / 95 sentences 
+	Processed 90 / 95 sentences 
+	Processed 95 / 95 sentences 
+[main, len(X), X]:  54 Relation set:
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: CUCommunity, Obj: Columbia
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Gilbert, Obj: National Book Critics Circle Award
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Columbia
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Chicago
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton Institute for Advanced Studies
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Sarah Goodin, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Goodin, Obj: California Academy of Sciences
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Crimson
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Meagan Marks, Obj: Harvard
+	Relation: Schools_Attended, Subj: Teddy Wright, Obj: University of Washington School of Social Work
+
+	Extracted annotations for  12  out of total  95  sentences.
+	Relations extracted from this website: 11 (Overall: 14)
+
+URL (6 / 10): https://www.thecrimson.com/article/2004/6/10/mark-e-zuckerberg-06-the-whiz/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 99 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Wearing a yellow t-shirt, blue jeans, and open-toe Adidas sandals, Zuckerberg sits on a ragged couch in the middle of a messy Kirkland House common room, surrounded by strewn clothes and half-closed boxes.
+		Subject: Zuckerberg		Object: Kirkland House
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 99 sentences 
+	Processed 10 / 99 sentences 
+	Processed 15 / 99 sentences 
+	Processed 20 / 99 sentences 
+	Processed 25 / 99 sentences 
+	Processed 30 / 99 sentences 
+	Processed 35 / 99 sentences 
+		=== Extracted Relation ===
+		Sentence: Zuckerberg found himself brought before the Administrative Board for breaching security, violating copyrights and violating individuals’ privacy by using students’ online facebook photos without permission.
+		Subject: Zuckerberg		Object: Administrative Board
+		Adding to set of extracted relations.
+		==========
+	Processed 40 / 99 sentences 
+		=== Extracted Relation ===
+		Sentence: Unreleased Zuckerberg programs include a screensaver that displays the user’s AOL Instant Messenger away messages and an application that synchronizes MP3 players on multiple computers.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: “The original plan here, which I actually got too lazy and never ended up executing,” Zuckerberg says, “was to get everyone at Harvard to play the same song at the same time.
+		Subject: Mark Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 99 sentences 
+	Processed 50 / 99 sentences 
+		=== Extracted Relation ===
+		Sentence: but I’m not”), Zuckerberg attended local Ardsley High School until his junior year, when he transferred to Phillips Exeter Academy.
+		Subject: Mark Zuckerberg		Object: Ardsley High School
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: but I’m not”), Zuckerberg attended local Ardsley High School until his junior year, when he transferred to Phillips Exeter Academy.
+		Subject: Mark Zuckerberg		Object: Phillips Exeter Academy
+		Adding to set of extracted relations.
+		==========
+	Processed 55 / 99 sentences 
+	Processed 60 / 99 sentences 
+	Processed 65 / 99 sentences 
+		=== Extracted Relation ===
+		Sentence: With a classmate, Adam D’Angelo (now a student at CalTech and still a close friend) Zuckerberg designed a program that learned a listener’s musical tastes, and then designed a playlist to match.
+		Subject: Adam D'Angelo		Object: CalTech
+		Adding to set of extracted relations.
+		==========
+	Processed 70 / 99 sentences 
+	Processed 75 / 99 sentences 
+	Processed 80 / 99 sentences 
+		=== Extracted Relation ===
+		Sentence: Zuckerberg participated in a live television interview for CNBC, and says he has been wined and dined in Harvard Square by representatives from major software companies.
+		Subject: Zuckerberg		Object: Harvard Square
+		Adding to set of extracted relations.
+		==========
+	Processed 85 / 99 sentences 
+	Processed 90 / 99 sentences 
+		=== Extracted Relation ===
+		Sentence: Last month, Zuckerberg faced allegations that he stole the idea for an online Harvard social directory.
+		Subject: Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Three Pforzheimer seniors asked Zuckerberg to help program ConnectU, a site similar to thefacebook.com that launched last month.
+		Subject: Three Pforzheimer seniors		Object: Pforzheimer
+		Adding to set of extracted relations.
+		==========
+	Processed 95 / 99 sentences 
+[main, len(X), X]:  60 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: CUCommunity, Obj: Columbia
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: National Book Critics Circle Award
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Columbia
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Chicago
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton Institute for Advanced Studies
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Sarah Goodin, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Goodin, Obj: California Academy of Sciences
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Crimson
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Meagan Marks, Obj: Harvard
+	Relation: Schools_Attended, Subj: Teddy Wright, Obj: University of Washington School of Social Work
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Administrative Board
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Square
+	Relation: Schools_Attended, Subj: Three Pforzheimer seniors, Obj: Pforzheimer
+
+	Extracted annotations for  9  out of total  99  sentences.
+	Relations extracted from this website: 10 (Overall: 10)
+
+URL (7 / 10): https://www.forbes.com/profile/mark-zuckerberg/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 1 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  60 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: CUCommunity, Obj: Columbia
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: National Book Critics Circle Award
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Columbia
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Chicago
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton Institute for Advanced Studies
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Sarah Goodin, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Goodin, Obj: California Academy of Sciences
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Crimson
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Meagan Marks, Obj: Harvard
+	Relation: Schools_Attended, Subj: Teddy Wright, Obj: University of Washington School of Social Work
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Administrative Board
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Square
+	Relation: Schools_Attended, Subj: Three Pforzheimer seniors, Obj: Pforzheimer
+
+	Extracted annotations for  0  out of total  1  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (8 / 10): https://nymag.com/intelligencer/2016/06/mark-zuckerberg-harvard-2006-reunion.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 67 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Susanna Brock, a math teacher at Berkeley Carroll, the Harvard of Brooklyn’s K-12 institutions, had been conducting an experiment on whether single-sex math classes might improve the performance of female students.
+		Subject: Susanna Brock		Object: Berkeley Carroll
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Susanna Brock, a math teacher at Berkeley Carroll, the Harvard of Brooklyn’s K-12 institutions, had been conducting an experiment on whether single-sex math classes might improve the performance of female students.
+		Subject: Susanna Brock		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Kirkland House was the Harvard dormitory where, in the fall of 2003, Mark Zuckerberg began work on Thefacebook.com.
+		Subject: Mark Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Zuckerberg came to Cambridge as a member of the class of 2006 and had he not joined Bill Gates, Matt Damon, and Pete Seeger as Harvard dropouts, he might have been just another one of his overachieving classmates who had come to the reunion to update everyone on his latest promotion.
+		Subject: Bill Gates		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Zuckerberg came to Cambridge as a member of the class of 2006 and had he not joined Bill Gates, Matt Damon, and Pete Seeger as Harvard dropouts, he might have been just another one of his overachieving classmates who had come to the reunion to update everyone on his latest promotion.
+		Subject: Matt Damon		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Zuckerberg came to Cambridge as a member of the class of 2006 and had he not joined Bill Gates, Matt Damon, and Pete Seeger as Harvard dropouts, he might have been just another one of his overachieving classmates who had come to the reunion to update everyone on his latest promotion.
+		Subject: Pete Seeger		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 67 sentences 
+	Processed 20 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Some choose to abstain, but others go on for pages, or compose entries to the tune of “I Dreamed a Dream” from Les Misérables: “I dream of Harvard years gone by / With precious friends, each day a story.”
+		Subject: I		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: “I had no idea he was gonna fucking build Facebook,” Bede Moore, one of Zuckerberg’s freshman-year roommates, told me a few hundred yards from where they had lived in Straus Hall.
+		Subject: Bede Moore		Object: Straus Hall
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Most everyone who knew Zuckerberg at Harvard rejects the heartless version presented in The Social Network, and Moore, an Australian who came to Harvard as a rower, remembered him as a kind, friendly, and generous roommate.
+		Subject: Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Most everyone who knew Zuckerberg at Harvard rejects the heartless version presented in The Social Network, and Moore, an Australian who came to Harvard as a rower, remembered him as a kind, friendly, and generous roommate.
+		Subject: Moore		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 67 sentences 
+	Processed 35 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: By semester’s end, Facebook had more than a hundred-thousand users and Zuckerberg left for California, but the site’s growth was still manageable enough that Chris Hughes, one of Zuckerberg’s sophomore-year roommates, was able to perform his duties as Facebook’s spokesman while studying abroad in Paris.
+		Subject: Chris Hughes		Object: Paris
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: It wasn’t especially odd for a Harvard undergraduate to take time off to work on an extracurricular project, and many people assumed Zuckerberg would return to Cambridge after a semester or two.
+		Subject: Zuckerberg		Object: Harvard
+		Duplicate. Ignoring this.
+		==========
+	Processed 40 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: If we exclude Weezer’s Rivers Cuomo, 45, who spent nearly a decade taking classes between tours before graduating in 2006, the class’s first celebrity was Nick McDonell, who wrote his debut novel in high school, to considerable acclaim, and published his second while at Harvard.
+		Subject: Rivers Cuomo		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 67 sentences 
+	Processed 50 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: In terms of tech entrepreneurs, there was Alexa Hirschfeld, who co-founded Paperless Post, and Trip Adler of Scribd, a “Netflix for reading,” and, well … people were certain there were other entrepreneurs in their class, but none of their names were coming immediately to mind.
+		Subject: Alexa Hirschfeld		Object: Paperless Post
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In terms of tech entrepreneurs, there was Alexa Hirschfeld, who co-founded Paperless Post, and Trip Adler of Scribd, a “Netflix for reading,” and, well … people were certain there were other entrepreneurs in their class, but none of their names were coming immediately to mind.
+		Subject: Trip Adler		Object: Scribd
+		Adding to set of extracted relations.
+		==========
+	Processed 55 / 67 sentences 
+	Processed 60 / 67 sentences 
+	Processed 65 / 67 sentences 
+[main, len(X), X]:  72 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Alexa Hirschfeld, Obj: Paperless Post
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard
+	Relation: Schools_Attended, Subj: Bede Moore, Obj: Straus Hall
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: CUCommunity, Obj: Columbia
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Paris
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Columbia
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Gilbert, Obj: National Book Critics Circle Award
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: I, Obj: Harvard
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Chicago
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton Institute for Advanced Studies
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Sarah Goodin, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Goodin, Obj: California Academy of Sciences
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Crimson
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Meagan Marks, Obj: Harvard
+	Relation: Schools_Attended, Subj: Teddy Wright, Obj: University of Washington School of Social Work
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Administrative Board
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Square
+	Relation: Schools_Attended, Subj: Three Pforzheimer seniors, Obj: Pforzheimer
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Moore, Obj: Harvard
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Rivers Cuomo, Obj: Harvard
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Trip Adler, Obj: Scribd
+
+	Extracted annotations for  10  out of total  67  sentences.
+	Relations extracted from this website: 14 (Overall: 15)
+
+URL (9 / 10): https://www.npr.org/sections/thetwo-way/2017/05/26/530159142/mark-zuckerberg-tells-harvard-graduates-to-embrace-globalism-a-sense-of-purpose
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 25 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 25 sentences 
+		=== Extracted Relation ===
+		Sentence: The 33-year-old Zuckerberg spoke of himself as a member of the same "millennial" generation as that of Harvard's graduates.
+		Subject: Zuckerberg		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 25 sentences 
+		=== Extracted Relation ===
+		Sentence: Zuckerberg and his wife Priscilla Chan have pledged to give away 99 percent of their shares in Facebook over the course of their lives.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 25 sentences 
+	Processed 20 / 25 sentences 
+		=== Extracted Relation ===
+		Sentence: Zuckerberg talked of building communities, and branded his efforts at expanding Facebook as "connecting one community at a time, and keeping at it until one day we connect the whole world."
+		Subject: Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 25 sentences 
+[main, len(X), X]:  72 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Alexa Hirschfeld, Obj: Paperless Post
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard
+	Relation: Schools_Attended, Subj: Bede Moore, Obj: Straus Hall
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: CUCommunity, Obj: Columbia
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Paris
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Columbia
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Gilbert, Obj: National Book Critics Circle Award
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: I, Obj: Harvard
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Chicago
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton Institute for Advanced Studies
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Sarah Goodin, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Goodin, Obj: California Academy of Sciences
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Crimson
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Meagan Marks, Obj: Harvard
+	Relation: Schools_Attended, Subj: Teddy Wright, Obj: University of Washington School of Social Work
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Administrative Board
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Square
+	Relation: Schools_Attended, Subj: Three Pforzheimer seniors, Obj: Pforzheimer
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Moore, Obj: Harvard
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Rivers Cuomo, Obj: Harvard
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Trip Adler, Obj: Scribd
+
+	Extracted annotations for  3  out of total  25  sentences.
+	Relations extracted from this website: 3 (Overall: 3)
+
+URL (10 / 10): https://www.businessinsider.com/how-mark-zuckerberg-hacked-into-the-harvard-crimson-2010-3
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 67 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Jump to  In the spring of 2004, Mark Zuckerberg used data from his successful new web site, TheFacebook.com, to hack into the email accounts of two Harvard Crimson journalists.
+		Subject: Mark Zuckerberg		Object: Harvard Crimson
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: This is the story of how, in 2004, Mark Zuckerberg hacked into the email accounts of two Harvard Crimson reporters using data obtained from TheFacebook.com's logs.
+		Subject: Mark Zuckerberg		Object: Harvard Crimson
+		Duplicate. Ignoring this.
+		==========
+	Processed 5 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Just six days after the site launched, three Harvard seniors, Cameron Winklevoss, Tyler Winklevoss, and Divya Narendra, accused Mark of intentionally misleading them into believing he would help them build a social network called HarvardConnection.com, while he was instead using their ideas to build a competing product.
+		Subject: Cameron Winklevoss		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Just six days after the site launched, three Harvard seniors, Cameron Winklevoss, Tyler Winklevoss, and Divya Narendra, accused Mark of intentionally misleading them into believing he would help them build a social network called HarvardConnection.com, while he was instead using their ideas to build a competing product.
+		Subject: Tyler Winklevoss		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Just six days after the site launched, three Harvard seniors, Cameron Winklevoss, Tyler Winklevoss, and Divya Narendra, accused Mark of intentionally misleading them into believing he would help them build a social network called HarvardConnection.com, while he was instead using their ideas to build a competing product.
+		Subject: Divya Narendra		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: After Mark launched TheFacebook.com, Cameron, Tyler and Divya hired a series of developers to build HarvardConnection -- the site Mark Zuckerberg had told them he would build but did not.
+		Subject: Mark Zuckerberg		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: After Mark launched TheFacebook.com, Cameron, Tyler and Divya hired a series of developers to build HarvardConnection -- the site Mark Zuckerberg had told them he would build but did not.
+		Subject: Cameron Winklevoss		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: After Mark launched TheFacebook.com, Cameron, Tyler and Divya hired a series of developers to build HarvardConnection -- the site Mark Zuckerberg had told them he would build but did not.
+		Subject: Tyler Winklevoss		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: After Mark launched TheFacebook.com, Cameron, Tyler and Divya hired a series of developers to build HarvardConnection -- the site Mark Zuckerberg had told them he would build but did not.
+		Subject: Divya Narendra		Object: Harvard University
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Sometime during the 14 days leading up to May 28 -- the editors at Harvard's student newspaper, the Crimson, received an email in the their "tips" inbox from Cameron Winklevoss, one of the founders of ConnectU.
+		Subject: Cameron Winklevoss		Object: Harvard
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: This email presented the argument Cameron Winklevoss, Tyler Winklevoss, and Divvya Narenda had already brought to Harvard's Administration Board and to Mark Zuckerberg -- that TheFacebook.com was the product of Mark Zuckerberg's fraud against the ConnectU team.
+		Subject: Cameron Winklevoss		Object: Harvard's Administration Board
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: This email presented the argument Cameron Winklevoss, Tyler Winklevoss, and Divvya Narenda had already brought to Harvard's Administration Board and to Mark Zuckerberg -- that TheFacebook.com was the product of Mark Zuckerberg's fraud against the ConnectU team.
+		Subject: Tyler Winklevoss		Object: Harvard's Administration Board
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: This email presented the argument Cameron Winklevoss, Tyler Winklevoss, and Divvya Narenda had already brought to Harvard's Administration Board and to Mark Zuckerberg -- that TheFacebook.com was the product of Mark Zuckerberg's fraud against the ConnectU team.
+		Subject: Divvya Narenda		Object: Harvard's Administration Board
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Since the Winklevoss brothers were best known at Harvard for being exceptional rowers, the story was assigned to Crimson sports writer Tim McGinn.
+		Subject: Winklevoss brothers		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: When Mark arrived at the Crimson, he asked Tim and Elisabeth Theodore, an editor helping with the story, to sign a non-disclosure agreement so that he could show them the work he'd done on HarvardConnection.
+		Subject: Tim		Object: Crimson
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: When Mark arrived at the Crimson, he asked Tim and Elisabeth Theodore, an editor helping with the story, to sign a non-disclosure agreement so that he could show them the work he'd done on HarvardConnection.
+		Subject: Elisabeth Theodore		Object: Crimson
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: When Mark arrived at the Crimson, he asked Tim and Elisabeth Theodore, an editor helping with the story, to sign a non-disclosure agreement so that he could show them the work he'd done on HarvardConnection.
+		Subject: Mark		Object: HarvardConnection
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: On a Crimson computer, Mark brought up what he described as the work he did on HarvardConnection.
+		Subject: Mark		Object: HarvardConnection
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Mark's goal seemed to have been to show Tim and Elizabeth, the Crimson reporter and editor, that, other than the ways in which social networks are all the same, there were no features or designs in the work he did on HarvardConnection.com
+		Subject: Mark		Object: HarvardConnectioncom
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: But then, perhaps a day or so later, the Winklevoss brothers reached out to Tim McGinn again, this time to tell him that another Harvard rower -- one named John Thomson -- had told them that Mark had stolen something for TheFacebook from him, too.
+		Subject: Winklevoss brothers		Object: Harvard
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: But then, perhaps a day or so later, the Winklevoss brothers reached out to Tim McGinn again, this time to tell him that another Harvard rower -- one named John Thomson -- had told them that Mark had stolen something for TheFacebook from him, too.
+		Subject: John Thomson		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 67 sentences 
+	Processed 35 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Mark Zuckerberg was not content to wait until the morning to find out if the Crimson would include John's accusations in its story.
+		Subject: Mark Zuckerberg		Object: None
+		Adding to set of extracted relations.
+		==========
+	Processed 40 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Here's how Mark described his hack to a friend: Mark used his site, TheFacebook.com, to look up members of the site who identified themselves as members of the Crimson.
+		Subject: Mark		Object: Crimson
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: If the cases in which they had entered failed logins, Mark tried to use them to access the Crimson members' Harvard email accounts.
+		Subject: Mark		Object: Harvard
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Another email Mark read was this one, from Crimson managing editor Elisabeth Theodore to Tim McGinn:
+		Subject: Elisabeth Theodore		Object: Crimson
+		Duplicate. Ignoring this.
+		==========
+	Processed 50 / 67 sentences 
+	Processed 55 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: The unquestioned fact is that since leaving Harvard for Silicon Valley nearly six years ago, Mark has led Facebook's growth from a college website to a global service playing an important role in the lives of over 400 million people."
+		Subject: Mark		Object: Harvard
+		Duplicate. Ignoring this.
+		==========
+	Processed 60 / 67 sentences 
+	Processed 65 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: A source close to the company suggests that it was the fallout from early privacy violations like this one -- fallout that has included reputational damage to Mark Zuckerberg and expensive and prolonged litigation with ConnectU -- that has shaped Facebook's current privacy policies and made Mark the CEO he is today.
+		Subject: Mark Zuckerberg		Object: ConnectU
+		Adding to set of extracted relations.
+		==========
+[main, len(X), X]:  89 Relation set:
+	Relation: Schools_Attended, Subj: Adam D'Angelo, Obj: CalTech
+	Relation: Schools_Attended, Subj: Alexa Hirschfeld, Obj: Paperless Post
+	Relation: Schools_Attended, Subj: Andrew McCollum, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Arie Hasit, Obj: Student Dorms
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Charlie Cheever, Obj: Harvard
+	Relation: Schools_Attended, Subj: Bill Gates, Obj: Harvard
+	Relation: Schools_Attended, Subj: Bede Moore, Obj: Straus Hall
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Eduardo Saverin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Indiana University
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Cornell University
+	Relation: Schools_Attended, Subj: CUCommunity, Obj: Columbia
+	Relation: Schools_Attended, Subj: Jones, Obj: Harvard
+	Relation: Schools_Attended, Subj: Chris Hughes, Obj: Paris
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Schools_Attended, Subj: Cameron Winklevoss, Obj: Harvard's Administration Board
+	Relation: Schools_Attended, Subj: Elisabeth Theodore, Obj: Crimson
+	Relation: Schools_Attended, Subj: Huda Y Zoghbi, Obj: Baylor College of Medicine
+	Relation: Schools_Attended, Subj: Mark, Obj: Harvard
+	Relation: Schools_Attended, Subj: Dustin Moskovitz, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Columbia
+	Relation: Schools_Attended, Subj: Harry Lewis, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: High School
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: The Social Network
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Ardsley High School
+	Relation: Schools_Attended, Subj: Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Peter Currie, Obj: Netscape
+	Relation: Schools_Attended, Subj: Gilbert, Obj: National Book Critics Circle Award
+	Relation: Schools_Attended, Subj: Matt Damon, Obj: Harvard
+	Relation: Schools_Attended, Subj: Kris Snibbe, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: MIT Technology Review
+	Relation: Schools_Attended, Subj: I, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard Crimson
+	Relation: Schools_Attended, Subj: Divya Narendra, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Divvya Narenda, Obj: Harvard's Administration Board
+	Relation: Schools_Attended, Subj: Rabin, Obj: Princeton Institute for Advanced Studies
+	Relation: Schools_Attended, Subj: Mark, Obj: HarvardConnection
+	Relation: Schools_Attended, Subj: John Thomson, Obj: Harvard
+	Relation: Schools_Attended, Subj: Mark, Obj: Crimson
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: ConnectU
+	Relation: Schools_Attended, Subj: Sarah Goodin, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Goodin, Obj: California Academy of Sciences
+	Relation: Schools_Attended, Subj: Greenspan, Obj: Harvard
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard
+	Relation: Schools_Attended, Subj: Norman R Augustine, Obj: Doctor of Laws
+	Relation: Schools_Attended, Subj: Priscilla Chan, Obj: Harvard College
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Crimson
+	Relation: Schools_Attended, Subj: Sandra M Gilbert, Obj: University of California, Davis
+	Relation: Schools_Attended, Subj: Meagan Marks, Obj: Harvard
+	Relation: Schools_Attended, Subj: Teddy Wright, Obj: University of Washington School of Social Work
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Kirkland House
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Administrative Board
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: N/A
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard Square
+	Relation: Schools_Attended, Subj: Three Pforzheimer seniors, Obj: Pforzheimer
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Berkeley Carroll
+	Relation: Schools_Attended, Subj: Susanna Brock, Obj: Harvard
+	Relation: Schools_Attended, Subj: Gilbert, Obj: Princeton University
+	Relation: Schools_Attended, Subj: Zuckerberg, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Pete Seeger, Obj: Harvard
+	Relation: Schools_Attended, Subj: Walter E Massey, Obj: School of the Art Institute of Chicago (SAIC)
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Harvard
+	Relation: Schools_Attended, Subj: Moore, Obj: Harvard
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Illinois, Urbana-Champaign
+	Relation: Schools_Attended, Subj: Rivers Cuomo, Obj: Harvard
+	Relation: Schools_Attended, Subj: Massey, Obj: Brown University
+	Relation: Schools_Attended, Subj: Trip Adler, Obj: Scribd
+	Relation: Schools_Attended, Subj: Massey, Obj: University of California system
+	Relation: Schools_Attended, Subj: Massey, Obj: University of Chicago
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Priscilla, Obj: Harvard
+	Relation: Schools_Attended, Subj: Michael Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Tyler Winklevoss, Obj: Harvard's Administration Board
+	Relation: Schools_Attended, Subj: Rabin, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Winklevoss brothers, Obj: Harvard
+	Relation: Schools_Attended, Subj: Tim, Obj: Crimson
+	Relation: Schools_Attended, Subj: Rabin, Obj: Hebrew University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: United States Senate Committee on Commerce, Science, and Transportation
+	Relation: Schools_Attended, Subj: Williams, Obj: American Film Institute
+	Relation: Schools_Attended, Subj: Mark, Obj: HarvardConnectioncom
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: None
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Forbes
+	Relation: Schools_Attended, Subj: Sviatlana Tsikhanouskaya, Obj: Harvard University
+	Relation: Schools_Attended, Subj: Mark Zuckerberg, Obj: Phillips Exeter Academy
+
+	Extracted annotations for  17  out of total  67  sentences.
+	Relations extracted from this website: 21 (Overall: 27)
+

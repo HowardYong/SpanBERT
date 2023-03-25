@@ -1,0 +1,578 @@
+
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Live_In
+Threshold       =   0.0
+Query           = megan repinoe redding
+# of Tuples     =     2
+Loading necessary libraries...
+=========== Iteration: 0 - Query: megan repinoe redding ===========
+URL (1 / 10): https://www.mercurynews.com/2019/07/06/womens-world-cup-hometown-star-out-of-step-in-californias-trump-country/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 79 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Today's e-Edition Get Morning Report and other email newsletters  Get Morning Report and other email newsletters Today's e-Edition Trending:  Megan Rapinoe of the USA looks on during the USA Training Session at Lyon Training Center on July 01, 2019 in Lyon, France.
+		Subject: Megan Rapinoe		Object: Lyon
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: U.S. women's national team winger Megan Rapinoe grew up in Redding.
+		Subject: Megan Rapinoe		Object: Redding
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: (Anda Chu/Bay Area News Group)  Jim Rapinoe the father of U.S. women's national team winger Megan Rapinoe poses for a photograph on the soccer field named after his daughter at the California Soccer Park in Redding, Calif., on Thursday, July 4, 2019.
+		Subject: Jim Rapinoe		Object: Redding, Calif
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 79 sentences 
+	Processed 10 / 79 sentences 
+		=== Extracted Relation ===
+		Sentence: A street sign 15 Rapinoe Way named after U.S. women's national team winger Megan Rapinoe is photographed near the California Soccer Park in Redding, Calif., on Thursday, July 4, 2019.
+		Subject: Megan Rapinoe		Object: California
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 79 sentences 
+		=== Extracted Relation ===
+		Sentence: U.S. women's national team winger Megan Rapinoe grew up in Redding.
+		Subject: Megan Rapinoe		Object: Redding
+		Duplicate. Ignoring this.
+		==========
+	Processed 20 / 79 sentences 
+		=== Extracted Relation ===
+		Sentence: U.S. women's national team winger Megan Rapino grew up in Redding.
+		Subject: Megan Rapino		Object: Redding
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 79 sentences 
+		=== Extracted Relation ===
+		Sentence: Rapinoe grew up in Redding.
+		Subject: Rapinoe		Object: Redding
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Rapinoe grew up in Redding.
+		Subject: Rapinoe		Object: Redding
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: (Anda Chu/Bay Area News Group)  Joanne Rice, left, and Noralene, who did not wish to give her last, both of Redding, attend the Redding Freedom Festival Fourth of July celebration at the Redding Civic Auditorium in Redding, Calif., on Thursday, July 4, 2019.
+		Subject: Joanne Rice		Object: Redding
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: (Anda Chu/Bay Area News Group)  Joanne Rice, left, and Noralene, who did not wish to give her last, both of Redding, attend the Redding Freedom Festival Fourth of July celebration at the Redding Civic Auditorium in Redding, Calif., on Thursday, July 4, 2019.
+		Subject: Noralene		Object: Redding
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 79 sentences 
+	Processed 35 / 79 sentences 
+		=== Extracted Relation ===
+		Sentence: But Roberts’ comment underscores the uneasy relationship between the woman who has become the defiant face of U.S. soccer and the sun-baked land of Trump supporters she calls home.
+		Subject: woman		Object: US
+		Adding to set of extracted relations.
+		==========
+	Processed 40 / 79 sentences 
+	Processed 45 / 79 sentences 
+	Processed 50 / 79 sentences 
+	Processed 55 / 79 sentences 
+	Processed 60 / 79 sentences 
+	Processed 65 / 79 sentences 
+	Processed 70 / 79 sentences 
+	Processed 75 / 79 sentences 
+[main, len(X), X]:  9 Relation set:
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: woman, Obj: US
+
+	Extracted annotations for  10  out of total  79  sentences.
+	Relations extracted from this website: 9 (Overall: 11)
+
+URL (2 / 10): https://www.redding.com/story/news/local/2019/07/08/after-world-cup-win-and-local-controversy-megan-rapinoe-still-praises-hometown-love/1679235001/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 27 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Shasta County residents might be divided over homegrown soccer superstar Megan Rapinoe's outspoken political beliefs, but the 34-year-old still considers local support "the best kind of love" after leading her country to World Cup victory over the Netherlands Sunday.
+		Subject: Megan Rapinoe		Object: Shasta County
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 27 sentences 
+	Processed 10 / 27 sentences 
+		=== Extracted Relation ===
+		Sentence: And while Rapinoe doesn't reflect the political beliefs of most of her home county, about 300 of its residents still gathered in Redding Sunday for a watch party of Rapinoe's final game in this year's Women's World Cup.
+		Subject: Rapinoe		Object: Redding
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 27 sentences 
+	Processed 20 / 27 sentences 
+		=== Extracted Relation ===
+		Sentence: More:Megan Rapinoe's feud with Trump draws mixed reactions in her hometown Shasta County Alayna Shulman covers a little bit of everything for the Record Searchlight.
+		Subject: Megan Rapinoe		Object: Shasta County
+		Duplicate. Ignoring this.
+		==========
+	Processed 25 / 27 sentences 
+[main, len(X), X]:  10 Relation set:
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: woman, Obj: US
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+
+	Extracted annotations for  3  out of total  27  sentences.
+	Relations extracted from this website: 2 (Overall: 3)
+
+URL (3 / 10): https://www.thedailybeast.com/the-mystical-megachurch-ruling-over-world-cup-soccer-star-megan-rapinoes-hometown
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 67 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: SEARCH Bethel Church in Redding, California, is pro-Trump, believes in conversion therapy, and endorses “faith healing” and “dead raising”—a far cry from its most famous resident.
+		Subject: most famous resident		Object: Bethel Church in Redding, California
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In the hours after Megan Rapinoe and the U.S. women’s national soccer team’s World Cup victory, the footballer celebrated on Instagram with a photo of her hometown paper, the Record Searchlight.
+		Subject: Megan Rapinoe		Object: Redding
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Rapinoe grew up in the small logging town of Redding, California, and has maintained a close relationship with the community.
+		Subject: Rapinoe		Object: Redding, California
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Shasta County, represented by Republican Doug LaMalfa in the House, is one of the most solidly red counties in California—roughly 64 percent of local voters are registered Republicans and in 2016, the county turned out overwhelmingly for Trump, including Rapinoe’s father.
+		Subject: Doug LaMalfa		Object: Shasta County
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 67 sentences 
+	Processed 20 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: The multimillion-dollar revivalist megachurch has stirred controversy in Rapinoe’s hometown and throughout the religious world for its embrace of consumerist Christianity, extensive gay conversion therapy programs (Rapinoe is an out lesbian), and semi-mystical practices.
+		Subject: Rapinoe		Object: Rapinoe's hometown
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Bethel wields immense local influence: of Redding’s 90,000 residents, 11,233 are Bethel members, according to a report from northern California magazine A News Cafe.
+		Subject: Bethel members		Object: Redding
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 67 sentences 
+	Processed 30 / 67 sentences 
+	Processed 35 / 67 sentences 
+	Processed 40 / 67 sentences 
+	Processed 45 / 67 sentences 
+		=== Extracted Relation ===
+		Sentence: Will Smith, a former Bethel member who lives in the Bay Area, said congregants often approach his friend’s son, who lives with cerebral palsy, offering to cure his illness—a gesture the child and his parents find distressing.
+		Subject: Will Smith		Object: Bay Area
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Will Smith, a former Bethel member who lives in the Bay Area, said congregants often approach his friend’s son, who lives with cerebral palsy, offering to cure his illness—a gesture the child and his parents find distressing.
+		Subject: his friend's son		Object: Bay Area
+		Adding to set of extracted relations.
+		==========
+	Processed 50 / 67 sentences 
+	Processed 55 / 67 sentences 
+	Processed 60 / 67 sentences 
+	Processed 65 / 67 sentences 
+[main, len(X), X]:  17 Relation set:
+	Relation: Live_In, Subj: Bethel members, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: woman, Obj: US
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: most famous resident, Obj: Bethel Church in Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Rapinoe's hometown
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: his friend's son, Obj: Bay Area
+
+	Extracted annotations for  7  out of total  67  sentences.
+	Relations extracted from this website: 8 (Overall: 8)
+
+URL (4 / 10): https://www.actionnewsnow.com/news/local/biden-to-award-medal-of-freedom-to-redding-native-megan-rapinoe/article_b2c769ac-f955-11ec-be4a-13d2127552d7.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 6 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: WASHINGTON - Redding native Megan Rapinoe will be awarded the highest civilian honor in the United States.
+		Subject: Megan Rapinoe		Object: Redding
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 6 sentences 
+[main, len(X), X]:  17 Relation set:
+	Relation: Live_In, Subj: Bethel members, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: woman, Obj: US
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: most famous resident, Obj: Bethel Church in Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Rapinoe's hometown
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: his friend's son, Obj: Bay Area
+
+	Extracted annotations for  1  out of total  6  sentences.
+	Relations extracted from this website: 1 (Overall: 1)
+
+URL (5 / 10): https://krcrtv.com/news/local/reddings-megan-rapinoe-inducted-into-californias-hall-of-fame
+	Fetching text from url...
+	Webpage has no main text to extract. Skipping...
+URL (6 / 10): https://www.espn.com/espnw/sports/article/24486574/us-soccer-star-megan-rapinoe-launches-fire-relief-fund-redding-hometown
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 70 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Megan Rapinoe still starts most mornings in Redding, the northern California city near the Oregon border.
+		Subject: Megan Rapinoe		Object: Redding
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Among the biggest stars in women's soccer, a mainstay of the U.S. women's national team who has drawn paychecks everywhere from Seattle to Lyon, France, Rapinoe still needs a regular fix of stories from places like Jack's Grill, the Redding restaurant where her mom works.
+		Subject: Rapinoe		Object: Seattle
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 70 sentences 
+	Processed 10 / 70 sentences 
+	Processed 15 / 70 sentences 
+	Processed 20 / 70 sentences 
+		=== Extracted Relation ===
+		Sentence: Hoping to mimic, on whatever scale possible, what NFL standout J.J. Watt accomplished in raising money for Houston after Hurricane Harvey, she partnered with Shasta Regional Community Foundation to launch a fundraising drive with an initial goal of $100,000.
+		Subject: JJ Watt		Object: Houston
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 70 sentences 
+	Processed 30 / 70 sentences 
+		=== Extracted Relation ===
+		Sentence: It is also the seat of Shasta County, which Donald Trump won handily in the 2016 election, a winning margin topped in the state only by two more sparsely populated counties directly adjacent to Shasta.
+		Subject: Donald Trump		Object: Shasta County
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 70 sentences 
+	Processed 40 / 70 sentences 
+	Processed 45 / 70 sentences 
+	Processed 50 / 70 sentences 
+	Processed 55 / 70 sentences 
+	Processed 60 / 70 sentences 
+	Processed 65 / 70 sentences 
+	Processed 70 / 70 sentences 
+[main, len(X), X]:  20 Relation set:
+	Relation: Live_In, Subj: Bethel members, Obj: Redding
+	Relation: Live_In, Subj: Donald Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: most famous resident, Obj: Bethel Church in Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Rapinoe's hometown
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: his friend's son, Obj: Bay Area
+	Relation: Live_In, Subj: woman, Obj: US
+	Relation: Live_In, Subj: Rapinoe, Obj: Seattle
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+
+	Extracted annotations for  4  out of total  70  sentences.
+	Relations extracted from this website: 4 (Overall: 4)
+
+URL (7 / 10): https://en.wikipedia.org/wiki/Megan_Rapinoe
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 72 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 72 sentences 
+	Processed 10 / 72 sentences 
+	Processed 15 / 72 sentences 
+		=== Extracted Relation ===
+		Sentence: Rapinoe grew up in Redding, California, with her parents, Jim and Denise, and five siblings, including her fraternal twin Rachael Rapinoe.
+		Subject: Jim Rapinoe		Object: Redding, California
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Rapinoe grew up in Redding, California, with her parents, Jim and Denise, and five siblings, including her fraternal twin Rachael Rapinoe.
+		Subject: Denise Rapinoe		Object: Redding, California
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Rapinoe grew up in Redding, California, with her parents, Jim and Denise, and five siblings, including her fraternal twin Rachael Rapinoe.
+		Subject: Rachael Rapinoe		Object: Redding, California
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 72 sentences 
+	Processed 25 / 72 sentences 
+	Processed 30 / 72 sentences 
+		=== Extracted Relation ===
+		Sentence: Elk Grove United finished second at the nationals after the Lazers scored a game-winning goal in the second half.[25] Rapinoe and her sister attended the University of Portland in Portland, Oregon.
+		Subject: Rapinoe		Object: Portland, Oregon
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: The Rapinoe twins almost committed to Santa Clara University before choosing to play for the Portland Pilots on full scholarships.[26] Rapinoe played in the 2004 FIFA U-19 Women's World Championship in 2004, where the United States finished third.
+		Subject: Rapinoe twins		Object: Portland
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 72 sentences 
+	Processed 40 / 72 sentences 
+	Processed 45 / 72 sentences 
+	Processed 50 / 72 sentences 
+		=== Extracted Relation ===
+		Sentence: Despite her injury, she was one of four Portland players in the program's history, including Christine Sinclair, Tiffeny Milbrett, and Shannon MacMillan, to score 25 goals and 15 assists in two seasons.[19]
+		Subject: Christine Sinclair		Object: Portland
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Despite her injury, she was one of four Portland players in the program's history, including Christine Sinclair, Tiffeny Milbrett, and Shannon MacMillan, to score 25 goals and 15 assists in two seasons.[19]
+		Subject: Tiffeny Milbrett		Object: Portland
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Despite her injury, she was one of four Portland players in the program's history, including Christine Sinclair, Tiffeny Milbrett, and Shannon MacMillan, to score 25 goals and 15 assists in two seasons.[19]
+		Subject: Shannon MacMillan		Object: Portland
+		Adding to set of extracted relations.
+		==========
+	Processed 55 / 72 sentences 
+	Processed 60 / 72 sentences 
+	Processed 65 / 72 sentences 
+	Processed 70 / 72 sentences 
+[main, len(X), X]:  28 Relation set:
+	Relation: Live_In, Subj: Bethel members, Obj: Redding
+	Relation: Live_In, Subj: Denise Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Christine Sinclair, Obj: Portland
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Donald Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland, Oregon
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Rapinoe, Obj: Rapinoe's hometown
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: his friend's son, Obj: Bay Area
+	Relation: Live_In, Subj: woman, Obj: US
+	Relation: Live_In, Subj: Rapinoe, Obj: Seattle
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: most famous resident, Obj: Bethel Church in Redding, California
+	Relation: Live_In, Subj: Rachael Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe twins, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Tiffeny Milbrett, Obj: Portland
+	Relation: Live_In, Subj: Shannon MacMillan, Obj: Portland
+
+	Extracted annotations for  4  out of total  72  sentences.
+	Relations extracted from this website: 8 (Overall: 8)
+
+URL (8 / 10): https://anewscafe.com/2015/07/22/redding/soccer-star-megan-rapinoe-has-her-day-in-absentia-as-the-redding-council-discusses-drones-power-plants-and-salaries/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 43 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Even though she was 420 miles to the north, in Portland, Ore., Women’s World Cup soccer standout and Palo Cedro native Megan Rapinoe starred at Tuesday’s Redding City Council meeting as the mayor proclaimed July 21 Megan Rapinoe Day.
+		Subject: Megan Rapinoe		Object: Palo Cedro
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: “We are very honored to be here accepting this on Megan’s behalf,” Denise Rapinoe said, noting that her daughter was in Portland with her club team, the Seattle Reign, preparing for Wednesday’s match against the Portland Thorns.
+		Subject: Megan Rapinoe		Object: Seattle
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 43 sentences 
+	Processed 10 / 43 sentences 
+	Processed 15 / 43 sentences 
+	Processed 20 / 43 sentences 
+	Processed 25 / 43 sentences 
+	Processed 30 / 43 sentences 
+	Processed 35 / 43 sentences 
+	Processed 40 / 43 sentences 
+		=== Extracted Relation ===
+		Sentence: Jon Lewis is a freelance writer living in Redding.
+		Subject: Jon Lewis		Object: Redding
+		Adding to set of extracted relations.
+		==========
+[main, len(X), X]:  31 Relation set:
+	Relation: Live_In, Subj: Bethel members, Obj: Redding
+	Relation: Live_In, Subj: Denise Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Christine Sinclair, Obj: Portland
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Donald Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland, Oregon
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Palo Cedro
+	Relation: Live_In, Subj: Jon Lewis, Obj: Redding
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: his friend's son, Obj: Bay Area
+	Relation: Live_In, Subj: woman, Obj: US
+	Relation: Live_In, Subj: Rapinoe, Obj: Seattle
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: most famous resident, Obj: Bethel Church in Redding, California
+	Relation: Live_In, Subj: Rachael Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe twins, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Tiffeny Milbrett, Obj: Portland
+	Relation: Live_In, Subj: Shannon MacMillan, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Rapinoe's hometown
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Seattle
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+
+	Extracted annotations for  3  out of total  43  sentences.
+	Relations extracted from this website: 3 (Overall: 3)
+
+URL (9 / 10): https://www.californiamuseum.org/inductee/megan-rapinoe
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 13 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: (b. 1985) Sports Born and raised in Redding, California Soccer star Megan Rapinoe is known for her creative style of play and for her social activism.
+		Subject: Megan Rapinoe		Object: Redding, California
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 13 sentences 
+	Processed 10 / 13 sentences 
+[main, len(X), X]:  32 Relation set:
+	Relation: Live_In, Subj: Bethel members, Obj: Redding
+	Relation: Live_In, Subj: Denise Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Christine Sinclair, Obj: Portland
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Donald Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland, Oregon
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Palo Cedro
+	Relation: Live_In, Subj: Jon Lewis, Obj: Redding
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: his friend's son, Obj: Bay Area
+	Relation: Live_In, Subj: woman, Obj: US
+	Relation: Live_In, Subj: Rapinoe, Obj: Seattle
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: most famous resident, Obj: Bethel Church in Redding, California
+	Relation: Live_In, Subj: Rachael Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe twins, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Tiffeny Milbrett, Obj: Portland
+	Relation: Live_In, Subj: Shannon MacMillan, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Rapinoe's hometown
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Seattle
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+
+	Extracted annotations for  1  out of total  13  sentences.
+	Relations extracted from this website: 1 (Overall: 1)
+
+URL (10 / 10): https://www.mynspr.org/news/2019-07-09/hometown-fans-watch-as-redding-native-megan-rapinoe-wins-world-cup-top-scorer-best-player-awards
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 13 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Rapinoe is a North State native, hailing from the community of Palo Cedro.
+		Subject: Rapinoe		Object: Palo Cedro
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 13 sentences 
+		=== Extracted Relation ===
+		Sentence: Jim Gawel, who lives in Washington state, came all the way to Redding to watch Rapinoe, who also plays for his favorite team the Seattle Reign.
+		Subject: Jim Gawel		Object: Washington state
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Jim Gawel, who lives in Washington state, came all the way to Redding to watch Rapinoe, who also plays for his favorite team the Seattle Reign.
+		Subject: Rapinoe		Object: Seattle
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 13 sentences 
+[main, len(X), X]:  34 Relation set:
+	Relation: Live_In, Subj: Bethel members, Obj: Redding
+	Relation: Live_In, Subj: Denise Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Christine Sinclair, Obj: Portland
+	Relation: Live_In, Subj: Jim Gawel, Obj: Washington state
+	Relation: Live_In, Subj: Donald Trump, Obj: Shasta County
+	Relation: Live_In, Subj: Doug LaMalfa, Obj: Shasta County
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, Calif
+	Relation: Live_In, Subj: Megan Rapino, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Jim Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: JJ Watt, Obj: Houston
+	Relation: Live_In, Subj: Rapinoe, Obj: Portland, Oregon
+	Relation: Live_In, Subj: Joanne Rice, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Palo Cedro
+	Relation: Live_In, Subj: Jon Lewis, Obj: Redding
+	Relation: Live_In, Subj: Noralene, Obj: Redding
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: woman, Obj: US
+	Relation: Live_In, Subj: Rapinoe, Obj: Seattle
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Shasta County
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: California
+	Relation: Live_In, Subj: most famous resident, Obj: Bethel Church in Redding, California
+	Relation: Live_In, Subj: Rachael Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding, California
+	Relation: Live_In, Subj: Rapinoe twins, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Redding
+	Relation: Live_In, Subj: Tiffeny Milbrett, Obj: Portland
+	Relation: Live_In, Subj: Shannon MacMillan, Obj: Portland
+	Relation: Live_In, Subj: Rapinoe, Obj: Rapinoe's hometown
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Seattle
+	Relation: Live_In, Subj: Megan Rapinoe, Obj: Lyon
+	Relation: Live_In, Subj: Will Smith, Obj: Bay Area
+	Relation: Live_In, Subj: Rapinoe, Obj: Palo Cedro
+	Relation: Live_In, Subj: his friend's son, Obj: Bay Area
+
+	Extracted annotations for  2  out of total  13  sentences.
+	Relations extracted from this website: 3 (Overall: 3)
+
