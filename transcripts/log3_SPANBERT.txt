@@ -2,7 +2,7 @@
 Parameters:
 Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
 Engine key      = 2fd5e3d392b10d370
-OpenAI key      = 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
+OpenAI key      = XXXXX
 Method          = spanbert
 Relation        = Live_In
 Threshold       = 0.7
