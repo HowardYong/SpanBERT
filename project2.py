@@ -58,7 +58,7 @@ def extract_main_text(soup):
     main_text = ''
     paragraphs = soup.find_all()
     if len(paragraphs) > 10000:
-        print(f'\tTrimming webpage content from {sum(paragraphs, lambda x: len(x.get_text()))} to 10000 characters')
+        print(f'\tTrimming webpage content from {len(paragraphs)} to 10000 characters')
 
     rem_char = 10000
     for p in paragraphs:
@@ -102,8 +102,14 @@ def print_parameters(args):
     print('Loading necessary libraries...')
 
 
-def update_query(query, X, old_queries=None):
-    return 'Larry Page Google'
+def update_query(X, old_queries=None):
+    for i in range(len(X)):
+        extracted_rel = (X[i][1][0] + ' ' + X[i][1][-1]).lower()
+        print('extracted_rel: ', extracted_rel)
+        if extracted_rel not in old_queries:
+            return extracted_rel
+    print('Iterative set expansion has stalled retrieving k high-confidence tuples. Terminating...')
+    return None
 
 
 def main(args):
@@ -122,7 +128,7 @@ def main(args):
     n_iter = 0
     query =  args.q
     old_queries.add(query)
-    while len(X) < args.k:
+    while len(X) < args.k and query:
         res = search(args.google_api_key, args.google_engine_id, query)
         print(f'=========== Iteration: {n_iter} - Query: {query} ===========\n')
         for i in range(len(res['items'])):
@@ -156,9 +162,8 @@ def main(args):
 
             print(f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
             print(f'\tRelations extracted from this website: {len(relations)} (Overall: {overall_num_relations})\n')
-        break
         n_iter += 1
-        query = update_query(query, X, old_queries)
+        query = update_query(X, old_queries)
     
     print(f'\n================== ALL RELATIONS for {[rel for rel in X.relation]} ( {len(X)} ) =================\n')
     print(X, '\n')
