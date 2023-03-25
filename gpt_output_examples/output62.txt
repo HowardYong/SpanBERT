@@ -1,0 +1,748 @@
+
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Work_For
+Threshold       =   0.7
+Query           = sundar pichai google
+# of Tuples     =    35
+Loading necessary libraries...
+=========== Iteration: 0 - Query: sundar pichai google ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Sundar_Pichai
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 39 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: In 2010, Pichai also announced the open-sourcing of the new video codec VP8 by Google and introduced the new video format, WebM. The Chromebook was released in 2012.
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: In 2013, Pichai added Android to the list of Google products that he oversaw.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was selected to become the next CEO of Google on August 10, 2015, after previously being appointed Product Chief by CEO Larry Page.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was selected to become the next CEO of Google on August 10, 2015, after previously being appointed Product Chief by CEO Larry Page.
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was included in Time's annual list of the 100 most influential people in 2016[11] and 2020.[12]
+		Subject: Pichai		Object: Time
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: His mother, Lakshmi, was a stenographer, and his father, Regunatha Pichai, was an electrical engineer at GEC, the British conglomerate.
+		Subject: Regunatha Pichai		Object: GEC
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai worked in engineering and product management at Applied Materials and in management consulting at McKinsey & Company.[25]
+		Subject: Pichai		Object: Applied Materials
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai worked in engineering and product management at Applied Materials and in management consulting at McKinsey & Company.[25]
+		Subject: Pichai		Object: McKinsey & Company
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai joined Google in 2004, where he led the product management and innovation efforts for a suite of Google's client software products, including Google Chrome[26] and ChromeOS, as well as being largely responsible for Google Drive.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+	Processed 25 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: On March 13, 2013, Pichai added Android to the list of Google products that he oversaw.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was selected to become the next CEO of Google on August 10, 2015[35] after previously being appointed Product Chief by CEO, Larry Page.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was selected to become the next CEO of Google on August 10, 2015[35] after previously being appointed Product Chief by CEO, Larry Page.
+		Subject: Larry Page		Object: Google
+		Duplicate. Ignoring this.
+		==========
+	Processed 30 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai had been suggested as a contender for Microsoft's CEO in 2014, a position that was eventually given to Satya Nadella.[38][39]
+		Subject: Pichai		Object: Microsoft
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai had been suggested as a contender for Microsoft's CEO in 2014, a position that was eventually given to Satya Nadella.[38][39]
+		Subject: Satya Nadella		Object: Microsoft
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In December 2017, Pichai was a speaker at the World Internet Conference in China, where he stated that "a lot of work Google does is to help Chinese companies.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: In December 2019, Pichai became the CEO of Alphabet Inc.[47][48]
+		Subject: Pichai		Object: Alphabet Inc
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: On December 11, 2018, Sundar Pichai was questioned by the U.S. House Judiciary Committee on a range of Google-related issues such as possible political bias on Google's platforms, the company's alleged plans for a "censored search app" in China, and its privacy practices.[49] In response, Pichai informed the committee that Google employees cannot influence search results.
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In October 2020, the United States Senate Committee on Commerce, Science, and Transportation unanimously voted in favor of, and on a bipartisan basis, to subpoena Pichai, along with Facebook (today Meta) CEO Mark Zuckerberg and then Twitter CEO Jack Dorsey, to testify before the committee in response to lawmakers' concerns over the technology industry's exemption from Section 230 of the Communications Decency Act of 1934.[51]
+		Subject: Sundar Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: In October 2020, the United States Senate Committee on Commerce, Science, and Transportation unanimously voted in favor of, and on a bipartisan basis, to subpoena Pichai, along with Facebook (today Meta) CEO Mark Zuckerberg and then Twitter CEO Jack Dorsey, to testify before the committee in response to lawmakers' concerns over the technology industry's exemption from Section 230 of the Communications Decency Act of 1934.[51]
+		Subject: Mark Zuckerberg		Object: Facebook
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In October 2020, the United States Senate Committee on Commerce, Science, and Transportation unanimously voted in favor of, and on a bipartisan basis, to subpoena Pichai, along with Facebook (today Meta) CEO Mark Zuckerberg and then Twitter CEO Jack Dorsey, to testify before the committee in response to lawmakers' concerns over the technology industry's exemption from Section 230 of the Communications Decency Act of 1934.[51]
+		Subject: Jack Dorsey		Object: Twitter
+		Adding to set of extracted relations.
+		==========
+[main, len(X), X]:  12 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Time
+
+	Extracted annotations for  14  out of total  39  sentences.
+	Relations extracted from this website: 12 (Overall: 20)
+
+URL (2 / 10): https://blog.google/authors/sundar-pichai/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 5 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 5 sentences 
+[main, len(X), X]:  12 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Time
+
+	Extracted annotations for  0  out of total  5  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (3 / 10): https://www.cnbc.com/2023/02/10/google-employees-slam-ceo-sundar-pichai-for-rushed-bard-announcement.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 51 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 51 sentences 
+	Processed 10 / 51 sentences 
+	Processed 15 / 51 sentences 
+		=== Extracted Relation ===
+		Sentence: In this article Google employees are criticizing leadership, most notably CEO Sundar Pichai, for the way the company handled the announcement this week of its ChatGPT competitor called Bard.
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: On Monday, Google got ahead of a Microsoft event the following day and had Pichai publicly divulge some details of the company's chatbot technology.
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 51 sentences 
+		=== Extracted Relation ===
+		Sentence: During Google's Wednesday event, search boss Prabhakar Raghavan briefly shared some slides with examples of Bard’s capabilities.
+		Subject: Prabhakar Raghavan		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 51 sentences 
+	Processed 30 / 51 sentences 
+	Processed 35 / 51 sentences 
+	Processed 40 / 51 sentences 
+	Processed 45 / 51 sentences 
+	Processed 50 / 51 sentences 
+[main, len(X), X]:  13 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Time
+	Relation: Work_For, Subj: Prabhakar Raghavan, Obj: Google
+
+	Extracted annotations for  3  out of total  51  sentences.
+	Relations extracted from this website: 3 (Overall: 3)
+
+URL (4 / 10): https://twitter.com/sundarpichai
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 4 sentences. Processing each sentence to identify presence of entities of interest...
+[main, len(X), X]:  13 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Time
+	Relation: Work_For, Subj: Prabhakar Raghavan, Obj: Google
+
+	Extracted annotations for  0  out of total  4  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (5 / 10): https://www.britannica.com/biography/Sundar-Pichai
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 15 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Sundar Pichai, in full Pichai Sundararajan, (born June 10, 1972, Madras [now Chennai], Tamil Nadu, India), Indian-born American executive who was CEO of both Google, Inc. (2015– ), and its holding company, Alphabet Inc. (2019– ).
+		Subject: Sundar Pichai		Object: Google, Inc
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Sundar Pichai, in full Pichai Sundararajan, (born June 10, 1972, Madras [now Chennai], Tamil Nadu, India), Indian-born American executive who was CEO of both Google, Inc. (2015– ), and its holding company, Alphabet Inc. (2019– ).
+		Subject: Sundar Pichai		Object: Alphabet Inc
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: As a boy growing up in Madras, Pichai slept with his brother in the living room of the cramped family home, but his father, an electrical engineer at the British multinational GEC, saw that the boys received a good education.
+		Subject: Pichai's father		Object: GEC
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 15 sentences 
+	Processed 10 / 15 sentences 
+		=== Extracted Relation ===
+		Sentence: Therefore, when Google cofounders Larry Page and Sergey Brin announced the creation of Alphabet Inc., in August 2015, it came as no surprise to industry insiders that Pichai was named CEO of Google, which was reorganized as a subsidiary.
+		Subject: Larry Page		Object: Alphabet Inc
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Therefore, when Google cofounders Larry Page and Sergey Brin announced the creation of Alphabet Inc., in August 2015, it came as no surprise to industry insiders that Pichai was named CEO of Google, which was reorganized as a subsidiary.
+		Subject: Sergey Brin		Object: Alphabet Inc
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Therefore, when Google cofounders Larry Page and Sergey Brin announced the creation of Alphabet Inc., in August 2015, it came as no surprise to industry insiders that Pichai was named CEO of Google, which was reorganized as a subsidiary.
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 15 sentences 
+		=== Extracted Relation ===
+		Sentence: In December 2019 he also was named CEO of Alphabet, replacing Page, who stepped down.
+		Subject: Page		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+[main, len(X), X]:  19 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Page, Obj: Alphabet
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Time
+	Relation: Work_For, Subj: Prabhakar Raghavan, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai's father, Obj: GEC
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+
+	Extracted annotations for  4  out of total  15  sentences.
+	Relations extracted from this website: 7 (Overall: 7)
+
+URL (6 / 10): https://observer.com/2023/02/google-ceo-sundar-pichai-bard-chatbot/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 78 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Massive layoffs, a sharp drop in stock price and an embarrassing gaffe when showing off its latest artificial intelligence project have led some of Silicon Valley’s opinion leaders to call for the ouster of Google CEO Sundar Pichai, who also heads Alphabet, Google’s parent company.
+		Subject: Sundar Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai is too risk averse and not the right person to lead Google through growing challenges posed by Microsoft and other tech companies, wrote Om Malik, a venture capitalist and an influential tech writer, in a recent blog post.
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In a Twitter poll Malik started before his article was published, roughly half of the 170 participants agreed with him and said Pichai should step down.
+		Subject: Malik		Object: Twitter
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Malik is a partner at True Ventures, a San Francisco-based venture capital firm, and the author of tech newsletter “A Letter From Om.”
+		Subject: Malik		Object: True Ventures
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Skepticism over Pichai’s leadership rose after Google made a very public mistake last week when unveiling Bard, its answer to ChatGPT.
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 78 sentences 
+	Processed 15 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai, a former product manager at Google, took over the company from its cofounder Larry Page in 2015 at the completion of the formation of Alphabet, which owns Google, YouTube and a few other smaller tech subsidiaries.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai, a former product manager at Google, took over the company from its cofounder Larry Page in 2015 at the completion of the formation of Alphabet, which owns Google, YouTube and a few other smaller tech subsidiaries.
+		Subject: Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai, a former product manager at Google, took over the company from its cofounder Larry Page in 2015 at the completion of the formation of Alphabet, which owns Google, YouTube and a few other smaller tech subsidiaries.
+		Subject: Larry Page		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai was appointed CEO of Alphabet in December 2019 following the retirement of Sergey Brin, Google’s other cofounder.
+		Subject: Pichai		Object: Alphabet
+		Duplicate. Ignoring this.
+		==========
+	Processed 25 / 78 sentences 
+	Processed 30 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai is too risk averse and not the right person to lead Google through growing challenges posed by Microsoft and other tech companies, wrote Om Malik, a venture capitalist and an influential tech writer, in a recent blog post.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: In a Twitter poll Malik started before his article was published, roughly half of the 170 participants agreed with him and said Pichai should step down.
+		Subject: Malik		Object: Twitter
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Malik is a partner at True Ventures, a San Francisco-based venture capital firm, and the author of tech newsletter “A Letter From Om.”
+		Subject: Malik		Object: True Ventures
+		Duplicate. Ignoring this.
+		==========
+	Processed 35 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Skepticism over Pichai’s leadership rose after Google made a very public mistake last week when unveiling Bard, its answer to ChatGPT.
+		Subject: Sundar Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+	Processed 40 / 78 sentences 
+	Processed 45 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai, a former product manager at Google, took over the company from its cofounder Larry Page in 2015 at the completion of the formation of Alphabet, which owns Google, YouTube and a few other smaller tech subsidiaries.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai, a former product manager at Google, took over the company from its cofounder Larry Page in 2015 at the completion of the formation of Alphabet, which owns Google, YouTube and a few other smaller tech subsidiaries.
+		Subject: Pichai		Object: Alphabet
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai, a former product manager at Google, took over the company from its cofounder Larry Page in 2015 at the completion of the formation of Alphabet, which owns Google, YouTube and a few other smaller tech subsidiaries.
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai, a former product manager at Google, took over the company from its cofounder Larry Page in 2015 at the completion of the formation of Alphabet, which owns Google, YouTube and a few other smaller tech subsidiaries.
+		Subject: Larry Page		Object: Alphabet
+		Duplicate. Ignoring this.
+		==========
+	Processed 50 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai was appointed CEO of Alphabet in December 2019 following the retirement of Sergey Brin, Google’s other cofounder.
+		Subject: Pichai		Object: Alphabet
+		Duplicate. Ignoring this.
+		==========
+	Processed 55 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Asked who would be a better CEO than Pichai, Malik said it’s a tough pick but YouTube CEO Susan Wojcicki could be a strong candidate.
+		Subject: Susan Wojcicki		Object: YouTube
+		Adding to set of extracted relations.
+		==========
+	Processed 60 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: In a Twitter poll Malik started before his article was published, roughly half of the 170 participants agreed with him and said Pichai should step down.
+		Subject: Malik		Object: Twitter
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Malik is a partner at True Ventures, a San Francisco-based venture capital firm, and the author of tech newsletter “A Letter From Om.”
+		Subject: Malik		Object: True Ventures
+		Duplicate. Ignoring this.
+		==========
+	Processed 65 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Skepticism over Pichai’s leadership rose after Google made a very public mistake last week when unveiling Bard, its answer to ChatGPT.
+		Subject: Sundar Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+	Processed 70 / 78 sentences 
+	Processed 75 / 78 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai, a former product manager at Google, took over the company from its cofounder Larry Page in 2015 at the completion of th
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+[main, len(X), X]:  25 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Malik, Obj: True Ventures
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Page, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Malik, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Prabhakar Raghavan, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai's father, Obj: GEC
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Time
+	Relation: Work_For, Subj: Susan Wojcicki, Obj: YouTube
+
+	Extracted annotations for  18  out of total  78  sentences.
+	Relations extracted from this website: 9 (Overall: 23)
+
+URL (7 / 10): https://www.nytimes.com/2019/05/07/opinion/google-sundar-pichai-privacy.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 72 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 72 sentences 
+		=== Extracted Relation ===
+		Sentence: By Sundar Pichai Mr. Pichai is the chief executive of Google.
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 72 sentences 
+	Processed 15 / 72 sentences 
+	Processed 20 / 72 sentences 
+	Processed 25 / 72 sentences 
+	Processed 30 / 72 sentences 
+	Processed 35 / 72 sentences 
+	Processed 40 / 72 sentences 
+	Processed 45 / 72 sentences 
+	Processed 50 / 72 sentences 
+	Processed 55 / 72 sentences 
+	Processed 60 / 72 sentences 
+	Processed 65 / 72 sentences 
+	Processed 70 / 72 sentences 
+		=== Extracted Relation ===
+		Sentence: Sundar Pichai is the chief executive of Google.
+		Subject: Sundar Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+[main, len(X), X]:  25 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Malik, Obj: True Ventures
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Page, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Malik, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Prabhakar Raghavan, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai's father, Obj: GEC
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Time
+	Relation: Work_For, Subj: Susan Wojcicki, Obj: YouTube
+
+	Extracted annotations for  2  out of total  72  sentences.
+	Relations extracted from this website: 1 (Overall: 2)
+
+URL (8 / 10): https://www.bbc.com/news/technology-50656803
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 57 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: Sundar Pichai, the chief executive of Google, has been put in charge of its parent company Alphabet, after co-founders Larry Page and Sergey Brin announced they were stepping down.
+		Subject: Sundar Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai's life story is remarkable, and his rise to the top of Google is an endorsement of India's standing in the global technology industry - and equally, a reassuring reminder of the so-called "American Dream".
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 57 sentences 
+	Processed 10 / 57 sentences 
+	Processed 15 / 57 sentences 
+		=== Extracted Relation ===
+		Sentence: But Pichai's father planted the seeds of technology into his boy's mind, partly thanks to his job at British conglomerate General Electric Company (not to be confused with the American General Electric).
+		Subject: Pichai's father		Object: General Electric Company
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: "I used to come home and talk to him a lot about my work day and the challenges I faced," Regunatha Pichai told Bloomberg, adding that Sundar had a remarkable talent for remembering telephone numbers.
+		Subject: Regunatha Pichai		Object: Bloomberg
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: At Google, Pichai is described as soft-spoken, and well liked.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+	Processed 20 / 57 sentences 
+	Processed 25 / 57 sentences 
+		=== Extracted Relation ===
+		Sentence: Google launched its health-focused research and development company in 2013, with Larry Page announcing in a blog post that its work would be based around the research areas of "health and well-being, in particular the challenge of ageing and associated diseases".
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 57 sentences 
+	Processed 35 / 57 sentences 
+	Processed 40 / 57 sentences 
+	Processed 45 / 57 sentences 
+	Processed 50 / 57 sentences 
+	Processed 55 / 57 sentences 
+[main, len(X), X]:  27 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Malik, Obj: True Ventures
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Page, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Malik, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai's father, Obj: General Electric Company
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai's father, Obj: GEC
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Time
+	Relation: Work_For, Subj: Susan Wojcicki, Obj: YouTube
+	Relation: Work_For, Subj: Prabhakar Raghavan, Obj: Google
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: Bloomberg
+
+	Extracted annotations for  6  out of total  57  sentences.
+	Relations extracted from this website: 5 (Overall: 6)
+
+URL (9 / 10): https://fortune.com/2023/03/22/alphabet-ceo-sundar-pichai-bard-chatbot-things-will-go-wrong/
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 39 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: “Even after all this progress, we’re still in the early stages of a long A.l. journey,” Pichai wrote in the Tuesday memo to employees, according to CNBC.
+		Subject: Pichai		Object: CNBC
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: Until now, Google has kept interactions with Bard limited to hand-picked testers, including about 80,000 Google employees, according to Pichai.
+		Subject: Google employees		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: Hong Kong-based security researcher Jane Manchun Wong wrote on Twitter Tuesday that she asked Bard whose side it would pick in the antitrust lawsuit against Google filed by the U.S. Department of Justice, and it promptly sided with the government.
+		Subject: Jane Manchun Wong		Object: Hong Kong
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: “As we’ve said, Bard can sometimes give inaccurate or inappropriate information that doesn’t represent Google’s views and Bard should not respond in a way that endorses a particular viewpoint on subjective topics.”Google was caught-flat footed by the release of Open AI’s ChatGPT, which has taken the internet by storm over the last few months with a major investment in Microsoft, which is incorporating it into its Bing search engine.
+		Subject: Microsoft		Object: Bing
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: We’ve missed the A.I. boat,” Google Cloud CEO Thomas Kurien reportedly said in a leaked audio recording about the company’s nay-sayers.
+		Subject: Thomas Kurien		Object: Google Cloud
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: OpenAI, in the meantime, has launched a version of ChatGPT for business and a new-and-improved version of its chatbot technology, GPT-4 that is used to power ChatGPT and Microsoft’s Bing searches.
+		Subject: OpenAI		Object: Microsoft
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 39 sentences 
+	Processed 35 / 39 sentences 
+[main, len(X), X]:  33 Relation set:
+	Relation: Work_For, Subj: Google employees, Obj: Google
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Malik, Obj: True Ventures
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Jane Manchun Wong, Obj: Hong Kong
+	Relation: Work_For, Subj: OpenAI, Obj: Microsoft
+	Relation: Work_For, Subj: Page, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Malik, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai's father, Obj: General Electric Company
+	Relation: Work_For, Subj: Pichai, Obj: CNBC
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai's father, Obj: GEC
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Time
+	Relation: Work_For, Subj: Susan Wojcicki, Obj: YouTube
+	Relation: Work_For, Subj: Prabhakar Raghavan, Obj: Google
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: Bloomberg
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Microsoft, Obj: Bing
+	Relation: Work_For, Subj: Thomas Kurien, Obj: Google Cloud
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+
+	Extracted annotations for  6  out of total  39  sentences.
+	Relations extracted from this website: 6 (Overall: 6)
+
+URL (10 / 10): https://www.yahoo.com/lifestyle/alphabet-ceo-sundar-pichai-said-170709478.html
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 28 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Sentence: “Even after all this progress, we’re still in the early stages of a long A.l. journey,” Pichai wrote in the Tuesday memo to employees, according to CNBC.
+		Subject: Pichai		Object: CNBC
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 28 sentences 
+		=== Extracted Relation ===
+		Sentence: Until now, Google has kept interactions with Bard limited to hand-picked testers, including about 80,000 Google employees, according to Pichai.
+		Subject: Google employees		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 28 sentences 
+		=== Extracted Relation ===
+		Sentence: Hong Kong-based security researcher Jane Manchun Wong wrote on Twitter Tuesday that she asked Bard whose side it would pick in the antitrust lawsuit against Google filed by the U.S. Department of Justice, and it promptly sided with the government.
+		Subject: Jane Manchun Wong		Object: Hong Kong-based security researcher
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 28 sentences 
+		=== Extracted Relation ===
+		Sentence: We’ve missed the A.I. boat,” Google Cloud CEO Thomas Kurien reportedly said in a leaked audio recording about the company’s nay-sayers.
+		Subject: Thomas Kurien		Object: Google Cloud
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 28 sentences 
+	Processed 25 / 28 sentences 
+		=== Extracted Relation ===
+		Sentence: OpenAI, in the meantime, has launched a version of ChatGPT for business and a new-and-improved version of its chatbot technology, GPT-4 that is used to power ChatGPT and Microsoft’s Bing searches.
+		Subject: OpenAI		Object: Microsoft
+		Adding to set of extracted relations.
+		==========
+[main, len(X), X]:  34 Relation set:
+	Relation: Work_For, Subj: Google employees, Obj: Google
+	Relation: Work_For, Subj: Jane Manchun Wong, Obj: Hong Kong-based security researcher
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Malik, Obj: True Ventures
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Jane Manchun Wong, Obj: Hong Kong
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Page, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Malik, Obj: Twitter
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai's father, Obj: General Electric Company
+	Relation: Work_For, Subj: Pichai, Obj: CNBC
+	Relation: Work_For, Subj: Larry Page, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: OpenAI, Obj: Microsoft
+	Relation: Work_For, Subj: Sergey Brin, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet
+	Relation: Work_For, Subj: Pichai, Obj: Time
+	Relation: Work_For, Subj: Susan Wojcicki, Obj: YouTube
+	Relation: Work_For, Subj: Prabhakar Raghavan, Obj: Google
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: Bloomberg
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google, Inc
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Microsoft, Obj: Bing
+	Relation: Work_For, Subj: Thomas Kurien, Obj: Google Cloud
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Pichai's father, Obj: GEC
+
+	Extracted annotations for  5  out of total  28  sentences.
+	Relations extracted from this website: 5 (Overall: 5)
+

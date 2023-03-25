@@ -106,7 +106,6 @@ def extract_relations(doc, spanbert, openai_api_key, r=None, conf=0.7):
             continue
 
         if extracted_relations_list and extracted_relations_list[0] and len(extracted_relations_list[0]) == 3 and extracted_relations_list[0][1] == relation_of_interest:
-            # if we get multiple relations from 1 sentence, we only +=1 right? spanbert doesn't
             num_sentences_used += 1
         else:
             continue
@@ -115,7 +114,16 @@ def extract_relations(doc, spanbert, openai_api_key, r=None, conf=0.7):
         for extracted_relation in extracted_relations_list:
             if len(extracted_relation) == 3 and extracted_relation[0] and extracted_relation[1] == relation_of_interest and extracted_relation[2]:
                 subj, rel, obj = extracted_relation
-                res[(subj, rel, obj)] = gpt3_confidence
+                print("\t\t=== Extracted Relation ===")
+                print("\t\tSentence: {}".format(sentence))
+                print("\t\tSubject: {}\t\tObject: {}".format(subj, obj))
+                if (subj, rel, obj) in res:
+                    print("\t\tDuplicate. Ignoring this.")
+                else:
+                    print("\t\tAdding to set of extracted relations.")
+                    res[(subj, rel, obj)] = gpt3_confidence
+                print("\t\t==========")
+                overall_num_relations += 1
 
     return res, num_sentences_used, overall_num_relations
 
@@ -126,15 +134,13 @@ def extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_
     obj_classification = ' or '.join(
         entities_of_interest[1:]) if r == 3 else entities_of_interest[1]
 
-    prompt = (f"Given the following example of a relation: {RELATION_EXAMPLES[r]}, "
-              f"please extract all the {relation_of_interest} relations in the format of "
-              f"[\"Subject Entity\", \"{relation_of_interest}\", \"Object Entity\"] from the sentence: '{sentence}'. "
-              f"Subject Entity must  "
-              f"be a {subj_classification} and Object Entity must be a {obj_classification}  ")
+    prompt = (f"Please extract all the {relation_of_interest} relations from the sentence: '{sentence}'. "
+              f"Output Format: [\"{subj_classification}\", \"{relation_of_interest}\", \"{obj_classification}\"]  "
+              f"Output Example: {RELATION_EXAMPLES[r]}")
 
     model = 'text-davinci-003'
     max_tokens = 100
-    temperature = 0.1
+    temperature = 0.15
     top_p = 1
     frequency_penalty = 0
     presence_penalty = 0

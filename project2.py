@@ -125,7 +125,6 @@ def main(args):
     while len(X) < args.k:
         print(f'=========== Iteration: {n_iter} - Query: {args.q} ===========')
         for i in range(len(res['items'])):
-            # for i in range(1):
             num_webpages = len(res['items'])
             webpage = res['items'][i]
             link = webpage['link']

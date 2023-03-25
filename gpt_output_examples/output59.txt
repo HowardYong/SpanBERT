@@ -1,0 +1,151 @@
+    prompt = (f""
+              f"Please extract all the {relation_of_interest} relations from the sentence: '{sentence}'. "
+              f"Ouput Format: [\"{subj_classification}\", \"{relation_of_interest}\", \"{obj_classification}\"]  "
+              f"Output Example: {RELATION_EXAMPLES[r]}")
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.1
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+	
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 485cb07d083282383
+OpenAI key      = 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
+Method          = gpt-3
+Relation        = Work_For
+Threshold       =   0.7
+Query           = sundar pichai google
+# of Tuples     =    35
+Loading necessary libraries...
+=========== Iteration: 0 - Query: sundar pichai google ===========
+URL (1 / 10): https://en.wikipedia.org/wiki/Sundar_Pichai
+	Fetching text from url...
+	Annotating the webpage using spacy...
+	Extracted 39 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: In 2010, Pichai also announced the open-sourcing of the new video codec VP8 by Google and introduced the new video format, WebM. The Chromebook was released in 2012.
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: In 2013, Pichai added Android to the list of Google products that he oversaw.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was selected to become the next CEO of Google on August 10, 2015, after previously being appointed Product Chief by CEO Larry Page.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was selected to become the next CEO of Google on August 10, 2015, after previously being appointed Product Chief by CEO Larry Page.
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was included in Time's annual list of the 100 most influential people in 2016[11] and 2020.[12]
+		Subject: Pichai		Object: Time
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: His mother, Lakshmi, was a stenographer, and his father, Regunatha Pichai, was an electrical engineer at GEC, the British conglomerate.
+		Subject: Regunatha Pichai		Object: GEC
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai worked in engineering and product management at Applied Materials and in management consulting at McKinsey & Company.[25]
+		Subject: Pichai		Object: Applied Materials
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai worked in engineering and product management at Applied Materials and in management consulting at McKinsey & Company.[25]
+		Subject: Pichai		Object: McKinsey & Company
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai joined Google in 2004, where he led the product management and innovation efforts for a suite of Google's client software products, including Google Chrome[26] and ChromeOS, as well as being largely responsible for Google Drive.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+	Processed 25 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: On March 13, 2013, Pichai added Android to the list of Google products that he oversaw.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was selected to become the next CEO of Google on August 10, 2015[35] after previously being appointed Product Chief by CEO, Larry Page.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai was selected to become the next CEO of Google on August 10, 2015[35] after previously being appointed Product Chief by CEO, Larry Page.
+		Subject: Larry Page		Object: Google
+		Duplicate. Ignoring this.
+		==========
+	Processed 30 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: Pichai had been suggested as a contender for Microsoft's CEO in 2014, a position that was eventually given to Satya Nadella.[38][39]
+		Subject: Pichai		Object: Microsoft
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: Pichai had been suggested as a contender for Microsoft's CEO in 2014, a position that was eventually given to Satya Nadella.[38][39]
+		Subject: Satya Nadella		Object: Microsoft
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In December 2017, Pichai was a speaker at the World Internet Conference in China, where he stated that "a lot of work Google does is to help Chinese companies.
+		Subject: Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: In December 2019, Pichai became the CEO of Alphabet Inc.[47][48]
+		Subject: Pichai		Object: Alphabet Inc
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 39 sentences 
+		=== Extracted Relation ===
+		Sentence: On December 11, 2018, Sundar Pichai was questioned by the U.S. House Judiciary Committee on a range of Google-related issues such as possible political bias on Google's platforms, the company's alleged plans for a "censored search app" in China, and its privacy practices.[49] In response, Pichai informed the committee that Google employees cannot influence search results.
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In October 2020, the United States Senate Committee on Commerce, Science, and Transportation unanimously voted in favor of, and on a bipartisan basis, to subpoena Pichai, along with Facebook (today Meta) CEO Mark Zuckerberg and then Twitter CEO Jack Dorsey, to testify before the committee in response to lawmakers' concerns over the technology industry's exemption from Section 230 of the Communications Decency Act of 1934.[51]
+		Subject: Sundar Pichai		Object: Google
+		Duplicate. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Sentence: In October 2020, the United States Senate Committee on Commerce, Science, and Transportation unanimously voted in favor of, and on a bipartisan basis, to subpoena Pichai, along with Facebook (today Meta) CEO Mark Zuckerberg and then Twitter CEO Jack Dorsey, to testify before the committee in response to lawmakers' concerns over the technology industry's exemption from Section 230 of the Communications Decency Act of 1934.[51]
+		Subject: Mark Zuckerberg		Object: Facebook
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Sentence: In October 2020, the United States Senate Committee on Commerce, Science, and Transportation unanimously voted in favor of, and on a bipartisan basis, to subpoena Pichai, along with Facebook (today Meta) CEO Mark Zuckerberg and then Twitter CEO Jack Dorsey, to testify before the committee in response to lawmakers' concerns over the technology industry's exemption from Section 230 of the Communications Decency Act of 1934.[51]
+		Subject: Jack Dorsey		Object: Twitter
+		Adding to set of extracted relations.
+		==========
+[main, len(X), X]:  12 Relation set:
+	Relation: Work_For, Subj: Jack Dorsey, Obj: Twitter
+	Relation: Work_For, Subj: Mark Zuckerberg, Obj: Facebook
+	Relation: Work_For, Subj: Larry Page, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Applied Materials
+	Relation: Work_For, Subj: Pichai, Obj: Alphabet Inc
+	Relation: Work_For, Subj: Pichai, Obj: McKinsey & Company
+	Relation: Work_For, Subj: Pichai, Obj: Microsoft
+	Relation: Work_For, Subj: Satya Nadella, Obj: Microsoft
+	Relation: Work_For, Subj: Regunatha Pichai, Obj: GEC
+	Relation: Work_For, Subj: Sundar Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Google
+	Relation: Work_For, Subj: Pichai, Obj: Time
+
+	Extracted annotations for  14  out of total  39  sentences.
+	Relations extracted from this website: 12 (Overall: 20)
+
