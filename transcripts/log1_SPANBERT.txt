@@ -1,0 +1,409 @@
+
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 2fd5e3d392b10d370
+OpenAI key      = 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
+Method          = spanbert
+Relation        = Schools_Attended
+Threshold       = 0.7
+Query           = mark zuckerberg harvard
+# of Tuples     = 10
+Loading necessary libraries...
+Loading pre-trained spanBERT from ./pretrained_spanbert...
+
+=========== Iteration: 0 - Query: mark zuckerberg harvard ===========
+
+URL (1 / 10): https://en.wikipedia.org/wiki/Mark_Zuckerberg
+    Fetching text from url...
+    Trimming webpage content from 88557 to 10000 characters
+    Webpage length (num of characters):  10000
+    Annotating the webpage using spacy...
+    Extracted 64 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 64 sentences 
+    Processed 10 / 64 sentences 
+    Processed 15 / 64 sentences 
+    Processed 20 / 64 sentences 
+    Processed 25 / 64 sentences 
+    Processed 30 / 64 sentences 
+    Processed 35 / 64 sentences 
+    Processed 40 / 64 sentences 
+    Processed 45 / 64 sentences 
+    Processed 50 / 64 sentences 
+    Processed 55 / 64 sentences 
+        === Extracted Relation ===
+        Tokens: ['An', 'earlier', 'inspiration', 'for', 'Facebook', 'may', 'have', 'come', 'from', 'Phillips', 'Exeter', 'Academy', ',', 'the', 'prep', 'school', 'from', 'which', 'Zuckerberg', 'graduated', 'in', '2002', '.']
+        Relation: per:schools_attended (Confidence: 0.836)
+        Subject: Zuckerberg             Object: Facebook
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['An', 'earlier', 'inspiration', 'for', 'Facebook', 'may', 'have', 'come', 'from', 'Phillips', 'Exeter', 'Academy', ',', 'the', 'prep', 'school', 'from', 'which', 'Zuckerberg', 'graduated', 'in', '2002', '.']
+        Relation: per:schools_attended (Confidence: 0.969)
+        Subject: Zuckerberg             Object: Phillips Exeter Academy
+        Adding to set of extracted relations.
+        ==========
+    Processed 60 / 64 sentences 
+    Extracted annotations for  1  out of total  64  sentences.
+    Relations extracted from this website: 2 (Overall: 2)
+
+URL (2 / 10): https://news.harvard.edu/gazette/story/2017/05/mark-zuckerbergs-speech-as-written-for-harvards-class-of-2017/
+    Fetching text from url...
+    Trimming webpage content from 22798 to 10000 characters
+    Webpage length (num of characters):  10000
+    Annotating the webpage using spacy...
+    Extracted 101 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 101 sentences 
+    Processed 10 / 101 sentences 
+    Processed 15 / 101 sentences 
+    Processed 20 / 101 sentences 
+    Processed 25 / 101 sentences 
+    Processed 30 / 101 sentences 
+    Processed 35 / 101 sentences 
+    Processed 40 / 101 sentences 
+    Processed 45 / 101 sentences 
+    Processed 50 / 101 sentences 
+    Processed 55 / 101 sentences 
+    Processed 60 / 101 sentences 
+    Processed 65 / 101 sentences 
+    Processed 70 / 101 sentences 
+    Processed 75 / 101 sentences 
+    Processed 80 / 101 sentences 
+    Processed 85 / 101 sentences 
+    Processed 90 / 101 sentences 
+    Processed 95 / 101 sentences 
+    Processed 100 / 101 sentences 
+    Extracted annotations for  0  out of total  101  sentences.
+    Relations extracted from this website: 0 (Overall: 0)
+
+URL (3 / 10): https://www.britannica.com/biography/Mark-Zuckerberg
+    Fetching text from url...
+    Webpage length (num of characters):  8834
+    Annotating the webpage using spacy...
+    Extracted 73 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 73 sentences 
+    Processed 10 / 73 sentences 
+    Processed 15 / 73 sentences 
+    Processed 20 / 73 sentences 
+    Processed 25 / 73 sentences 
+    Processed 30 / 73 sentences 
+    Processed 35 / 73 sentences 
+    Processed 40 / 73 sentences 
+    Processed 45 / 73 sentences 
+    Processed 50 / 73 sentences 
+        === Extracted Relation ===
+        Tokens: ['Why', 'did', 'Mark', 'Zuckerberg', 'drop', 'out', 'of', 'college?Mark', 'Zuckerberg', 'dropped', 'out', 'of', 'college', 'in', '2004', 'to', 'devote', 'himself', 'to', 'Facebook', ',']
+        Relation: per:schools_attended (Confidence: 0.707)
+        Subject: Mark Zuckerberg                Object: Facebook
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['Why', 'did', 'Mark', 'Zuckerberg', 'drop', 'out', 'of', 'college?Mark', 'Zuckerberg', 'dropped', 'out', 'of', 'college', 'in', '2004', 'to', 'devote', 'himself', 'to', 'Facebook', ',', 'which', 'he', 'had', 'founded', 'at', 'Harvard', 'University', 'with', 'four', 'fellow', 'students', 'there', '—']
+        Relation: per:schools_attended (Confidence: 0.907)
+        Subject: Mark Zuckerberg                Object: Harvard University
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['Why', 'did', 'Mark', 'Zuckerberg', 'drop', 'out', 'of', 'college?Mark', 'Zuckerberg', 'dropped', 'out', 'of', 'college', 'in', '2004', 'to', 'devote', 'himself', 'to', 'Facebook', ',']
+        Relation: per:schools_attended (Confidence: 0.773)
+        Subject: Zuckerberg             Object: Facebook
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['Why', 'did', 'Mark', 'Zuckerberg', 'drop', 'out', 'of', 'college?Mark', 'Zuckerberg', 'dropped', 'out', 'of', 'college', 'in', '2004', 'to', 'devote', 'himself', 'to', 'Facebook', ',', 'which', 'he', 'had', 'founded', 'at', 'Harvard', 'University', 'with', 'four', 'fellow', 'students', 'there', '—']
+        Relation: per:schools_attended (Confidence: 0.902)
+        Subject: Zuckerberg             Object: Harvard University
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['which', 'he', 'had', 'founded', 'at', 'Harvard', 'University', 'with', 'four', 'fellow', 'students', 'there', '—', 'Eduardo', 'Saverin', ',']
+        Relation: per:schools_attended (Confidence: 0.974)
+        Subject: Eduardo Saverin                Object: Harvard University
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['which', 'he', 'had', 'founded', 'at', 'Harvard', 'University', 'with', 'four', 'fellow', 'students', 'there', '—', 'Eduardo', 'Saverin', ',', 'Andrew', 'McCollum', ',']
+        Relation: per:schools_attended (Confidence: 0.978)
+        Subject: Andrew McCollum                Object: Harvard University
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['which', 'he', 'had', 'founded', 'at', 'Harvard', 'University', 'with', 'four', 'fellow', 'students', 'there', '—', 'Eduardo', 'Saverin', ',', 'Andrew', 'McCollum', ',', 'Dustin', 'Moskovitz', ',']
+        Relation: per:schools_attended (Confidence: 0.982)
+        Subject: Dustin Moskovitz               Object: Harvard University
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['which', 'he', 'had', 'founded', 'at', 'Harvard', 'University', 'with', 'four', 'fellow', 'students', 'there', '—', 'Eduardo', 'Saverin', ',', 'Andrew', 'McCollum', ',', 'Dustin', 'Moskovitz', ',', 'and', 'Chris', 'Hughes', '.']
+        Relation: per:schools_attended (Confidence: 0.964)
+        Subject: Chris Hughes           Object: Harvard University
+        Adding to set of extracted relations.
+        ==========
+    Processed 55 / 73 sentences 
+    Processed 60 / 73 sentences 
+    Processed 65 / 73 sentences 
+    Processed 70 / 73 sentences 
+    Relation (('Zuckerberg', 'per:schools_attended', 'Facebook')) has already been encountered with higher confidence. Skipping...
+    Extracted annotations for  1  out of total  73  sentences.
+    Relations extracted from this website: 7 (Overall: 8)
+
+URL (4 / 10): https://news.harvard.edu/gazette/story/2017/05/harvard-awards-10-honorary-degrees-at-366th-commencement/
+    Fetching text from url...
+    Trimming webpage content from 11685 to 10000 characters
+    Webpage length (num of characters):  10000
+    Annotating the webpage using spacy...
+    Extracted 52 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 52 sentences 
+    Processed 10 / 52 sentences 
+        === Extracted Relation ===
+        Tokens: ['Priscilla', 'Chan', ',', 'a', 'pediatrician', 'and', '2007', 'Harvard', 'College', 'graduate', ',']
+        Relation: per:schools_attended (Confidence: 0.956)
+        Subject: Priscilla Chan         Object: Harvard College
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['Zuckerberg', 'studied', 'computer', 'science', 'at', 'Harvard', 'University', 'before', 'moving', 'Facebook', 'to', 'Palo', 'Alto', ',']
+        Relation: per:schools_attended (Confidence: 0.986)
+        Subject: Zuckerberg             Object: Harvard University
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['Zuckerberg', 'studied', 'computer', 'science', 'at', 'Harvard', 'University', 'before', 'moving', 'Facebook', 'to', 'Palo', 'Alto', ',']
+        Relation: per:schools_attended (Confidence: 0.852)
+        Subject: Zuckerberg             Object: Facebook
+        Adding to set of extracted relations.
+        ==========
+    Processed 15 / 52 sentences 
+    Processed 20 / 52 sentences 
+    Processed 25 / 52 sentences 
+    Processed 30 / 52 sentences 
+    Processed 35 / 52 sentences 
+    Processed 40 / 52 sentences 
+    Processed 45 / 52 sentences 
+    Processed 50 / 52 sentences 
+    Updating confidence for following relation: ('Zuckerberg', 'per:schools_attended', 'Harvard University')
+    Updating confidence for following relation: ('Zuckerberg', 'per:schools_attended', 'Facebook')
+    Extracted annotations for  2  out of total  52  sentences.
+    Relations extracted from this website: 3 (Overall: 3)
+
+URL (5 / 10): https://www.theatlantic.com/technology/archive/2019/02/and-then-there-was-thefacebookcom/582004/
+    Fetching text from url...
+    Trimming webpage content from 21569 to 10000 characters
+    Webpage length (num of characters):  10000
+    Annotating the webpage using spacy...
+    Extracted 88 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 88 sentences 
+    Processed 10 / 88 sentences 
+    Processed 15 / 88 sentences 
+    Processed 20 / 88 sentences 
+    Processed 25 / 88 sentences 
+    Processed 30 / 88 sentences 
+    Processed 35 / 88 sentences 
+    Processed 40 / 88 sentences 
+    Processed 45 / 88 sentences 
+    Processed 50 / 88 sentences 
+    Processed 55 / 88 sentences 
+    Processed 60 / 88 sentences 
+    Processed 65 / 88 sentences 
+    Processed 70 / 88 sentences 
+    Processed 75 / 88 sentences 
+    Processed 80 / 88 sentences 
+    Processed 85 / 88 sentences 
+    Extracted annotations for  0  out of total  88  sentences.
+    Relations extracted from this website: 0 (Overall: 0)
+
+URL (6 / 10): https://www.thecrimson.com/article/2004/6/10/mark-e-zuckerberg-06-the-whiz/
+    Fetching text from url...
+    Trimming webpage content from 12002 to 10000 characters
+    Webpage length (num of characters):  10000
+    Annotating the webpage using spacy...
+    Extracted 91 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 91 sentences 
+    Processed 10 / 91 sentences 
+    Processed 15 / 91 sentences 
+    Processed 20 / 91 sentences 
+    Processed 25 / 91 sentences 
+    Processed 30 / 91 sentences 
+    Processed 35 / 91 sentences 
+    Processed 40 / 91 sentences 
+    Processed 45 / 91 sentences 
+        === Extracted Relation ===
+        Tokens: ['Zuckerberg', 'attended', 'local', 'Ardsley', 'High', 'School', 'until', 'his', 'junior', 'year', ',', 'when', 'he', 'transferred', 'to', 'Phillips', 'Exeter', 'Academy', '.']
+        Relation: per:schools_attended (Confidence: 0.969)
+        Subject: Zuckerberg             Object: Phillips Exeter Academy
+        Adding to set of extracted relations.
+        ==========
+    Processed 50 / 91 sentences 
+    Processed 55 / 91 sentences 
+    Processed 60 / 91 sentences 
+        === Extracted Relation ===
+        Tokens: ['Adam', 'D’Angelo', '(', 'now', 'a', 'student', 'at', 'CalTech', 'and', 'still', 'a', 'close', 'friend', ')']
+        Relation: per:schools_attended (Confidence: 0.779)
+        Subject: Adam D’Angelo          Object: CalTech
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['now', 'a', 'student', 'at', 'CalTech', 'and', 'still', 'a', 'close', 'friend', ')', 'Zuckerberg', 'designed', 'a', 'program', 'that', 'learned', 'a', 'listener', '’s', 'musical', 'tastes', ',']
+        Relation: per:schools_attended (Confidence: 0.954)
+        Subject: Zuckerberg             Object: CalTech
+        Adding to set of extracted relations.
+        ==========
+    Processed 65 / 91 sentences 
+    Processed 70 / 91 sentences 
+    Processed 75 / 91 sentences 
+    Processed 80 / 91 sentences 
+    Processed 85 / 91 sentences 
+    Processed 90 / 91 sentences 
+    Relation (('Zuckerberg', 'per:schools_attended', 'Phillips Exeter Academy')) has already been encountered with higher confidence. Skipping...
+    Extracted annotations for  2  out of total  91  sentences.
+    Relations extracted from this website: 2 (Overall: 3)
+
+URL (7 / 10): https://www.forbes.com/profile/mark-zuckerberg/
+    Fetching text from url...
+    Webpage length (num of characters):  7390
+    Annotating the webpage using spacy...
+    Extracted 62 sentences. Processing each sentence to identify presence of entities of interest...
+        === Extracted Relation ===
+        Tokens: ['by', 'Martin', 'Schoeller', 'for', 'ForbesAbout', 'Mark', 'ZuckerbergZuckerberg', 'started', 'Facebook', 'at', 'Harvard', 'in', '2004', 'at', 'the', 'age', 'of', '19', 'for', 'students', 'to', 'match', 'names', 'with', 'photos', 'of', 'classmates', '.']
+        Relation: per:schools_attended (Confidence: 0.738)
+        Subject: Martin Schoeller               Object: Facebook
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['by', 'Martin', 'Schoeller', 'for', 'ForbesAbout', 'Mark', 'ZuckerbergZuckerberg', 'started', 'Facebook', 'at', 'Harvard', 'in', '2004', 'at', 'the', 'age', 'of', '19', 'for', 'students', 'to', 'match', 'names', 'with', 'photos', 'of', 'classmates', '.']
+        Relation: per:schools_attended (Confidence: 0.943)
+        Subject: Martin Schoeller               Object: Harvard
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['by', 'Martin', 'Schoeller', 'for', 'ForbesAbout', 'Mark', 'ZuckerbergZuckerberg', 'started', 'Facebook', 'at', 'Harvard', 'in', '2004', 'at', 'the', 'age', 'of', '19', 'for', 'students', 'to', 'match', 'names', 'with', 'photos', 'of', 'classmates', '.']
+        Relation: per:schools_attended (Confidence: 0.929)
+        Subject: ForbesAbout            Object: Facebook
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['by', 'Martin', 'Schoeller', 'for', 'ForbesAbout', 'Mark', 'ZuckerbergZuckerberg', 'started', 'Facebook', 'at', 'Harvard', 'in', '2004', 'at', 'the', 'age', 'of', '19', 'for', 'students', 'to', 'match', 'names', 'with', 'photos', 'of', 'classmates', '.']
+        Relation: per:schools_attended (Confidence: 0.903)
+        Subject: ForbesAbout            Object: Harvard
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['by', 'Martin', 'Schoeller', 'for', 'ForbesAbout', 'Mark', 'ZuckerbergZuckerberg', 'started', 'Facebook', 'at', 'Harvard', 'in', '2004', 'at', 'the', 'age', 'of', '19', 'for', 'students', 'to', 'match', 'names', 'with', 'photos', 'of', 'classmates', '.']
+        Relation: per:schools_attended (Confidence: 0.943)
+        Subject: Mark ZuckerbergZuckerberg              Object: Facebook
+        Adding to set of extracted relations.
+        ==========
+        === Extracted Relation ===
+        Tokens: ['by', 'Martin', 'Schoeller', 'for', 'ForbesAbout', 'Mark', 'ZuckerbergZuckerberg', 'started', 'Facebook', 'at', 'Harvard', 'in', '2004', 'at', 'the', 'age', 'of', '19', 'for', 'students', 'to', 'match', 'names', 'with', 'photos', 'of', 'classmates', '.']
+        Relation: per:schools_attended (Confidence: 0.977)
+        Subject: Mark ZuckerbergZuckerberg              Object: Harvard
+        Adding to set of extracted relations.
+        ==========
+    Processed 5 / 62 sentences 
+    Processed 10 / 62 sentences 
+    Processed 15 / 62 sentences 
+    Processed 20 / 62 sentences 
+    Processed 25 / 62 sentences 
+    Processed 30 / 62 sentences 
+    Processed 35 / 62 sentences 
+    Processed 40 / 62 sentences 
+    Processed 45 / 62 sentences 
+    Processed 50 / 62 sentences 
+    Processed 55 / 62 sentences 
+    Processed 60 / 62 sentences 
+    Extracted annotations for  1  out of total  62  sentences.
+    Relations extracted from this website: 6 (Overall: 6)
+
+URL (8 / 10): https://nymag.com/intelligencer/2016/06/mark-zuckerberg-harvard-2006-reunion.html
+    Fetching text from url...
+    Trimming webpage content from 24312 to 10000 characters
+    Webpage length (num of characters):  10000
+    Annotating the webpage using spacy...
+    Extracted 68 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 68 sentences 
+    Processed 10 / 68 sentences 
+    Processed 15 / 68 sentences 
+    Processed 20 / 68 sentences 
+    Processed 25 / 68 sentences 
+    Processed 30 / 68 sentences 
+    Processed 35 / 68 sentences 
+    Processed 40 / 68 sentences 
+    Processed 45 / 68 sentences 
+    Processed 50 / 68 sentences 
+    Processed 55 / 68 sentences 
+    Processed 60 / 68 sentences 
+    Processed 65 / 68 sentences 
+    Extracted annotations for  0  out of total  68  sentences.
+    Relations extracted from this website: 0 (Overall: 0)
+
+URL (9 / 10): https://www.npr.org/sections/thetwo-way/2017/05/26/530159142/mark-zuckerberg-tells-harvard-graduates-to-embrace-globalism-a-sense-of-purpose
+    Fetching text from url...
+    Webpage length (num of characters):  5323
+    Annotating the webpage using spacy...
+    Extracted 52 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 52 sentences 
+    Processed 10 / 52 sentences 
+    Processed 15 / 52 sentences 
+    Processed 20 / 52 sentences 
+    Processed 25 / 52 sentences 
+    Processed 30 / 52 sentences 
+    Processed 35 / 52 sentences 
+    Processed 40 / 52 sentences 
+    Processed 45 / 52 sentences 
+    Processed 50 / 52 sentences 
+    Extracted annotations for  0  out of total  52  sentences.
+    Relations extracted from this website: 0 (Overall: 0)
+
+URL (10 / 10): https://www.businessinsider.com/how-mark-zuckerberg-hacked-into-the-harvard-crimson-2010-3
+    Fetching text from url...
+    Trimming webpage content from 11663 to 10000 characters
+    Webpage length (num of characters):  10000
+    Annotating the webpage using spacy...
+    Extracted 90 sentences. Processing each sentence to identify presence of entities of interest...
+    Processed 5 / 90 sentences 
+    Processed 10 / 90 sentences 
+    Processed 15 / 90 sentences 
+    Processed 20 / 90 sentences 
+    Processed 25 / 90 sentences 
+    Processed 30 / 90 sentences 
+    Processed 35 / 90 sentences 
+    Processed 40 / 90 sentences 
+    Processed 45 / 90 sentences 
+    Processed 50 / 90 sentences 
+    Processed 55 / 90 sentences 
+    Processed 60 / 90 sentences 
+    Processed 65 / 90 sentences 
+    Processed 70 / 90 sentences 
+    Processed 75 / 90 sentences 
+    Processed 80 / 90 sentences 
+    Processed 85 / 90 sentences 
+    Processed 90 / 90 sentences 
+    Extracted annotations for  0  out of total  90  sentences.
+    Relations extracted from this website: 0 (Overall: 0)
+
+
+================== ALL RELATIONS for ['per:schools_attended'] ( 18 ) =================
+
+Confidence                    | Subject                       | Object                        
+
+0.9862293004989624            | Zuckerberg                    | Harvard University            
+0.9816163778305054            | Dustin Moskovitz              | Harvard University            
+0.9782669544219971            | Andrew McCollum               | Harvard University            
+0.9771611094474792            | Mark ZuckerbergZuckerberg     | Harvard                       
+0.974037766456604             | Eduardo Saverin               | Harvard University            
+0.9694227576255798            | Zuckerberg                    | Phillips Exeter Academy       
+0.963668167591095             | Chris Hughes                  | Harvard University            
+0.9562180638313293            | Priscilla Chan                | Harvard College               
+0.954184353351593             | Zuckerberg                    | CalTech                       
+0.9429661631584167            | Mark ZuckerbergZuckerberg     | Facebook                      
+0.942561149597168             | Martin Schoeller              | Harvard                       
+0.9294759035110474            | ForbesAbout                   | Facebook                      
+0.9067565202713013            | Mark Zuckerberg               | Harvard University            
+0.9028002619743347            | ForbesAbout                   | Harvard                       
+0.8521597385406494            | Zuckerberg                    | Facebook                      
+0.7787966728210449            | Adam D’Angelo                 | CalTech                       
+0.7375534772872925            | Martin Schoeller              | Facebook                      
+0.7073028683662415            | Mark Zuckerberg               | Facebook                      
+ 
+
+Total # of iterations = 1
+

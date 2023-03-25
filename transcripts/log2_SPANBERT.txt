@@ -1,0 +1,789 @@
+
+Parameters:
+Client key      = AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4
+Engine key      = 2fd5e3d392b10d370
+OpenAI key      = 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
+Method          = spanbert
+Relation        = Work_For
+Threshold       = 0.7
+Query           = sundar pichai google
+# of Tuples     = 35
+Loading necessary libraries...
+Loading pre-trained spanBERT from ./pretrained_spanbert...
+
+=========== Iteration: 0 - Query: sundar pichai google ===========
+
+URL (1 / 10): https://en.wikipedia.org/wiki/Sundar_Pichai
+	Fetching text from url...
+	Trimming webpage content from 27969 to 10000 characters
+	Webpage length (num of characters):  10000
+	Annotating the webpage using spacy...
+	Extracted 107 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['MBA)OccupationBusinessmanTitleCEO', 'of', 'Alphabet', 'and', 'GoogleBoard', 'member', 'ofAlphabet', 'Inc.[1]Magic', 'Leap', '(']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: ofAlphabet Inc.[1]Magic		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['MBA)OccupationBusinessmanTitleCEO', 'of', 'Alphabet', 'and', 'GoogleBoard', 'member', 'ofAlphabet', 'Inc.[1]Magic', 'Leap', '(', '2014–2018)[2]SpouseAnjali', 'PichaiChildren2Awards', 'Padma', 'Bhushan', '(']
+		Relation: per:employee_of (Confidence: 0.560)
+		Subject: Padma Bhushan		Object: Alphabet
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['MBA)OccupationBusinessmanTitleCEO', 'of', 'Alphabet', 'and', 'GoogleBoard', 'member', 'ofAlphabet', 'Inc.[1]Magic', 'Leap', '(', '2014–2018)[2]SpouseAnjali', 'PichaiChildren2Awards', 'Padma', 'Bhushan', '(', '2022)Signature', 'Pichai', 'Sundararajan', '(']
+		Relation: per:employee_of (Confidence: 0.560)
+		Subject: Pichai Sundararajan		Object: Alphabet
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['MBA)OccupationBusinessmanTitleCEO', 'of', 'Alphabet', 'and', 'GoogleBoard', 'member', 'ofAlphabet', 'Inc.[1]Magic', 'Leap', '(', '2014–2018)[2]SpouseAnjali', 'PichaiChildren2Awards', 'Padma', 'Bhushan', '(', '2022)Signature', 'Pichai', 'Sundararajan', '(', 'born', 'June', '10', ',', '1972[3][4][5', ']', ')', ',', 'better', 'known', 'as', 'Sundar', 'Pichai', '(']
+		Relation: per:employee_of (Confidence: 0.560)
+		Subject: Sundar Pichai		Object: Alphabet
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['MBA)OccupationBusinessmanTitleCEO', 'of', 'Alphabet', 'and', 'GoogleBoard', 'member', 'ofAlphabet', 'Inc.[1]Magic', 'Leap', '(']
+		Relation: per:employee_of (Confidence: 0.904)
+		Subject: ofAlphabet Inc.[1]Magic		Object: GoogleBoard
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'added', 'Android', 'to', 'the', 'list', 'of', 'Google', 'products', 'that', 'he', 'oversaw', '.']
+		Relation: per:employee_of (Confidence: 0.773)
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'selected', 'to', 'become', 'the', 'next', 'CEO', 'of', 'Google', 'on', 'August', '10', ',']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'selected', 'to', 'become', 'the', 'next', 'CEO', 'of', 'Google', 'on', 'August', '10', ',', '2015', ',', 'after', 'previously', 'being', 'appointed', 'Product', 'Chief', 'by', 'CEO', 'Larry', 'Page', '.']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Regunatha', 'Pichai', ',', 'was', 'an', 'electrical', 'engineer', 'at', 'GEC', ',']
+		Relation: per:employee_of (Confidence: 0.944)
+		Subject: Regunatha Pichai		Object: GEC
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Spain', 'Pichai', 'worked', 'in', 'engineering', 'and', 'product', 'management', 'at', 'Applied', 'Materials', 'and', 'in', 'management', 'consulting', 'at', 'McKinsey', '&']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Pichai		Object: Applied Materials
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Spain', 'Pichai', 'worked', 'in', 'engineering', 'and', 'product', 'management', 'at', 'Applied', 'Materials', 'and', 'in', 'management', 'consulting', 'at', 'McKinsey', '&', 'Company.[25', ']']
+		Relation: per:employee_of (Confidence: 0.995)
+		Subject: Pichai		Object: McKinsey &
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'joined', 'Google', 'in', '2004', ',']
+		Relation: per:employee_of (Confidence: 0.974)
+		Subject: Pichai		Object: Google
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'added', 'Android', 'to', 'the', 'list', 'of', 'Google', 'products', 'that', 'he', 'oversaw', '.']
+		Relation: per:employee_of (Confidence: 0.773)
+		Subject: Pichai		Object: Google
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+	Processed 30 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'selected', 'to', 'become', 'the', 'next', 'CEO', 'of', 'Google', 'on', 'August', '10', ',']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Pichai		Object: Google
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'selected', 'to', 'become', 'the', 'next', 'CEO', 'of', 'Google', 'on', 'August', '10', ',', '2015[35', ']', 'after', 'previously', 'being', 'appointed', 'Product', 'Chief', 'by', 'CEO', ',', 'Larry', 'Page', '.']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'had', 'been', 'suggested', 'as', 'a', 'contender', 'for', 'Microsoft', "'s", 'CEO', 'in', '2014', ',', 'a', 'position', 'that', 'was', 'eventually', 'given', 'to', 'Satya', 'Nadella.[38][39', ']']
+		Relation: per:employee_of (Confidence: 0.883)
+		Subject: Satya Nadella.[38][39		Object: Microsoft
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'drew', 'publicity', 'for', 'firing', 'a', 'Google', 'employee', 'who', 'wrote', 'a', 'ten', '-']
+		Relation: per:employee_of (Confidence: 0.549)
+		Subject: Pichai		Object: Google
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'a', 'speaker', 'at', 'the', 'World', 'Internet', 'Conference', 'in', 'China', ',']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Pichai		Object: the World Internet Conference
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'became', 'the', 'CEO', 'of', 'Alphabet', 'Inc.[47][48', ']']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+	Processed 40 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['to', 'subpoena', 'Pichai', ',', 'along', 'with', 'Facebook', '(', 'today', 'Meta', ')', 'CEO', 'Mark', 'Zuckerberg', 'and', 'then', 'Twitter', 'CEO', 'Jack', 'Dorsey', ',']
+		Relation: per:employee_of (Confidence: 0.789)
+		Subject: Pichai		Object: Twitter
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['along', 'with', 'Facebook', '(', 'today', 'Meta', ')', 'CEO', 'Mark', 'Zuckerberg', 'and', 'then', 'Twitter', 'CEO', 'Jack', 'Dorsey', ',']
+		Relation: per:employee_of (Confidence: 0.919)
+		Subject: Mark Zuckerberg		Object: Facebook
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['along', 'with', 'Facebook', '(', 'today', 'Meta', ')', 'CEO', 'Mark', 'Zuckerberg', 'and', 'then', 'Twitter', 'CEO', 'Jack', 'Dorsey', ',']
+		Relation: per:employee_of (Confidence: 0.980)
+		Subject: Jack Dorsey		Object: Facebook
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['today', 'Meta', ')', 'CEO', 'Mark', 'Zuckerberg', 'and', 'then', 'Twitter', 'CEO', 'Jack', 'Dorsey', ',']
+		Relation: per:employee_of (Confidence: 0.726)
+		Subject: Mark Zuckerberg		Object: Meta
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['today', 'Meta', ')', 'CEO', 'Mark', 'Zuckerberg', 'and', 'then', 'Twitter', 'CEO', 'Jack', 'Dorsey', ',']
+		Relation: per:employee_of (Confidence: 0.992)
+		Subject: Jack Dorsey		Object: Meta
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['CEO', 'Mark', 'Zuckerberg', 'and', 'then', 'Twitter', 'CEO', 'Jack', 'Dorsey', ',']
+		Relation: per:employee_of (Confidence: 0.929)
+		Subject: Mark Zuckerberg		Object: Twitter
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['CEO', 'Mark', 'Zuckerberg', 'and', 'then', 'Twitter', 'CEO', 'Jack', 'Dorsey', ',']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Jack Dorsey		Object: Twitter
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'received', 'the', 'Padma', 'Bhushan', 'from', 'the', 'Government', 'of', 'India', ',']
+		Relation: per:employee_of (Confidence: 0.991)
+		Subject: Pichai		Object: the Government of India
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 107 sentences 
+	Processed 50 / 107 sentences 
+	Processed 55 / 107 sentences 
+	Processed 60 / 107 sentences 
+	Processed 65 / 107 sentences 
+	Processed 70 / 107 sentences 
+	Processed 75 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['"', 'Google', 'CEO', 'Sundar', 'Pichai', 'Appointed', 'To', 'Alphabet', 'Board', 'Of', 'Directors', '"']
+		Relation: per:employee_of (Confidence: 0.990)
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 80 / 107 sentences 
+	Processed 85 / 107 sentences 
+	Processed 90 / 107 sentences 
+	Processed 95 / 107 sentences 
+	Processed 100 / 107 sentences 
+		=== Extracted Relation ===
+		Tokens: ['"', 'Google', 'gets', 'new', 'parent', 'Alphabet', ';', 'Sundar', 'Pichai', 'becomes', 'CEO', 'of', 'Google', '"']
+		Relation: per:employee_of (Confidence: 0.966)
+		Subject: Sundar Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundar', 'Pichai', 'becomes', 'CEO', 'of', 'Google', '"']
+		Relation: per:employee_of (Confidence: 0.909)
+		Subject: Sundar Pichai		Object: Google
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+	Processed 105 / 107 sentences 
+	Extracted annotations for  12  out of total  107  sentences.
+	Relations extracted from this website: 20 (Overall: 30)
+
+URL (2 / 10): https://blog.google/authors/sundar-pichai/
+	Fetching text from url...
+	Webpage length (num of characters):  3228
+	Annotating the webpage using spacy...
+	Extracted 62 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 62 sentences 
+	Processed 10 / 62 sentences 
+		=== Extracted Relation ===
+		Tokens: ['CEO', 'Ruth', 'Porat', ',', 'SVP', 'and', 'CFO', 'Kent', 'Walker', ',']
+		Relation: per:employee_of (Confidence: 0.844)
+		Subject: Ruth Porat		Object: SVP
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['CEO', 'Ruth', 'Porat', ',', 'SVP', 'and', 'CFO', 'Kent', 'Walker', ',']
+		Relation: per:employee_of (Confidence: 0.844)
+		Subject: Ruth Porat		Object: SVP
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+	Processed 15 / 62 sentences 
+		=== Extracted Relation ===
+		Tokens: ['CEO', 'Ruth', 'Porat', ',', 'SVP', 'and', 'CFO', 'Kent', 'Walker', ',']
+		Relation: per:employee_of (Confidence: 0.844)
+		Subject: Ruth Porat		Object: SVP
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+	Processed 20 / 62 sentences 
+	Processed 25 / 62 sentences 
+	Processed 30 / 62 sentences 
+		=== Extracted Relation ===
+		Tokens: ['CEO', 'Ruth', 'Porat', ',', 'SVP', 'and', 'CFO', 'Kent', 'Walker', ',']
+		Relation: per:employee_of (Confidence: 0.844)
+		Subject: Ruth Porat		Object: SVP
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['CEO', 'Ruth', 'Porat', ',', 'SVP', 'and', 'CFO', 'Kent', 'Walker', ',']
+		Relation: per:employee_of (Confidence: 0.844)
+		Subject: Ruth Porat		Object: SVP
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+	Processed 35 / 62 sentences 
+		=== Extracted Relation ===
+		Tokens: ['CEO', 'Ruth', 'Porat', ',', 'SVP', 'and', 'CFO', 'Kent', 'Walker', ',']
+		Relation: per:employee_of (Confidence: 0.844)
+		Subject: Ruth Porat		Object: SVP
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+	Processed 40 / 62 sentences 
+	Processed 45 / 62 sentences 
+	Processed 50 / 62 sentences 
+	Processed 55 / 62 sentences 
+	Processed 60 / 62 sentences 
+	Extracted annotations for  1  out of total  62  sentences.
+	Relations extracted from this website: 1 (Overall: 6)
+
+URL (3 / 10): https://www.cnbc.com/2023/02/10/google-employees-slam-ceo-sundar-pichai-for-rushed-bard-announcement.html
+	Fetching text from url...
+	Webpage length (num of characters):  9261
+	Annotating the webpage using spacy...
+	Extracted 58 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Tokens: ['Google', 'employees', 'slam', 'CEO', 'Sundar', 'Pichai', 'for', '‘', 'rushed', '’', 'Bard', 'announcementSkip', 'NavigationwatchliveMarketsPre', '-', 'MarketsU.S.', 'MarketsCurrenciesCryptocurrencyFutures', '&', 'CommoditiesBondsFunds', '&', 'ETFsBusinessEconomyFinanceHealth', '&', 'ScienceMediaReal']
+		Relation: per:employee_of (Confidence: 0.961)
+		Subject: Sundar Pichai		Object: NavigationwatchliveMarketsPre-MarketsU.S. MarketsCurrenciesCryptocurrencyFutures & CommoditiesBondsFunds & ETFsBusinessEconomyFinanceHealth &
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 58 sentences 
+	Processed 10 / 58 sentences 
+	Processed 15 / 58 sentences 
+	Processed 20 / 58 sentences 
+		=== Extracted Relation ===
+		Tokens: ['In', 'this', 'articleMSFTGOOGLFollow', 'your', 'favorite', 'stocksCREATE', 'FREE', 'ACCOUNTwatch', 'nowVIDEO3:0303:03Google', 'employees', 'bash', 'company', 'after', 'Bard', 'debacleClosing', 'BellGoogle', 'employees', 'are', 'criticizing', 'leadership', ',', 'most', 'notably', 'CEO', 'Sundar', 'Pichai', ',']
+		Relation: per:employee_of (Confidence: 0.481)
+		Subject: Sundar Pichai		Object: BellGoogle
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+	Processed 25 / 58 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Sundar', 'Pichai', ',', 'CEO', 'of', 'GoogleAnindito', 'Mukherjee', '|', 'Bloomberg', '|', 'Getty', 'ImagesDuring', 'Google', "'s", 'Wednesday', 'event', ',']
+		Relation: per:employee_of (Confidence: 0.955)
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 30 / 58 sentences 
+	Processed 35 / 58 sentences 
+	Processed 40 / 58 sentences 
+	Processed 45 / 58 sentences 
+	Processed 50 / 58 sentences 
+	Processed 55 / 58 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Market', 'Data', 'Terms', 'of', 'Use', 'and', 'DisclaimersData', 'also', 'provided', 'by', 'Google', 'employees', 'slam', 'CEO', 'Sundar', 'Pichai', 'for', '‘']
+		Relation: per:employee_of (Confidence: 0.577)
+		Subject: Sundar Pichai		Object: Google
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Market', 'Data', 'Terms', 'of', 'Use', 'and', 'DisclaimersData', 'also', 'provided', 'by', 'Google', 'employees', 'slam', 'CEO', 'Sundar', 'Pichai', 'for', '‘', 'rushed', '’', 'Bard', 'announcement', ' ', '@charset', '"']
+		Relation: per:employee_of (Confidence: 0.869)
+		Subject: Sundar Pichai		Object: Bard
+		Adding to set of extracted relations.
+		==========
+	Relation (('Sundar Pichai', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Extracted annotations for  3  out of total  58  sentences.
+	Relations extracted from this website: 2 (Overall: 5)
+
+URL (4 / 10): https://twitter.com/sundarpichai
+	Fetching text from url...
+	Webpage length (num of characters):  401
+	Annotating the webpage using spacy...
+	Extracted 52 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 52 sentences 
+	Processed 10 / 52 sentences 
+	Processed 15 / 52 sentences 
+	Processed 20 / 52 sentences 
+	Processed 25 / 52 sentences 
+	Processed 30 / 52 sentences 
+	Processed 35 / 52 sentences 
+	Processed 40 / 52 sentences 
+	Processed 45 / 52 sentences 
+	Processed 50 / 52 sentences 
+	Extracted annotations for  0  out of total  52  sentences.
+	Relations extracted from this website: 0 (Overall: 0)
+
+URL (5 / 10): https://www.britannica.com/biography/Sundar-Pichai
+	Fetching text from url...
+	Webpage length (num of characters):  6996
+	Annotating the webpage using spacy...
+	Extracted 51 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Tokens: ['Britannica', 'ClassicsCheck', 'out', 'these', 'retro', 'videos', 'from', 'Encyclopedia', 'Britannica', '’s', 'archives', '.']
+		Relation: per:employee_of (Confidence: 0.595)
+		Subject: Britannica ClassicsCheck		Object: Encyclopedia Britannica’s
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+	Processed 5 / 51 sentences 
+	Processed 10 / 51 sentences 
+	Processed 15 / 51 sentences 
+	Processed 20 / 51 sentences 
+	Processed 25 / 51 sentences 
+	Processed 30 / 51 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Sundararajan', 'Pichai', 'Written', 'by', 'Melinda', 'C.', 'Shepherd', 'Melinda', 'Shepherd', 'became', 'an', 'editor', 'at', 'Encyclopædia', 'Britannica', 'in', '1988', 'and', 'served', 'as', 'a', 'senior', 'editor', 'of', 'Britannica', 'Book', 'of', 'the', 'Year', 'from', '2004', 'to', '2016', '.']
+		Relation: per:employee_of (Confidence: 0.995)
+		Subject: Sundararajan Pichai		Object: Encyclopædia Britannica
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundararajan', 'Pichai', 'Written', 'by', 'Melinda', 'C.', 'Shepherd', 'Melinda', 'Shepherd', 'became', 'an', 'editor', 'at', 'Encyclopædia', 'Britannica', 'in', '1988', 'and', 'served', 'as', 'a', 'senior', 'editor', 'of', 'Britannica', 'Book', 'of', 'the', 'Year', 'from', '2004', 'to', '2016', '.']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Sundararajan Pichai		Object: Britannica Book of the Year
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundararajan', 'Pichai', 'Written', 'by', 'Melinda', 'C.', 'Shepherd', 'Melinda', 'Shepherd', 'became', 'an', 'editor', 'at', 'Encyclopædia', 'Britannica', 'in', '1988', 'and', 'served', 'as', 'a', 'senior', 'editor', 'of', 'Britannica', 'Book', 'of', 'the', 'Year', 'from', '2004', 'to', '2016', '.']
+		Relation: per:employee_of (Confidence: 0.992)
+		Subject: Melinda C. Shepherd		Object: Encyclopædia Britannica
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundararajan', 'Pichai', 'Written', 'by', 'Melinda', 'C.', 'Shepherd', 'Melinda', 'Shepherd', 'became', 'an', 'editor', 'at', 'Encyclopædia', 'Britannica', 'in', '1988', 'and', 'served', 'as', 'a', 'senior', 'editor', 'of', 'Britannica', 'Book', 'of', 'the', 'Year', 'from', '2004', 'to', '2016', '.']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Melinda C. Shepherd		Object: Britannica Book of the Year
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundararajan', 'Pichai', 'Written', 'by', 'Melinda', 'C.', 'Shepherd', 'Melinda', 'Shepherd', 'became', 'an', 'editor', 'at', 'Encyclopædia', 'Britannica', 'in', '1988', 'and', 'served', 'as', 'a', 'senior', 'editor', 'of', 'Britannica', 'Book', 'of', 'the', 'Year', 'from', '2004', 'to', '2016', '.']
+		Relation: per:employee_of (Confidence: 0.994)
+		Subject: Melinda Shepherd		Object: Encyclopædia Britannica
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundararajan', 'Pichai', 'Written', 'by', 'Melinda', 'C.', 'Shepherd', 'Melinda', 'Shepherd', 'became', 'an', 'editor', 'at', 'Encyclopædia', 'Britannica', 'in', '1988', 'and', 'served', 'as', 'a', 'senior', 'editor', 'of', 'Britannica', 'Book', 'of', 'the', 'Year', 'from', '2004', 'to', '2016', '.']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Melinda Shepherd		Object: Britannica Book of the Year
+		Adding to set of extracted relations.
+		==========
+	Processed 35 / 51 sentences 
+		=== Extracted Relation ===
+		Tokens: ['in', 'full', 'Pichai', 'Sundararajan', ',', '(', 'born', 'June', '10', ',', '1972', ',', 'Madras', '[', 'now', 'Chennai', ']', ',', 'Tamil', 'Nadu', ',', 'India', ')', ',', 'Indian', '-', 'born', 'American', 'executive', 'who', 'was', 'CEO', 'of', 'both', 'Google', ',', 'Inc.', '(']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Pichai Sundararajan		Object: Google, Inc.
+		Adding to set of extracted relations.
+		==========
+	Processed 40 / 51 sentences 
+	Processed 45 / 51 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Therefore', ',', 'when', 'Google', 'cofounders', 'Larry', 'Page', 'and', 'Sergey', 'Brin', 'announced', 'the', 'creation', 'of', 'Alphabet', 'Inc.', ',']
+		Relation: per:employee_of (Confidence: 0.984)
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['In', 'December', '2019', 'he', 'also', 'was', 'named', 'CEO', 'of', 'Alphabet', ',', 'replacing', 'Page', ',']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Page		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+	Processed 50 / 51 sentences 
+	Relation (('Larry Page', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Extracted annotations for  4  out of total  51  sentences.
+	Relations extracted from this website: 8 (Overall: 10)
+
+URL (6 / 10): https://observer.com/2023/02/google-ceo-sundar-pichai-bard-chatbot/
+	Fetching text from url...
+	Webpage length (num of characters):  5915
+	Annotating the webpage using spacy...
+	Extracted 53 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Tokens: ['Sundar', 'Pichai', 'has', 'been', 'the', 'CEO', 'of', 'Google', 'since', '2015', 'and', 'Alphabet', 'since', '2019', '.']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundar', 'Pichai', 'has', 'been', 'the', 'CEO', 'of', 'Google', 'since', '2015', 'and', 'Alphabet', 'since', '2019', '.']
+		Relation: per:employee_of (Confidence: 0.995)
+		Subject: Sundar Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 53 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Malik', 'is', 'a', 'partner', 'at', 'True', 'Ventures', ',']
+		Relation: per:employee_of (Confidence: 0.697)
+		Subject: Malik		Object: True Ventures
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+	Processed 10 / 53 sentences 
+	Processed 15 / 53 sentences 
+	Processed 20 / 53 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Pichai', ',', 'a', 'former', 'product', 'manager', 'at', 'Google', ',', 'took', 'over', 'the', 'company', 'from', 'its', 'cofounder', 'Larry', 'Page', 'in', '2015', 'at', 'the', 'completion', 'of', 'the', 'formation', 'of', 'Alphabet', ',']
+		Relation: per:employee_of (Confidence: 0.991)
+		Subject: Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', ',', 'a', 'former', 'product', 'manager', 'at', 'Google', ',', 'took', 'over', 'the', 'company', 'from', 'its', 'cofounder', 'Larry', 'Page', 'in', '2015', 'at', 'the', 'completion', 'of', 'the', 'formation', 'of', 'Alphabet', ',', 'which', 'owns', 'Google', ',']
+		Relation: per:employee_of (Confidence: 0.986)
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', ',', 'a', 'former', 'product', 'manager', 'at', 'Google', ',', 'took', 'over', 'the', 'company', 'from', 'its', 'cofounder', 'Larry', 'Page', 'in', '2015', 'at', 'the', 'completion', 'of', 'the', 'formation', 'of', 'Alphabet', ',']
+		Relation: per:employee_of (Confidence: 0.975)
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['took', 'over', 'the', 'company', 'from', 'its', 'cofounder', 'Larry', 'Page', 'in', '2015', 'at', 'the', 'completion', 'of', 'the', 'formation', 'of', 'Alphabet', ',']
+		Relation: per:employee_of (Confidence: 0.723)
+		Subject: Larry Page		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'appointed', 'CEO', 'of', 'Alphabet', 'in', 'December', '2019', 'following', 'the', 'retirement', 'of', 'Sergey', 'Brin', ',']
+		Relation: per:employee_of (Confidence: 0.998)
+		Subject: Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'appointed', 'CEO', 'of', 'Alphabet', 'in', 'December', '2019', 'following', 'the', 'retirement', 'of', 'Sergey', 'Brin', ',', 'Google', '’s', 'other', 'cofounder', '.']
+		Relation: per:employee_of (Confidence: 0.998)
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'appointed', 'CEO', 'of', 'Alphabet', 'in', 'December', '2019', 'following', 'the', 'retirement', 'of', 'Sergey', 'Brin', ',']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Sergey Brin		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'was', 'appointed', 'CEO', 'of', 'Alphabet', 'in', 'December', '2019', 'following', 'the', 'retirement', 'of', 'Sergey', 'Brin', ',', 'Google', '’s', 'other', 'cofounder', '.']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Sergey Brin		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 25 / 53 sentences 
+	Processed 30 / 53 sentences 
+	Processed 35 / 53 sentences 
+	Processed 40 / 53 sentences 
+	Processed 45 / 53 sentences 
+	Processed 50 / 53 sentences 
+	Updating confidence for following relation: ('Sundar Pichai', 'per:employee_of', 'Google')
+	Updating confidence for following relation: ('Sundar Pichai', 'per:employee_of', 'Alphabet')
+	Updating confidence for following relation: ('Pichai', 'per:employee_of', 'Alphabet')
+	Updating confidence for following relation: ('Pichai', 'per:employee_of', 'Google')
+	Relation (('Larry Page', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Extracted annotations for  3  out of total  53  sentences.
+	Relations extracted from this website: 7 (Overall: 11)
+
+URL (7 / 10): https://www.nytimes.com/2019/05/07/opinion/google-sundar-pichai-privacy.html
+	Fetching text from url...
+	Webpage length (num of characters):  8155
+	Annotating the webpage using spacy...
+	Extracted 81 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 81 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Pichai', 'is', 'the', 'chief', 'executive', 'of', 'Google', '.']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 81 sentences 
+	Processed 15 / 81 sentences 
+	Processed 20 / 81 sentences 
+	Processed 25 / 81 sentences 
+	Processed 30 / 81 sentences 
+	Processed 35 / 81 sentences 
+	Processed 40 / 81 sentences 
+	Processed 45 / 81 sentences 
+	Processed 50 / 81 sentences 
+	Processed 55 / 81 sentences 
+	Processed 60 / 81 sentences 
+	Processed 65 / 81 sentences 
+	Processed 70 / 81 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Sundar', 'Pichai', 'is', 'the', 'chief', 'executive', 'of', 'Google', '.']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 75 / 81 sentences 
+	Processed 80 / 81 sentences 
+	Relation (('Pichai', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Relation (('Sundar Pichai', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Extracted annotations for  2  out of total  81  sentences.
+	Relations extracted from this website: 0 (Overall: 2)
+
+URL (8 / 10): https://www.bbc.com/news/technology-50656803
+	Fetching text from url...
+	Webpage length (num of characters):  8895
+	Annotating the webpage using spacy...
+	Extracted 65 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Tokens: ['Sundar', 'Pichai', 'is', 'the', 'new', 'chief', 'executive', 'of', 'AlphabetSundar', 'Pichai', ',']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Sundar Pichai		Object: AlphabetSundar Pichai
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundar', 'Pichai', 'is', 'the', 'new', 'chief', 'executive', 'of', 'AlphabetSundar', 'Pichai', ',', 'the', 'chief', 'executive', 'of', 'Google', ',']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Sundar Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Sundar', 'Pichai', 'is', 'the', 'new', 'chief', 'executive', 'of', 'AlphabetSundar', 'Pichai', ',', 'the', 'chief', 'executive', 'of', 'Google', ',', 'has', 'been', 'put', 'in', 'charge', 'of', 'its', 'parent', 'company', 'Alphabet', ',']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Sundar Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['the', 'chief', 'executive', 'of', 'Google', ',', 'has', 'been', 'put', 'in', 'charge', 'of', 'its', 'parent', 'company', 'Alphabet', ',', 'after', 'co', '-', 'founders', 'Larry', 'Page', 'and', 'Sergey', 'Brin', 'announced', 'they', 'were', 'stepping', 'down', '.']
+		Relation: per:employee_of (Confidence: 0.996)
+		Subject: Larry Page		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['the', 'chief', 'executive', 'of', 'Google', ',', 'has', 'been', 'put', 'in', 'charge', 'of', 'its', 'parent', 'company', 'Alphabet', ',', 'after', 'co', '-', 'founders', 'Larry', 'Page', 'and', 'Sergey', 'Brin', 'announced', 'they', 'were', 'stepping', 'down', '.']
+		Relation: per:employee_of (Confidence: 0.983)
+		Subject: Sergey Brin		Object: Google
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['has', 'been', 'put', 'in', 'charge', 'of', 'its', 'parent', 'company', 'Alphabet', ',', 'after', 'co', '-', 'founders', 'Larry', 'Page', 'and', 'Sergey', 'Brin', 'announced', 'they', 'were', 'stepping', 'down', '.']
+		Relation: per:employee_of (Confidence: 0.997)
+		Subject: Larry Page		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['has', 'been', 'put', 'in', 'charge', 'of', 'its', 'parent', 'company', 'Alphabet', ',', 'after', 'co', '-', 'founders', 'Larry', 'Page', 'and', 'Sergey', 'Brin', 'announced', 'they', 'were', 'stepping', 'down', '.']
+		Relation: per:employee_of (Confidence: 0.985)
+		Subject: Sergey Brin		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 65 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Pichai', "'s", 'life', 'story', 'is', 'remarkable', ',', 'and', 'his', 'rise', 'to', 'the', 'top', 'of', 'Google', 'is', 'an', 'endorsement', 'of', 'India', "'s", 'standing', 'in', 'the', 'global', 'technology', 'industry', '-']
+		Relation: per:employee_of (Confidence: 0.875)
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 65 sentences 
+	Processed 15 / 65 sentences 
+	Processed 20 / 65 sentences 
+	Processed 25 / 65 sentences 
+	Processed 30 / 65 sentences 
+	Processed 35 / 65 sentences 
+	Processed 40 / 65 sentences 
+	Processed 45 / 65 sentences 
+	Processed 50 / 65 sentences 
+	Processed 55 / 65 sentences 
+	Processed 60 / 65 sentences 
+	Processed 65 / 65 sentences 
+	Relation (('Sundar Pichai', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Updating confidence for following relation: ('Sundar Pichai', 'per:employee_of', 'Alphabet')
+	Relation (('Larry Page', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Relation (('Sergey Brin', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Updating confidence for following relation: ('Larry Page', 'per:employee_of', 'Alphabet')
+	Relation (('Sergey Brin', 'per:employee_of', 'Alphabet')) has already been encountered with higher confidence. Skipping...
+	Relation (('Pichai', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Extracted annotations for  2  out of total  65  sentences.
+	Relations extracted from this website: 3 (Overall: 8)
+
+URL (9 / 10): https://fortune.com/2023/03/22/alphabet-ceo-sundar-pichai-bard-chatbot-things-will-go-wrong/
+	Fetching text from url...
+	Webpage length (num of characters):  7326
+	Annotating the webpage using spacy...
+	Extracted 63 sentences. Processing each sentence to identify presence of entities of interest...
+	Processed 5 / 63 sentences 
+		=== Extracted Relation ===
+		Tokens: ['EducationFortune', 'WellFortune', 'CryptoFortune', 'RecommendsSEARCHSEARCHSIGN', 'INSubscribe', 'Now', 'Tech', '·', 'GoogleAlphabet', 'CEO', 'Sundar', 'Pichai', 'said', 'the', 'Bard', 'chatbot', 'would', 'make', 'mistakes', '.']
+		Relation: per:employee_of (Confidence: 0.881)
+		Subject: Sundar Pichai		Object: EducationFortune
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['GoogleAlphabet', 'CEO', 'Sundar', 'Pichai', 'said', 'the', 'Bard', 'chatbot', 'would', 'make', 'mistakes', '.']
+		Relation: per:employee_of (Confidence: 0.984)
+		Subject: Sundar Pichai		Object: GoogleAlphabet
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 63 sentences 
+		=== Extracted Relation ===
+		Tokens: ['5:07', 'PM', 'UTCSundar', 'Pichai', 'warned', 'that', '"', 'things', 'will', 'go', 'wrong', '"', 'as', 'Bard', 'opened', 'for', 'public', 'users', '.']
+		Relation: per:employee_of (Confidence: 0.538)
+		Subject: UTCSundar Pichai		Object: Bard
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+	Processed 15 / 63 sentences 
+		=== Extracted Relation ===
+		Tokens: ['including', 'about', '80,000', 'Google', 'employees', ',', 'according', 'to', 'Pichai', '.']
+		Relation: per:employee_of (Confidence: 0.878)
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 20 / 63 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Jane', 'Manchun', 'Wong', '(', '@wongmjane', ')', 'March', '21', ',', '2023', '“', 'Google', 'has', 'acquired', 'its', 'competitors', ',']
+		Relation: per:employee_of (Confidence: 0.552)
+		Subject: Jane Manchun Wong		Object: Google
+		Confidence is lower than threshold confidence. Ignoring this.
+		==========
+	Processed 25 / 63 sentences 
+	Processed 30 / 63 sentences 
+	Processed 35 / 63 sentences 
+	Processed 40 / 63 sentences 
+	Processed 45 / 63 sentences 
+	Processed 50 / 63 sentences 
+	Processed 55 / 63 sentences 
+	Processed 60 / 63 sentences 
+	Relation (('Pichai', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Extracted annotations for  2  out of total  63  sentences.
+	Relations extracted from this website: 2 (Overall: 5)
+
+URL (10 / 10): https://www.yahoo.com/lifestyle/alphabet-ceo-sundar-pichai-said-170709478.html
+	Fetching text from url...
+	Webpage length (num of characters):  6002
+	Annotating the webpage using spacy...
+	Extracted 60 sentences. Processing each sentence to identify presence of entities of interest...
+		=== Extracted Relation ===
+		Tokens: ['Alphabet', 'CEO', 'Sundar', 'Pichai', 'said', 'the', 'Bard', 'chatbot', 'would', 'make', 'mistakes', '.']
+		Relation: per:employee_of (Confidence: 0.984)
+		Subject: Sundar Pichai		Object: Alphabet
+		Adding to set of extracted relations.
+		==========
+	Processed 5 / 60 sentences 
+		=== Extracted Relation ===
+		Tokens: ['AdvertisementFortuneAlphabet', 'CEO', 'Sundar', 'Pichai', 'said', 'the', 'Bard', 'chatbot', 'would', 'make', 'mistakes', '.']
+		Relation: per:employee_of (Confidence: 0.994)
+		Subject: Sundar Pichai		Object: Bard
+		Adding to set of extracted relations.
+		==========
+	Processed 10 / 60 sentences 
+		=== Extracted Relation ===
+		Tokens: ['including', 'about', '80,000', 'Google', 'employees', ',', 'according', 'to', 'Pichai', '.']
+		Relation: per:employee_of (Confidence: 0.878)
+		Subject: Pichai		Object: Google
+		Adding to set of extracted relations.
+		==========
+	Processed 15 / 60 sentences 
+	Processed 20 / 60 sentences 
+	Processed 25 / 60 sentences 
+	Processed 30 / 60 sentences 
+	Processed 35 / 60 sentences 
+	Processed 40 / 60 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Advertisement', 'AdvertisementAdvertisement', 'Alphabet', 'CEO', 'Sundar', 'Pichai', 'said', 'the', 'Bard', 'chatbot', 'would', 'make', 'mistakes', '.']
+		Relation: per:employee_of (Confidence: 0.945)
+		Subject: Sundar Pichai		Object: AdvertisementAdvertisement Alphabet
+		Adding to set of extracted relations.
+		==========
+		=== Extracted Relation ===
+		Tokens: ['Advertisement', 'AdvertisementAdvertisement', 'Alphabet', 'CEO', 'Sundar', 'Pichai', 'said', 'the', 'Bard', 'chatbot', 'would', 'make', 'mistakes', '.']
+		Relation: per:employee_of (Confidence: 0.995)
+		Subject: Sundar Pichai		Object: Bard
+		Adding to set of extracted relations.
+		==========
+	Processed 45 / 60 sentences 
+	Processed 50 / 60 sentences 
+		=== Extracted Relation ===
+		Tokens: ['Alphabet', 'CEO', 'Sundar', 'Pichai', 'said', 'the', 'Bard', 'chatbot', 'would', 'make', 'mistakes', '.']
+		Relation: per:employee_of (Confidence: 0.984)
+		Subject: Sundar Pichai		Object: Alphabet
+		Duplicate with lower confidence than existing record. Ignoring this.
+		==========
+	Processed 55 / 60 sentences 
+	Processed 60 / 60 sentences 
+	Relation (('Sundar Pichai', 'per:employee_of', 'Alphabet')) has already been encountered with higher confidence. Skipping...
+	Updating confidence for following relation: ('Sundar Pichai', 'per:employee_of', 'Bard')
+	Relation (('Pichai', 'per:employee_of', 'Google')) has already been encountered with higher confidence. Skipping...
+	Extracted annotations for  4  out of total  60  sentences.
+	Relations extracted from this website: 2 (Overall: 6)
+
+
+================== ALL RELATIONS for ['per:employee_of'] ( 38 ) =================
+
+Confidence                    | Subject                       | Object                        
+
+0.9975606203079224            | Pichai                        | Google                        
+0.9975491762161255            | Pichai                        | Alphabet                      
+0.9972362518310547            | Larry Page                    | Google                        
+0.9971392750740051            | Sundar Pichai                 | Google                        
+0.9969576597213745            | ofAlphabet Inc.[1]Magic       | Alphabet                      
+0.996940553188324             | Sergey Brin                   | Alphabet                      
+0.9968207478523254            | Page                          | Alphabet                      
+0.9967408776283264            | Larry Page                    | Alphabet                      
+0.996610701084137             | Sundararajan Pichai           | Britannica Book of the Year   
+0.9964548349380493            | Pichai Sundararajan           | Google, Inc.                  
+0.996288537979126             | Melinda Shepherd              | Britannica Book of the Year   
+0.9960234761238098            | Pichai                        | Applied Materials             
+0.9958534836769104            | Sundar Pichai                 | Alphabet                      
+0.9957841634750366            | Sundar Pichai                 | AlphabetSundar Pichai         
+0.9957271814346313            | Pichai                        | the World Internet Conference 
+0.9957224130630493            | Sergey Brin                   | Google                        
+0.9955068826675415            | Jack Dorsey                   | Twitter                       
+0.9955030679702759            | Melinda C. Shepherd           | Britannica Book of the Year   
+0.9951025247573853            | Pichai                        | McKinsey &                    
+0.995000958442688             | Sundararajan Pichai           | Encyclopædia Britannica       
+0.9947704076766968            | Sundar Pichai                 | Bard                          
+0.9942705631256104            | Melinda Shepherd              | Encyclopædia Britannica       
+0.992464005947113             | Melinda C. Shepherd           | Encyclopædia Britannica       
+0.9924460053443909            | Jack Dorsey                   | Meta                          
+0.9914650321006775            | Pichai                        | the Government of India       
+0.984219491481781             | Sundar Pichai                 | GoogleAlphabet                
+0.9802833199501038            | Jack Dorsey                   | Facebook                      
+0.9607675075531006            | Sundar Pichai                 | NavigationwatchliveMarketsPre-MarketsU.S. MarketsCurrenciesCryptocurrencyFutures & CommoditiesBondsFunds & ETFsBusinessEconomyFinanceHealth &
+0.945235550403595             | Sundar Pichai                 | AdvertisementAdvertisement Alphabet
+0.9442318677902222            | Regunatha Pichai              | GEC                           
+0.9291098713874817            | Mark Zuckerberg               | Twitter                       
+0.9186751842498779            | Mark Zuckerberg               | Facebook                      
+0.9035453200340271            | ofAlphabet Inc.[1]Magic       | GoogleBoard                   
+0.882976770401001             | Satya Nadella.[38][39         | Microsoft                     
+0.8814749121665955            | Sundar Pichai                 | EducationFortune              
+0.8444584608078003            | Ruth Porat                    | SVP                           
+0.7890127301216125            | Pichai                        | Twitter                       
+0.7263556718826294            | Mark Zuckerberg               | Meta                          
+ 
+
+Total # of iterations = 1
+
+

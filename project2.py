@@ -57,8 +57,6 @@ def search(google_api_key, google_engine_id, q):
 def extract_main_text(soup):
     main_text = ''
     paragraphs = soup.find_all()
-    if len(paragraphs) > 10000:
-        print(f'\tTrimming webpage content from {len(paragraphs)} to 10000 characters')
 
     rem_char = 10000
     for p in paragraphs:
@@ -71,7 +69,13 @@ def extract_main_text(soup):
         else:
             main_text += p_text + ' '
             rem_char -= len(p_text)
-    return main_text
+    
+    if len(soup.get_text(strip=True)) > 10000:
+        print(f'\tTrimming webpage content from {len(soup.get_text(strip=True))} to 10000 characters')
+        print(f'\tWebpage length (num of characters): ', len(main_text[:10000]))
+    else:
+        print(f'\tWebpage length (num of characters): ', len(soup.get_text(strip=True)))
+    return main_text[:10000]
 
 
 def format_text(raw_text_str):
@@ -98,17 +102,16 @@ def print_parameters(args):
 
     print('\nParameters:')
     for k, v in parameters.items():
-        print(f'{k:<15} = {v:>5}')
+        print(f'{k:<15} = {v:>2}')
     print('Loading necessary libraries...')
 
 
 def update_query(X, old_queries=None):
     for i in range(len(X)):
         extracted_rel = (X[i][1][0] + ' ' + X[i][1][-1]).lower()
-        print('extracted_rel: ', extracted_rel)
         if extracted_rel not in old_queries:
             return extracted_rel
-    print('Iterative set expansion has stalled retrieving k high-confidence tuples. Terminating...')
+    print('\nIterative set expansion has stalled retrieving k high-confidence tuples. Terminating...')
     return None
 
 
@@ -157,11 +160,12 @@ def main(args):
 
             print('\tAnnotating the webpage using spacy...')
             relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.r, args.t)
+            num_dup = 0
             for r, conf in relations.items():
-                X.add(r, conf)
+                num_dup += X.add(r, conf)
 
             print(f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
-            print(f'\tRelations extracted from this website: {len(relations)} (Overall: {overall_num_relations})\n')
+            print(f'\tRelations extracted from this website: {len(relations) - num_dup} (Overall: {overall_num_relations})\n')
         n_iter += 1
         query = update_query(X, old_queries)
     

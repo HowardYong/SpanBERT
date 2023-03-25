@@ -34,13 +34,17 @@ class RelationSet:
         return sorted_queue[i]
 
     def add(self, element, priority):
+        num_dup = 0
         if element in self.set:
             element_idx = next((index for index, (_, rel) in enumerate(self.queue) if element == rel), -1)
             if element_idx != -1 and self.queue[element_idx][0] > priority:
+                num_dup += 1
                 print(f"\tRelation ({element}) has already been encountered with higher confidence. Skipping...")
             else:
+                print(f'\tUpdating confidence for following relation: {self.queue[element_idx][1]}')
                 self.queue[element_idx] = (priority, element)
         else:
             hq.heappush(self.queue, (priority, element))
             self.set.add(element)
+        return num_dup
 

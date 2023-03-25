@@ -57,6 +57,7 @@ def extract_relations(doc, spanbert, r=None, conf=0.7):
     print("\tExtracted {} sentences. Processing each sentence to identify presence of entities of interest...".format(num_sentences))
     c = 0
     for sentence in doc.sents:
+        old_res = res.copy()
         c += 1
         if c % 5 == 0:
             print(f"\tProcessed {c} / {num_sentences} sentences ")
@@ -86,13 +87,14 @@ def extract_relations(doc, spanbert, r=None, conf=0.7):
             if confidence > conf:
                 if res[(subj, relation, obj)] < confidence:
                     res[(subj, relation, obj)] = confidence
-                    num_sentences_used += 1
                     print("\t\tAdding to set of extracted relations.")
                 else:
                     print("\t\tDuplicate with lower confidence than existing record. Ignoring this.")
             else:
                 print("\t\tConfidence is lower than threshold confidence. Ignoring this.")
             print("\t\t==========")
+        if len(res.values()) > 0 and res != old_res:
+            num_sentences_used += 1
     return res, num_sentences_used, overall_num_relations
 
 
