@@ -1,6 +1,10 @@
 import ssl
 import spacy
 from collections import defaultdict
+import openai
+import re
+import ast
+import time
 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -27,17 +31,29 @@ BERT2SPACY = {
         "DATE": "DATE"
         }
 ENTITIES_OF_INTEREST = ["ORGANIZATION", "PERSON", "LOCATION", "CITY", "STATE_OR_PROVINCE", "COUNTRY"]
-RELATIONS_OF_INTEREST = {
+RELATIONS_OF_INTEREST_INTERNAL = {
     1: ['per:schools_attended'],
     2: ['per:employee_of'],
     3: ['per:countries_of_residence', 'per:cities_of_residence', 'per:stateorprovinces_of_residence'],
     4: ['org:top_members/employees']
+}
+RELATIONS_OF_INTEREST = {
+    1: 'Schools_Attended',
+    2: 'Work_For',
+    3: 'Live_In',
+    4: 'Top_Member_Employees'
 }
 RELATIONS_TO_ENTITIES = {
     1: [ENTITIES_OF_INTEREST[1], ENTITIES_OF_INTEREST[0]],
     2: [ENTITIES_OF_INTEREST[1], ENTITIES_OF_INTEREST[0]], 
     3: ENTITIES_OF_INTEREST[1:], 
     4: [ENTITIES_OF_INTEREST[0], ENTITIES_OF_INTEREST[1]], 
+}
+RELATION_EXAMPLES = {
+    1: '["Jeff Bezos", "Schools_Attended", "Princeton University"]',
+    2: '["Alec Radford", "Work_For", "OpenAI"]',
+    3: '["Mariah Carey", "Live_In", "New York City"]',
+    4: '["Nvidia", "Top_Member_Employees", "Jensen Huang"]'
 }
 
 
@@ -48,7 +64,7 @@ def get_entities(sentence, entities_of_interest):
 def extract_relations(doc, spanbert, r=None, conf=0.7):
     res = defaultdict(int)
     entities_of_interest = RELATIONS_TO_ENTITIES[r]
-    relation_of_interest = RELATIONS_OF_INTEREST[r]
+    relation_of_interest = RELATIONS_OF_INTEREST_INTERNAL[r]
 
     num_sentences = len([s for s in doc.sents])
     num_sentences_used = 0
@@ -162,3 +178,99 @@ def create_entity_pairs(sents_doc, entities_of_interest, window_size=40):
     return entity_pairs
 
 
+def extract_relations_gpt3(doc, openai_api_key, r=None, conf=0.7):
+    res = defaultdict(int)
+    entities_of_interest = RELATIONS_TO_ENTITIES[r]
+    relation_of_interest = RELATIONS_OF_INTEREST[r]
+    num_sentences = len([s for s in doc.sents])
+    num_sentences_used = 0
+    overall_num_relations = 0
+
+    print("\tExtracted {} sentences. Processing each sentence to identify presence of entities of interest...".format(
+        num_sentences))
+    c = 0
+    for sentence in doc.sents:
+        old_res = res.copy()
+        c += 1
+        if c % 5 == 0:
+            print(f"\tProcessed {c} / {num_sentences} sentences ")
+
+        entity_pairs = create_entity_pairs(sentence, entities_of_interest)
+
+        examples = []
+        for ep in entity_pairs:
+            if ep[1][1] in entities_of_interest and ep[2][1] in entities_of_interest and ep[1][1] != ep[2][1]:
+                subj_ent = tuple(
+                    filter(lambda e: e[1] in entities_of_interest[:1], ep))[0]
+                obj_ent = tuple(
+                    filter(lambda e: e[1] in entities_of_interest[1:], ep))[0]
+                examples.append(
+                    {"tokens": ep[0], "subj": subj_ent, "obj": obj_ent})
+        if len(examples) == 0:
+            continue
+
+        response = extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_interest, r,
+                                                   openai_api_key)
+
+        extracted_relations_list = None
+        extracted_relations_string = '[' + \
+            re.sub(r'[\n.]', '', response.choices[0].text.strip()) + ']'
+        try:
+            extracted_relations_list = ast.literal_eval(
+                extracted_relations_string)
+        except (SyntaxError, AssertionError, ValueError):
+            continue
+
+        gpt3_confidence = 1.00
+        for extracted_relation in extracted_relations_list:
+            if len(extracted_relation) == 3 and extracted_relation[0] and extracted_relation[1] == relation_of_interest and extracted_relation[2]:
+                overall_num_relations += 1
+                subj, rel, obj = extracted_relation
+                print("\t\t=== Extracted Relation ===")
+                print("\t\tSentence: {}".format(sentence))
+                print("\t\tSubject: {}\t\tObject: {}".format(subj, obj))
+                if (subj, rel, obj) in res:
+                    print("\t\tDuplicate. Ignoring this.")
+                else:
+                    print("\t\tAdding to set of extracted relations.")
+                    res[(subj, rel, obj)] = gpt3_confidence
+                print("\t\t==========")
+        if len(res.values()) != 0 and old_res != res:
+            num_sentences_used += 1
+    return res, num_sentences_used, overall_num_relations
+
+
+def extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_interest, r, openai_api_key):
+    openai.api_key = openai_api_key
+    subj_classification = entities_of_interest[0]
+    obj_classification = ' or '.join(
+        entities_of_interest[1:]) if r == 3 else entities_of_interest[1]
+
+    prompt = (f"Please extract all the {relation_of_interest} relations from the sentence: '{sentence}'. "
+              f"Output Format: [\"{subj_classification}\", \"{relation_of_interest}\", \"{obj_classification}\"]  "
+              f"Output Example: {RELATION_EXAMPLES[r]}")
+
+    model = 'text-davinci-003'
+    max_tokens = 100
+    temperature = 0.2
+    top_p = 1
+    frequency_penalty = 0
+    presence_penalty = 0
+
+    try:
+        response = openai.Completion.create(
+            model=model,
+            prompt=prompt,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            top_p=top_p,
+            frequency_penalty=frequency_penalty,
+            presence_penalty=presence_penalty
+        )
+    except openai.error.RateLimitError:
+        print('Warning: RateLimitError. Sleeping...')
+        time.sleep(10)
+        extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_interest, r,
+                                                   openai_api_key)
+
+    return response

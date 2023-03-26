@@ -54,6 +54,20 @@ def search(google_api_key, google_engine_id, q):
     return res
 
 
+def extract_content(webpage):
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
+    print (f'\tFetching text from url...')
+    response = requests.get(webpage['link'], headers=headers, timeout=20)
+    
+    if response.status_code != 200:
+        print(f'\tWarning (response {response.status_code}): Target address {webpage["link"]}. Failed to retrieve webpage.')
+        return None
+    else:
+        content = response.text
+    soup = BeautifulSoup(content, 'html.parser')
+    return soup
+
+
 def extract_main_text(soup):
     main_text = ''
     paragraphs = soup.find_all()
@@ -75,6 +89,9 @@ def extract_main_text(soup):
         print(f'\tWebpage length (num of characters): ', len(main_text[:10000]))
     else:
         print(f'\tWebpage length (num of characters): ', len(soup.get_text(strip=True)))
+    if len(main_text) == 0:
+        print('\tWebpage has no main text to extract. Skipping...')
+        return ''
     return main_text[:10000]
 
 
@@ -117,49 +134,52 @@ def update_query(X, old_queries=None):
 
 def main(args):
     print_parameters(args)
+    n_iter = 0
     nlp = spacy.load("en_core_web_lg")  
+    extractor = 'spanbert' if args.spanbert else 'gpt3'
+    X = RelationSet(relation_type=args.r, model=extractor)
+    visited = set()
+    old_queries = set()
+    query =  args.q
+    old_queries.add(query)
 
     if args.spanbert:
         model = SpanBERT("./pretrained_spanbert")  
     else:
         model = None
-    X = RelationSet(args.r)
-    visited = set()
-    old_queries = set()
-    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
 
-    n_iter = 0
-    query =  args.q
-    old_queries.add(query)
     while len(X) < args.k and query:
         res = search(args.google_api_key, args.google_engine_id, query)
+        num_webpages = len(res['items'])
         print(f'=========== Iteration: {n_iter} - Query: {query} ===========\n')
-        for i in range(len(res['items'])):
-            num_webpages = len(res['items'])
+
+        for i in range(num_webpages):
             webpage = res['items'][i]
             link = webpage['link']
-            if webpage['link'] in visited:
-                print('\tWebpage has already been visited. Skipping...')
-                continue
+
             print(f'URL ({i+1} / {num_webpages}): {link}')
+            if webpage['link'] in visited:
+                print('\tWebpage has already been visited. Skipping...\n')
+                continue
+            elif 'fileFormat' in webpage and webpage['fileFormat'] == 'PDF/Adobe Acrobat':
+                print('\tEncountered non-HTML webpage (PDF). Skipping...\n')
+                continue
             visited.add(webpage['link'])
 
-            print (f'\tFetching text from url...')
-            response = requests.get(webpage['link'], headers=headers, timeout=20)
-            if response.status_code != 200:
-                print(f'\tWarning (response {response.status_code}): Target address {webpage["link"]}. Failed to retrieve webpage.')
-                continue
+            content = extract_content(webpage)
+            if content:
+                text = extract_main_text(content)
+                if text:
+                    doc = nlp(text)
             else:
-                content = response.text
-            soup = BeautifulSoup(content, 'html.parser')
-            text = extract_main_text(soup)
-            if len(text) == 0:
-                print('\tWebpage has no main text to extract. Skipping...')
                 continue
-            doc = nlp(text)
 
             print('\tAnnotating the webpage using spacy...')
-            relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.r, args.t)
+            if args.spanbert:
+                relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.r, args.t)
+            else:
+                relations, num_sentences_used, overall_num_relations = extract_relations_gpt3(doc, args.openai_api_key, args.r, args.t)
+            
             num_dup = 0
             for r, conf in relations.items():
                 num_dup += X.add(r, conf)
