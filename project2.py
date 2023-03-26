@@ -30,9 +30,9 @@ from collections import defaultdict
 
 def search(google_api_key, google_engine_id, q):
     '''
-    Launches instance of Google Programmable Search to query provided terms
-    :params: 
-    :return: 
+    Launches instance of Google Programmable Search to query provided terms.
+    :params: str, str, str
+    :return: JSON
     '''
     key = google_api_key
     searchEngineId = google_engine_id
@@ -55,6 +55,11 @@ def search(google_api_key, google_engine_id, q):
 
 
 def extract_content(webpage):
+    '''
+    Retrieve content from webpage if response status is OK. 
+    :params: dict
+    :return: BeautifulSoup, None
+    '''
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
     print (f'\tFetching text from url...')
     response = requests.get(webpage['link'], headers=headers, timeout=20)
@@ -69,6 +74,11 @@ def extract_content(webpage):
 
 
 def extract_main_text(soup):
+    '''
+    Extract main text from webpage content. If number of characters exceeds 10000 then truncate.
+    :params: BeautifulSoup
+    :return: str
+    '''
     main_text = ''
     paragraphs = soup.find_all()
 
@@ -96,6 +106,11 @@ def extract_main_text(soup):
 
 
 def format_text(raw_text_str):
+    '''
+    Preprocess text extracted from webpage content.
+    :params: str
+    :return: str
+    '''
     preprocessed_text = re.sub(u'\xa0', ' ', raw_text_str) 
     preprocessed_text = re.sub('\t+', ' ', preprocessed_text) 
     preprocessed_text = re.sub('\n+', ' ', preprocessed_text) 
@@ -105,6 +120,11 @@ def format_text(raw_text_str):
 
 
 def print_parameters(args):
+    '''
+    Displays header with argument values.
+    :params: argparse.Namespace
+    :return: void
+    '''
     relations_of_interest = ['Schools_Attended', 'Work_For', 'Live_In', 'Top_Member_Employees']
     parameters = {
         'Client key': args.google_api_key,
@@ -124,6 +144,11 @@ def print_parameters(args):
 
 
 def update_query(X, old_queries=None):
+    '''
+    Updates with unique query by iterating extracted relations in descending order of confidence. 
+    :params: RelationSet, set
+    :return: str, None
+    '''
     for i in range(len(X)):
         extracted_rel = (X[i][1][0] + ' ' + X[i][1][-1]).lower()
         if extracted_rel not in old_queries:
@@ -133,6 +158,7 @@ def update_query(X, old_queries=None):
 
 
 def main(args):
+    # (1) Initialize empty RelationSet object and empty sets for visited webpages and old queries.
     print_parameters(args)
     n_iter = 0
     nlp = spacy.load("en_core_web_lg")  
@@ -148,12 +174,15 @@ def main(args):
     else:
         model = None
 
+    # (2) Obtain search results for given query until any-K (or top-K) tuples extracted.
     while len(X) < args.k and query:
         res = search(args.google_api_key, args.google_engine_id, query)
         num_webpages = len(res['items'])
         print(f'=========== Iteration: {n_iter} - Query: {query} ===========\n')
 
+        # (3) Process each webpage.
         for i in range(num_webpages):
+            # (3a) Only process unvisited webpages and non-PDF webpage content.
             webpage = res['items'][i]
             link = webpage['link']
 
@@ -166,6 +195,7 @@ def main(args):
                 continue
             visited.add(webpage['link'])
 
+            # (3b-c) Extract main content with BeautifulSoup and get main text.
             content = extract_content(webpage)
             if content:
                 text = extract_main_text(content)
@@ -175,17 +205,23 @@ def main(args):
                 continue
 
             print('\tAnnotating the webpage using spacy...')
+            # (3d-e) Annotate with spaCy library and extract relations via method specified in args.
             if args.spanbert:
                 relations, num_sentences_used, overall_num_relations = extract_relations(doc, model, args.r, args.t)
             else:
                 relations, num_sentences_used, overall_num_relations = extract_relations_gpt3(doc, args.openai_api_key, args.r, args.t)
             
+            # (3f-4) Update RelationSet with extracted relations. Skip duplicate relations.
             num_dup = 0
             for r, conf in relations.items():
                 num_dup += X.add(r, conf)
 
             print(f'\tExtracted annotations for  {num_sentences_used}  out of total  {len([s for s in doc.sents])}  sentences.')
             print(f'\tRelations extracted from this website: {len(relations) - num_dup} (Overall: {overall_num_relations})\n')
+        
+        # (5-6) If at least k relations added to RelationSet X then exit loop. 
+        # Otherwise update the query with the highest confidence extracted relation (for SpanBERT). 
+        # If no unique query exists in X, terminate with ISE stalled.
         n_iter += 1
         query = update_query(X, old_queries)
     

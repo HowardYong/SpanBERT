@@ -73,23 +73,30 @@ def extract_relations(doc, spanbert, r=None, conf=0.7):
     print("\tExtracted {} sentences. Processing each sentence to identify presence of entities of interest...".format(num_sentences))
     c = 0
     for sentence in doc.sents:
+        # Copy values in result prior to current sentence to verify if sentence was used.
         old_res = res.copy()
         c += 1
         if c % 5 == 0:
             print(f"\tProcessed {c} / {num_sentences} sentences ")
 
+        # Annotate entities and create pairs using spaCy library.
         entity_pairs = create_entity_pairs(sentence, entities_of_interest)
         examples = []
         for ep in entity_pairs:
+            # Add entity pair to extract relation with SpanBERT only if subject and object entity types match
+            # the relation of interest.
             if ep[1][1] in entities_of_interest and ep[2][1] in entities_of_interest and ep[1][1] != ep[2][1]:
                 subj_ent = tuple(filter(lambda e: e[1] in entities_of_interest[:1], ep))[0]
                 obj_ent = tuple(filter(lambda e: e[1] in entities_of_interest[1:], ep))[0]
                 examples.append({"tokens": ep[0], "subj": subj_ent, "obj": obj_ent})
+        # Skip this sentence if no entities were labeled.
         if len(examples) == 0:
             continue
 
         preds = spanbert.predict(examples)
         for ex, pred in list(zip(examples, preds)):
+            # Skip the entity pair if no relation found or relation identified is different from relation
+            # of interest.
             relation = pred[0]
             if relation == 'no_relation' or relation not in relation_of_interest:
                 continue
@@ -109,6 +116,7 @@ def extract_relations(doc, spanbert, r=None, conf=0.7):
             else:
                 print("\t\tConfidence is lower than threshold confidence. Ignoring this.")
             print("\t\t==========")
+        # If results changed after passing through sentence, the sentence was used.
         if len(res.values()) > 0 and res != old_res:
             num_sentences_used += 1
     return res, num_sentences_used, overall_num_relations
