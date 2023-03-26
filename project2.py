@@ -48,8 +48,8 @@ def search(google_api_key, google_engine_id, q):
         )
         .execute()
     )
-    if int(res['searchInformation']['totalResults']) < 10:
-        print("Fewer than 10 results overall. Terminating...")
+    if int(res['searchInformation']['totalResults']) < 1:
+        print("Returned 0 results. Terminating...")
         return None
     return res
 
