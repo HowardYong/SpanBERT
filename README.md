@@ -60,19 +60,19 @@ The user provides an initial seed query, relation of interest, confidence thresh
 
 Entity pairs are created for each sentence in the main text of a given web page document. If the 2 entity labels in a given pair conforms to the structure of the desired relation (provided upon program launch), then the project proceeds to relation extraction. Method of extracting relations is specified at program launch (`-spanbert` or `gpt3`). If the user provided the `-spanbert` flag, then the list of entity pairs are provided to the pre-trained SpanBERT model for relation extraction. Entity pairs consist of the corresponding context tokens, the subject (string, label, and index span found in the sentence), and object (same as subject). However, if the `-gpt3` flag is provided, then a prompt is constructed using a template, the input sentence, and an example relation. Relations that are extracted by SpanBERT have a corresponding confidence. If this confidence is higher than the user-provided threshold and is unique, it is added to the results. Relations extracted with GPT-3 are assigned a confidence of `1.0`. Thus, all unique relations are appended.
 
-One iteration in this project flow consists of launching a search for a given query, downloading, annotating and extracting relations for each of the web pages returned for a given search. At the end of an iteration, the query is updated with an extracted relation based on 2 criteria: (1) it has the highest probability, or confidence (2) it is unique. If no more extracted relations can be used to construct a new query and the program has not terminated (i.e., k relations have not been extracted yet) then the program by default terminates as a result of iterative set expansion stalling. Otherwise, keep iterating until k relations have been extracted.
+One iteration in this project flow consists of launching a search for a given query, downloading, annotating and extracting relations for each of the web pages returned for a given search. At the end of an iteration, the query is updated with an extracted relation based on 2 criteria: (1) it has the highest probability, or confidence (2) it is unique. If no more extracted relations can be used to construct a new query and the program has not terminated (i.e., `k` relations have not been extracted yet) then the program by default terminates as a result of iterative set expansion stalling. Otherwise, keep iterating until `k` relations have been extracted.
 
 ### Main functions
 
 The key functions and objects in this project are listed below with short descriptions:
 
-main(): Entry point and driver for the program
-search(): Constructs search object with Google custom search API and launches search
-extract_content() and extract_main_text(): Uses `BeautifulSoup4` to scrape webpage content, preprocess text, and return main text for annotation
-update_query(): Searches extracted relations and updates query with next highest confidence, unique relation
-extract_relations() and extract_relations_gpt3(): Applies pre-trained language model to extract relations
-create_entity_pairs() and create_entity_pairs_gpt3(): Annotate text with `spaCy` library and create entity pairs
-RelationSet: Custom class used to store relations. Handles duplicates and ordering with priority queue and set data structures.
+`main()`: Entry point and driver for the program
+`search()`: Constructs search object with Google custom search API and launches search
+`extract_content()`: and extract_main_text(): Uses `BeautifulSoup4` to scrape webpage content, preprocess text, and return main text for annotation
+`update_query() : Searches extracted relations and updates query with next highest confidence, unique relation
+`extract_relations()`: and extract_relations_gpt3(): Applies pre-trained language model to extract relations
+`create_entity_pairs()`: and create_entity_pairs_gpt3(): Annotate text with `spaCy` library and create entity pairs
+`RelationSet`: Custom class used to store relations. Handles duplicates and ordering with priority queue and set data structures.
 
 ### Details on scraping, annotation and relation extraction
 #### Scraping
