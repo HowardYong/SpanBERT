@@ -1,89 +1,116 @@
-# UPDATE THIS README
+# COMS E6111 - Advanced Database Systems Project 2
 
-# spaCy-SpanBERT: Relation Extraction from Web Documents
+## Authors
 
-This repository integrates spaCy with pre-trained SpanBERT. It is a fork from [SpanBERT](https://github.com/facebookresearch/SpanBERT) by Facebook Research, which contains code and models for the paper: [SpanBERT: Improving Pre-training by Representing and Predicting Spans](https://arxiv.org/abs/1907.10529).
+Howard Yong (hy2724) and Solomon Chang (sjc2233)
 
-We have adapted the SpanBERT scripts to support relation extraction from general documents beyond the TACRED dataset. We extract entities using spaCy and classify relations using SpanBERT. This code has been used for the purpose of the Advanced Database Systems Course at Columbia University.
+## Files
 
-## Install Requirements
-First, create a conda environment running Python 3.7:
+Name | Usage
+--- | ---
+``README.pdf`` | README file
+``query_transcripts_spanbert.pdf`` | Transcript of required spanbert query
+``query_transcripts_gpt3.pdf`` | Transcript of required gpt3 query
+``pytorch_pretrained_bert/`` | Pretrained spanbert files
+``download_finetuned.sh`` | Spanbert setup file
+``example_relations.py`` | Example of using spacy and spanbert
+``project2.py`` | Main project file
+``relation_set.py`` | Implements a data structure for a global relation set
+``relations.txt`` | Contains a list of the relation names
+``requirements.txt`` | A list of requirements to install
+``setup.sh`` | Shell script to install project dependencies
+``spacy_help_functions.py`` | Contains methods for relation extraction
+``spanbert.py`` | Contains spanbert program
+
+## Credentials
+
+Credential | Detail
+--- | ---
+``AIzaSyBTMbRD_IajPp_IY1jVcwG2p2uv1Xe1dI4`` | Google API KEY
+``485cb07d083282383`` | Engine ID
+
+## Dependencies
+
+To install, run:
+
+  ```bash
+  $ cd proj2
+  $ bash setup.sh
+  ```
+
+## How to Run
+
+Under the project's root directory, run
 
 ```bash
-conda create --name spacyspanbert python=3.7
-conda activate spacyspanbert
+$ python3 project2.py [-spanbert|-gpt3] <google api key> <google engine id> <openai secret key> <relation> <threshold> <query> <k-tuples>
 ```
 
-Then, install requirements and download spacy's en_core_web_lg:
-```bash
-pip install -r requirements.txt
-python3 -m spacy download en_core_web_lg
-```
-
-## Download Pre-Trained SpanBERT (Fine-Tuned in TACRED)
-SpanBERT has the same model configuration as [BERT](https://github.com/google-research/bert) but it differs in
-both the masking scheme and the training objectives.
-
-* Architecture: 24-layer, 1024-hidden, 16-heads, 340M parameters
-* Fine-tuning Dataset: [TACRED](https://nlp.stanford.edu/projects/tacred/) ([42 relation types](https://github.com/gkaramanolakis/SpanBERT/blob/master/relations.txt))
-
-To download the fine-tuned SpanBERT model run: 
+Examples:
 
 ```bash
-bash ./download_finetuned.sh
+$ python3 project2.py -spanbert  <google api key> <google engine id> <openai secret key> 1 0.7 "mark zuckerberg harvard" 10
 ```
 
-## Run Spacy-SpanBERT 
-The code below shows how to extract relations between entities of interest from raw text: 
+## Internal Design
 
-```python
-raw_text = "Bill Gates stepped down as chairman of Microsoft in February 2014 and assumed a new post as technology adviser to support the newly appointed CEO Satya Nadella."
+### Project Flow
 
-entities_of_interest = ["ORGANIZATION", "PERSON", "LOCATION", "CITY", "STATE_OR_PROVINCE", "COUNTRY"]
+The user provides an initial seed query, relation of interest, confidence threshold, and a desired number of relations to extract, k. The program is then responsible for launching a search with the provided query. A request is sent to each webpage response. If successful with respect to some criteria, then the main text is extracted from the contents of the webpage, preprocessed, and trimmed, if necessary. For each web page main text, a document is constructed using the `spaCy` library `en_core_web_lg` pre-trained language model for annotation and named entity recognition. 
 
-# Load spacy model
-import spacy
-nlp = spacy.load("en_core_web_lg")  
+Entity pairs are created for each sentence in the main text of a given web page document. If the 2 entity labels in a given pair conforms to the structure of the desired relation (provided upon program launch), then the project proceeds to relation extraction. Method of extracting relations is specified at program launch (`-spanbert` or `gpt3`). If the user provided the `-spanbert` flag, then the list of entity pairs are provided to the pre-trained SpanBERT model for relation extraction. Entity pairs consist of the corresponding context tokens, the subject (string, label, and index span found in the sentence), and object (same as subject). However, if the `-gpt3` flag is provided, then a prompt is constructed using a template, the input sentence, and an example relation. Relations that are extracted by SpanBERT have a corresponding confidence. If this confidence is higher than the user-provided threshold and is unique, it is added to the results. Relations extracted with GPT-3 are assigned a confidence of `1.0`. Thus, all unique relations are appended.
 
-# Apply spacy model to raw text (to split to sentences, tokenize, extract entities etc.)
-doc = nlp(raw_text)  
+One iteration in this project flow consists of launching a search for a given query, downloading, annotating and extracting relations for each of the web pages returned for a given search. At the end of an iteration, the query is updated with an extracted relation based on 2 criteria: (1) it has the highest probability, or confidence (2) it is unique. If no more extracted relations can be used to construct a new query and the program has not terminated (i.e., k relations have not been extracted yet) then the program by default terminates as a result of iterative set expansion stalling. Otherwise, keep iterating until k relations have been extracted.
 
-# Load pre-trained SpanBERT model
-from spanbert import SpanBERT 
-spanbert = SpanBERT("./pretrained_spanbert")  
+### Main functions
 
-# Extract relations
-from spacy_help_functions import extract_relations
-relations = extract_relations(doc, spanbert, entities_of_interest)
-print("Relations: {}".format(dict(relations)))
-# Relations: {('Bill Gates', 'per:employee_of', 'Microsoft'): 1.0, ('Microsoft', 'org:top_members/employees', 'Bill Gates'): 0.992, ('Satya Nadella', 'per:employee_of', 'Microsoft'): 0.9844}
+The key functions and objects in this project are listed below with short descriptions:
+
+main(): Entry point and driver for the program
+search(): Constructs search object with Google custom search API and launches search
+extract_content() and extract_main_text(): Uses `BeautifulSoup4` to scrape webpage content, preprocess text, and return main text for annotation
+update_query(): Searches extracted relations and updates query with next highest confidence, unique relation
+extract_relations() and extract_relations_gpt3(): Applies pre-trained language model to extract relations
+create_entity_pairs() and create_entity_pairs_gpt3(): Annotate text with `spaCy` library and create entity pairs
+RelationSet: Custom class used to store relations. Handles duplicates and ordering with priority queue and set data structures.
+
+### Details on scraping, annotation and relation extraction
+#### Scraping
+
+Dependencies: `google-api-python-client`, `requests`, `BeautifulSoup`, `re`
+
+A search is launched using the `google-api-python-client`. This returns a JSON object storing each webpage (up to 10 as configured) and its corresponding metadata. Only non-PDF webpages are parsed
+
+#### Annotation and Extraction
+
+When running `-gpt3`, the program will loop through each sentence in the document and at the start of each iteration, makes a copy of the current state of the relation set for that document. SpaCY is then utilized to extract entity pairs out of the sentence. If the sentence contains entity pairs relevant to the desired relation, a plain text version of the sentence is fed into the GPT-3 model for relation extraction using this prompt
+
+``` python
+Please extract all the <Relation of Interest> relations from the sentence <Sentence>. 
+Output Format: [<Subject>, <Relation of Interest>, <Object>]. 
+Output Example: [<Example Output>]
 ```
 
-You can directly run this example via the example_relations.py file.
+The `Relation of Interest` is one of `Schools_Attended, Work_For, Live_In, Top_Member_Employees`.
 
-## Directly Apply SpanBERT (without using spaCy)
+The `Subject` and `Object` are one of `"ORGANIZATION", "PERSON", "LOCATION", "CITY", "STATE_OR_PROVINCE", "COUNTRY"`
 
-```python
-from spanbert import SpanBERT
-bert = SpanBERT(pretrained_dir="./pretrained_spanbert")
-```
-Input is a list of dicts, where each dict contains the sentence tokens ('tokens'), the subject entity information ('subj'), and object entity information ('obj'). Entity information is provided as a tuple: (\<Entity Name\>, \<Entity Type\>, (\<Start Location\>, \<End Location\>))
+The `Example Output` is one of the following depending on the `Relation of Interest`
 
-```python
-examples = [
-        {'tokens': ['Bill', 'Gates', 'stepped', 'down', 'as', 'chairman', 'of', 'Microsoft'], 'subj': ('Bill Gates', 'PERSON', (0,1)), "obj": ('Microsoft', 'ORGANIZATION', (7,7))},
-        {'tokens': ['Bill', 'Gates', 'stepped', 'down', 'as', 'chairman', 'of', 'Microsoft'], 'subj': ('Microsoft', 'ORGANIZATION', (7,7)), 'obj': ('Bill Gates', 'PERSON', (0,1))},
-        {'tokens': ['Zuckerberg', 'began', 'classes', 'at', 'Harvard', 'in', '2002'], 'subj': ('Zuckerberg', 'PERSON', (0,0)), 'obj': ('Harvard', 'ORGANIZATION', (4,4))}
-        ]
-preds = bert.predict(examples)
+``` python
+   1: '["Jeff Bezos", "Schools_Attended", "Princeton University"]',
+   2: '["Alec Radford", "Work_For", "OpenAI"]',
+   3: '["Mariah Carey", "Live_In", "New York City"]',
+   4: '["Nvidia", "Top_Member_Employees", "Jensen Huang"]'
 ```
 
-Output is a list of the same length as the input list, which contains the SpanBERT predictions and confidence scores
+Several variations of this prompt and varying temperatures were tested. The prompt and temperature judged to return the largest number of relevant relations was selected. A temperature of `0.2` was selected. The Output Example was added to the prompt in the vein of one-shot learning to guide GPT-3 to providing more accurate relations. 
 
-```python
-print("Output: ", preds)
-# Output: [('per:employee_of', 0.99), ('org:top_members/employees', 0.98), ('per:schools_attended', 0.98)]
-```
 
-## Contact
-If you have any questions, please contact Zheng Hui `<zheng.hui@columbia.edu>`.
+## External references
+
+
+
+## Additional Information
+
+
