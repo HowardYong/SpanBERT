@@ -9,8 +9,8 @@ Howard Yong (hy2724) and Solomon Chang (sjc2233)
 Name | Usage
 --- | ---
 ``README.pdf`` | README file
-``query_transcripts_spanbert.pdf`` | Transcript of required spanbert query
-``query_transcripts_gpt3.pdf`` | Transcript of required gpt3 query
+``spanbert_transcript.pdf`` | Transcript of required spanbert query
+``gpt3_transcript.pdf`` | Transcript of required gpt3 query
 ``pytorch_pretrained_bert/`` | Pretrained spanbert files
 ``download_finetuned.sh`` | Spanbert setup file
 ``example_relations.py`` | Example of using spacy and spanbert
@@ -85,9 +85,27 @@ The key functions and objects in this project are listed below with short descri
 
 Dependencies: `google-api-python-client`, `requests`, `BeautifulSoup`, `re`
 
-A search is launched using the `google-api-python-client`. This returns a JSON object storing each webpage (up to 10 as configured) and its corresponding metadata. Only non-PDF webpages are parsed
+A search is launched using the `google-api-python-client`. This returns a JSON object storing each webpage (up to 10 as configured in the Custom search portal) and its corresponding metadata. There is a 20 second timeout for the response of the websites. Only HTML web pages are parsed. If a web page has been visited (visited web pages are maintained with a set) or it has the field `fileFormat` with value `PDF/Adobe Acrobat` in its metadata, it is skipped. Additionally, a response status code of 200 is verified; otherwise, a warning is displayed and the webpage is skipped. To avoid some response codes, a `User-Agent` string is provided in the `headers` argument. We used the following string:
+``` python
+'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'~
+```
+BeautifulSoup extracts all the main content with text, and it is processed with regex. Metacharacters representing escape sequences (`\xa0`), tabs (`\t`), new lines (`\n`), are replaced with single spaces. If there is a zero space metacharacter (`\u200b`) it is replaced with an empty string. If the total text is more than 10,000 characters, the remaining text is truncated. 
 
-#### Annotation and Extraction
+#### Annotation
+
+Dependencies: `spacy`
+
+The annotation task is done in the `main()` function by making calls to functions in the `spacy_help_functions.py` file, namely `create_entity_pairs()`. The project initializes a `spacy.Doc` object using the pretrained model `en_core_web_lg`. The model tokenizes the text into sentences. For each sentence, the model identifies the existing entities, and the function `create_entity_pairs()` returns the list of entity pairs within a span of the sentence. For each entity pair, if the 2 respective entities match the same entity types for user-provided relation at program launch, then it is collected to be passed to the pretrained language model, SpanBERT. 
+
+#### Extraction
+
+Dependencies: `spacy`, `pytorch-pretrained-bert`, `openai`, `ast`
+
+SpanBERT
+
+Given the entity pairs matching the relation of interest, SpanBERT makes predictions on the relationship between the entities in the pair given the span of context tokens, the subject entity (a tuple of the entity original string, label, and token span), and the object entity. The driving logic for relation extraction is in `extract_relations()`. The original helper function is modified in a few ways: (1) only examples with matching entity type and order of the relation of interest are added to `examples` to predict with SpanBERT (2) if no examples are found (i.e., valid entity pairs) then the sentence is skipped (3) if the predicted relation is not a relation of interest, it is skipped. At the beginning of each sentence, a copy of the values in the result (storing the extracted relations for a given web page document) is made and used to compare with the result values at the end of a sentence processing to determine the number of sentences used. 
+
+GPT-3
 
 When running `-gpt3`, the program will loop through each sentence in the document and at the start of each iteration, makes a copy of the current state of the relation set for that document. SpaCY is then utilized to extract entity pairs out of the sentence. If the sentence contains entity pairs relevant to the desired relation, a plain text version of the sentence is fed into the GPT-3 model for relation extraction using this prompt
 
@@ -112,11 +130,23 @@ The `Example Output` is one of the following depending on the `Relation of Inter
 
 Several variations of this prompt and varying temperatures were tested. The prompt and temperature judged to return the largest number of relevant relations was selected. A temperature of `0.2` was selected. The Output Example was added to the prompt in the vein of one-shot learning to guide GPT-3 to providing more accurate relations. 
 
+### Relations
+
+Dependencies: `heapq`
+
+The extracted relations are stored in a RelationSet object, which is a class designed to handle priority ordering efficiently and duplicate elements. The main attributes it stores is a priority queue (implemented with a list and heap), a set, the spaCy relation of interest, and a string corresponding to the specified method of relation extraction at user-input. The following system-defined methods are overwritten for the object
+
+`__len__()`: Returns the length of the queue
+`__str__()`: Prints all relations and their confidence (if SpanBERT is specified), subject, and object in the specified format by the reference implementation
+`__getitem__()`: Returns the i-th element in sorted order
+
+The `add(element, priority)` method is used to add new relations and returns the number of duplicate relations encountered. Firstly, the provided element (or relation) is checked for membership in the set to handle duplicates. If it is not a duplicate relation, the priority queue pushes the element with priority as the confidence of the relation. The priority queue is maintained as a linear representation of a max heap. The priority of the relation is irrelevant to the case of GPT-3, since all elements have the same confidence/priority. If a given relation is a duplicate, the current priority is compared with the new priority. If the current priority is higher, then no change is made to the RelationSet and the number of duplicate elements increments. If the current priority is lower than the new priority, only if SpanBERT was specified, then the old relation confidence is updated (GPT-3 assumes confidence 1.0 for all relations). The number of duplicate relations is used to compute the number of extracted relations for a given web page, which is the length of the RelationSet object minus the number of duplicates encountered.
+
+The `__getitem()__` system-defined, or dunder, method implementation is particularly used in `update_query()`. It enforces ordered indexing of values by decreasing order of confidence. This simplifies the query update process as the RelationSet object can simply be indexed in order. 
+
 
 ## External references
 
+[1] Query optimizers: http://www.cs.columbia.edu/~gravano/Papers/2008/sigmod-record08.pdf
 
-
-## Additional Information
-
-
+[2] Spacy documentation: https://spacy.io/api/span
