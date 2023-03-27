@@ -224,6 +224,7 @@ def main(args):
         # If no unique query exists in X, terminate with ISE stalled.
         n_iter += 1
         query = update_query(X, old_queries)
+        old_queries.add(query)
     
     print(f'\n================== ALL RELATIONS for {[rel for rel in X.relation]} ( {len(X)} ) =================\n')
     print(X, '\n')
