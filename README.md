@@ -67,11 +67,17 @@ One iteration in this project flow consists of launching a search for a given qu
 The key functions and objects in this project are listed below with short descriptions:
 
 `main()`: Entry point and driver for the program
+
 `search()`: Constructs search object with Google custom search API and launches search
-`extract_content()`: and extract_main_text(): Uses `BeautifulSoup4` to scrape webpage content, preprocess text, and return main text for annotation
-`update_query() : Searches extracted relations and updates query with next highest confidence, unique relation
+
+`extract_content()` and `extract_main_text()`: Uses `BeautifulSoup4` to scrape webpage content, preprocess text, and return main text for annotation
+
+`update_query()` : Searches extracted relations and updates query with next highest confidence, unique relation
+
 `extract_relations()`: and extract_relations_gpt3(): Applies pre-trained language model to extract relations
+
 `create_entity_pairs()`: and create_entity_pairs_gpt3(): Annotate text with `spaCy` library and create entity pairs
+
 `RelationSet`: Custom class used to store relations. Handles duplicates and ordering with priority queue and set data structures.
 
 ### Details on scraping, annotation and relation extraction
