@@ -129,7 +129,7 @@ def print_parameters(args):
     parameters = {
         'Client key': args.google_api_key,
         'Engine key': args.google_engine_id,
-        'OpenAI key': args.openai_api_key,
+        'OpenAI key': 'XXXXXX',
         'Method': 'spanbert' if args.spanbert else 'gpt-3',
         'Relation': relations_of_interest[args.r-1],
         'Threshold': args.t,
