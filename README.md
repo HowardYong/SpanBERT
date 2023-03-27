@@ -34,19 +34,19 @@ Credential | Detail
 To install, run:
 
   ```bash
-  $ cd proj2
+  $ cd proj2/SpanBERT
   $ bash setup.sh
   ```
 
 ## How to Run
 
-Under the project's root directory, run
+Under `proj2/SpanBERT` directory, run
 
 ```bash
 $ python3 project2.py [-spanbert|-gpt3] <google api key> <google engine id> <openai secret key> <relation> <threshold> <query> <k-tuples>
 ```
 
-Examples:
+Example:
 
 ```bash
 $ python3 project2.py -spanbert  <google api key> <google engine id> <openai secret key> 1 0.7 "mark zuckerberg harvard" 10
@@ -56,9 +56,9 @@ $ python3 project2.py -spanbert  <google api key> <google engine id> <openai sec
 
 ### Project Flow
 
-The user provides an initial seed query, relation of interest, confidence threshold, and a desired number of relations to extract, k. The program is then responsible for launching a search with the provided query. A request is sent to each webpage response. If successful with respect to some criteria, then the main text is extracted from the contents of the webpage, preprocessed, and trimmed, if necessary. For each web page main text, a document is constructed using the `spaCy` library `en_core_web_lg` pre-trained language model for annotation and named entity recognition. 
+The user provides an initial seed query, relation of interest, confidence threshold, and a desired number of relations to extract, `k`. The program is then responsible for launching a search with the provided query. A request is sent to each webpage response. If successful with respect to some criteria, then the main text is extracted from the contents of the webpage, preprocessed, and trimmed, if necessary. For each web page main text, a document is constructed using the `spaCy` library `en_core_web_lg` pre-trained language model for annotation and named entity recognition. 
 
-Entity pairs are created for each sentence in the main text of a given web page document. If the 2 entity labels in a given pair conforms to the structure of the desired relation (provided upon program launch), then the project proceeds to relation extraction. Method of extracting relations is specified at program launch (`-spanbert` or `gpt3`). If the user provided the `-spanbert` flag, then the list of entity pairs are provided to the pre-trained SpanBERT model for relation extraction. Entity pairs consist of the corresponding context tokens, the subject (string, label, and index span found in the sentence), and object (same as subject). However, if the `-gpt3` flag is provided, then a prompt is constructed using a template, the input sentence, and an example relation. Relations that are extracted by SpanBERT have a corresponding confidence. If this confidence is higher than the user-provided threshold and is unique, it is added to the results. Relations extracted with GPT-3 are assigned a confidence of `1.0`. Thus, all unique relations are appended.
+Entity pairs are created for each sentence in the main text of a given web page document. If the 2 entity labels in a given pair conforms to the structure of the desired relation (provided upon program launch), then the project proceeds to relation extraction. Method of extracting relations is specified at program launch (`-spanbert` or `-gpt3`). If the user provided the `-spanbert` flag, then the list of entity pairs are provided to the pre-trained SpanBERT model for relation extraction. Entity pairs consist of the corresponding context tokens, the subject (string, label, and index span found in the sentence), and object (same as subject). However, if the `-gpt3` flag is provided, then a prompt is constructed using a template, the input sentence, and an example relation. Relations that are extracted by SpanBERT have a corresponding confidence. If this confidence is higher than the user-provided threshold and is unique, it is added to the results. Relations extracted with GPT-3 are assigned a confidence of `1.0`. Thus, all unique relations are appended.
 
 One iteration in this project flow consists of launching a search for a given query, downloading, annotating and extracting relations for each of the web pages returned for a given search. At the end of an iteration, the query is updated with an extracted relation based on 2 criteria: (1) it has the highest probability, or confidence (2) it is unique. If no more extracted relations can be used to construct a new query and the program has not terminated (i.e., `k` relations have not been extracted yet) then the program by default terminates as a result of iterative set expansion stalling. Otherwise, keep iterating until `k` relations have been extracted.
 
@@ -74,9 +74,9 @@ The key functions and objects in this project are listed below with short descri
 
 `update_query()`: Searches extracted relations and updates query with next highest confidence, unique relation
 
-`extract_relations()` and `extract_relations_gpt3()`: Applies pre-trained language model to extract relations
+`extract_relations()` and `extract_relations_gpt3()` and `extract_relations_sentence_gpt3()`: Applies pre-trained language model to extract relations
 
-`create_entity_pairs()` and `create_entity_pairs_gpt3()`: Annotate text with `spaCy` library and create entity pairs
+`create_entity_pairs()`: Annotate text with `spaCy` library and create entity pairs
 
 `RelationSet`: Custom class used to store relations. Handles duplicates and ordering with priority queue and set data structures.
 
@@ -134,15 +134,17 @@ Several variations of this prompt and varying temperatures were tested. The prom
 
 Dependencies: `heapq`
 
-The extracted relations are stored in a RelationSet object, which is a class designed to handle priority ordering efficiently and duplicate elements. The main attributes it stores is a priority queue (implemented with a list and heap), a set, the spaCy relation of interest, and a string corresponding to the specified method of relation extraction at user-input. The following system-defined methods are overwritten for the object
+The extracted relations are stored in a `RelationSet` object, which is a class designed to handle priority ordering efficiently and duplicate elements. The main attributes it stores is a priority queue (implemented with a list and heap), a set, the spaCy relation of interest, and a string corresponding to the specified method of relation extraction at user-input. The following system-defined methods are overwritten for the object
 
 `__len__()`: Returns the length of the queue
+
 `__str__()`: Prints all relations and their confidence (if SpanBERT is specified), subject, and object in the specified format by the reference implementation
-`__getitem__()`: Returns the i-th element in sorted order
 
-The `add(element, priority)` method is used to add new relations and returns the number of duplicate relations encountered. Firstly, the provided element (or relation) is checked for membership in the set to handle duplicates. If it is not a duplicate relation, the priority queue pushes the element with priority as the confidence of the relation. The priority queue is maintained as a linear representation of a max heap. The priority of the relation is irrelevant to the case of GPT-3, since all elements have the same confidence/priority. If a given relation is a duplicate, the current priority is compared with the new priority. If the current priority is higher, then no change is made to the RelationSet and the number of duplicate elements increments. If the current priority is lower than the new priority, only if SpanBERT was specified, then the old relation confidence is updated (GPT-3 assumes confidence 1.0 for all relations). The number of duplicate relations is used to compute the number of extracted relations for a given web page, which is the length of the RelationSet object minus the number of duplicates encountered.
+`__getitem__()`: Returns the `i`-th element in sorted order
 
-The `__getitem()__` system-defined, or dunder, method implementation is particularly used in `update_query()`. It enforces ordered indexing of values by decreasing order of confidence. This simplifies the query update process as the RelationSet object can simply be indexed in order. 
+The `add(element, priority)` method is used to add new relations and returns the number of duplicate relations encountered. Firstly, the provided element (or relation) is checked for membership in the set to handle duplicates. If it is not a duplicate relation, the priority queue pushes the element with priority as the confidence of the relation. The priority queue is maintained as a linear representation of a max heap. The priority of the relation is irrelevant to the case of GPT-3, since all elements have the same confidence/priority. If a given relation is a duplicate, the current priority is compared with the new priority. If the current priority is higher, then no change is made to the `RelationSet` and the number of duplicate elements increments. If the current priority is lower than the new priority, only if SpanBERT was specified, then the old relation confidence is updated (GPT-3 assumes confidence 1.0 for all relations). The number of duplicate relations is used to compute the number of extracted relations for a given web page, which is the length of the `RelationSet` object minus the number of duplicates encountered.
+
+The `__getitem()__` system-defined, or dunder, method implementation is particularly used in `update_query()`. It enforces ordered indexing of values by decreasing order of confidence. This simplifies the query update process as the `RelationSet` object can simply be indexed in order. 
 
 
 ## External references
