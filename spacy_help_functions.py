@@ -312,7 +312,7 @@ def extract_relations_sentence_gpt3(sentence, entities_of_interest, relation_of_
     except openai.error.RateLimitError:
         # Catch RateLimitError and sleep for 10 seconds before trying again
         print('Warning: RateLimitError. Sleeping...')
-        time.sleep(10)
+        time.sleep(5)
         extract_relations_sentence_gpt3(
             sentence, entities_of_interest, relation_of_interest, r, openai_api_key)
 
